@@ -9,3 +9,5 @@ navbar:
       href: eda-slides-01.html
     - text: "Part 2"
       href: eda-slides-02.html
+    - text: "Gallery"
+      href: eda-graph-gallery.html
