@@ -23,6 +23,8 @@ output:
 
 ### *`ggplot2`: a Framework for Thinking with Graphs* 
 
+**Currently under development**
+
 #### A talk for **[ODSC East, 2022](https://odsc.com/boston/)** {style="padding-top: 0px;"}
 
 Read the preview full blog post [here](https://opendatascience.com/ggplot2-a-framework-for-thinking-with-graphs/), and [previous tutorials](https://www.storybench.org/getting-started-data-visualization-r-using-ggplot2/) I've written on `ggplot2`.  
