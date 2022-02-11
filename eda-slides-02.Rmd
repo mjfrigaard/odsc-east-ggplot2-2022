@@ -92,9 +92,6 @@ Written: `r dateWritten`
 
 Updated: `r today`
 
-.footer[.right[.fira[[What does "λέξις" mean](https://jhelvy.github.io/lexis/index.html#what-does-%CE%BB%CE%AD%CE%BE%CE%B9%CF%82-mean)
-]]]
-
 ---
 class: left, top, inverse
 background-image: url(images/ODSC_Logo_2020.png)
@@ -103,7 +100,11 @@ background-size: 12%
 
 # Resources 
 
-## [Slides]() 
+## Slides
+
+### - [Part 1](https://mjfrigaard.github.io/odsc-ggplot2-2022/eda-slides-01.html#1)
+
+### - [Part 2](https://mjfrigaard.github.io/odsc-ggplot2-2022/eda-slides-02.html#1)
 
 <br>
 
@@ -435,6 +436,7 @@ background-size: 12%
 .right[
 [@mjfrigaard `r fa(name = "twitter", fill = "white")`](http://twitter.com/mjfrigaard)<br>
 [@mjfrigaard `r fa(name = "github", fill = "white")`](http://github.com/mjfrigaard)<br>
-[mjfrigaard@pm.e `r fa(name = "paper-plane", fill = "white")`](mailto:mjfrigaard@pm.me)
+[mjfrigaard@pm.e `r fa(name = "paper-plane", fill = "white")`](mailto:mjfrigaard@pm.me)<br>
+[What does "λέξις" mean?](https://jhelvy.github.io/lexis/index.html#what-does-%CE%BB%CE%AD%CE%BE%CE%B9%CF%82-mean)
 ]]
 

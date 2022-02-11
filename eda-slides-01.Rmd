@@ -103,7 +103,11 @@ background-size: 12%
 
 # Resources 
 
-## [Slides]() 
+## Slides
+
+### - [Part 1](https://mjfrigaard.github.io/odsc-ggplot2-2022/eda-slides-01.html#1)
+
+### - [Part 2](https://mjfrigaard.github.io/odsc-ggplot2-2022/eda-slides-02.html#1)
 
 <br>
 
@@ -173,7 +177,7 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-<br><br>
+<br>
 
 # **.fancy[.darkblue[.large[Exploratory Data Analysis (EDA)]]]**
 
@@ -209,12 +213,12 @@ background-size: 12%
 
 #### John T. Behrens, [Principles and Procedures of Exploratory Data Analysis](https://psycnet.apa.org/record/1997-06270-001):
 
---
-
 <br>
 
 > #### .blue[*Emphasis on substantive understanding of data*]
 >   .blue[*- i.e. "what is going on here?"*]
+
+--
 
 > #### .blue[*Iterative process with a focus on graphic representations of data*]
 
@@ -229,11 +233,11 @@ background-size: 12%
 
 #### John T. Behrens, [Principles and Procedures of Exploratory Data Analysis](https://psycnet.apa.org/record/1997-06270-001):
 
---
-
 <br>
 
 > #### .blue[*- Includes subset analyses, skepticism, and flexibility*]
+
+--
 
 > #### .red[*- The role of the data analyst is to listen to the data in as many ways as possible until a plausible "story" of the data is apparent*]
 
@@ -252,9 +256,15 @@ background-size: 12%
 
 > .blue[*A detective investigating a crime needs both tools and understanding.*]
 
+--
+
 > .blue[*If he has no fingerprint powder, he will fail to find fingerprints on most surfaces.*]
 
+--
+
 > .blue[*If he does not understand where the criminal is likely to have put his fingers, he will not look in the right places.*]
+
+--
 
 > .red[*Equally, the analyst of data needs both tool and understanding.*]
 
@@ -271,9 +281,13 @@ background-size: 12%
 
 <br>
 
-> .blue[*More than anything, EDA is a state of mind. *]
+> .red[*More than anything, EDA is a state of mind.*]
 
-> .red[*During the initial phases of EDA you should feel free to investigate every idea that occurs to you. Some of these ideas will pan out, and some will be dead ends.*]
+--
+
+> .blue[*During the initial phases of EDA you should feel free to investigate every idea that occurs to you. Some of these ideas will pan out, and some will be dead ends.*]
+
+--
 
 > .blue[*As your exploration continues, you will home in on a few particularly productive areas that you’ll eventually write up and communicate to others.*]
 
@@ -308,19 +322,37 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-## Why is EDA important?
+# Why is EDA important?
+
+### Data are complex:
+
+```{r Big-Data-Reporting, echo=FALSE, eval=TRUE, fig.align='center', out.height='60%', out.width='60%'}
+knitr::include_graphics("images/Big-Data-Reporting-640x300.jpeg")
+```
 
 --
 
-#### ***EDA is a means of .blue[visualizing complexity]***
+*It's hard to derive insight from data in it's raw form!*
+
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# EDA is a means of .blue[visualizing complexity]
+
+<br>
 
 --
 
-#### - *It's hard to make sense of a dataset or database with millions of rows and thousands of columns*
+### - *It's hard to make sense of a dataset or database with millions of rows and thousands of columns*
 
 --
 
-#### - *Fortunately, humans are excellent at seeing patterns:*
+### - *Fortunately, humans are excellent at seeing patterns:*
 
 --
 
@@ -352,32 +384,14 @@ background-size: 12%
 ## **Understanding** = *...experience and feedback*
 
 ---
-class: left, top, inverse
+class: center, middle
 background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-## EDA: A Bayesian Mindset
+<br>
 
---
-
-### .center[*What we thought we knew (what we expect)*]
-
---
-
-# .large[.center[+]]
-
---
-
-### .center[*New information (what we see)*]
-
---
-
-# .large[.center[=]]
-
---
-
-### .center[*What we think now (what we've learned)*]
+# **.fancy[.darkblue[.large[A Bayesian Mindset]]]**
 
 ---
 class: left, top, inverse
@@ -385,7 +399,35 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-# EDA: A Bayesian Mindset
+## A Bayesian Mindset
+
+--
+
+### .center[*What we thought we knew (.orange[what we expect])*]
+
+--
+
+# .large[.center[+]]
+
+--
+
+### .center[*New information (.orange[what we see])*]
+
+--
+
+# .large[.center[=]]
+
+--
+
+### .center[*What we think now (.orange[what we've learned])*]
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+## A Bayesian Mindset
 
 <br>
 
@@ -410,7 +452,7 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-# EDA: A Bayesian Mindset
+## A Bayesian Mindset
 
 --
 
@@ -454,15 +496,19 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-# Purposeful, technical creativity
+# EDA is .green[purposeful, technical creativity]
 
 <br>
 
 ### Writing code can be frustrating, especially in the beginning 
 
+--
+
 <br>
 
 ### Time spent writing code doesn't always produce 'tangible' results
+
+--
 
 <br>
 
@@ -537,6 +583,8 @@ background-size: 12%
 .right[
 [@mjfrigaard `r fa(name = "twitter", fill = "white")`](http://twitter.com/mjfrigaard)<br>
 [@mjfrigaard `r fa(name = "github", fill = "white")`](http://github.com/mjfrigaard)<br>
-[mjfrigaard@pm.e `r fa(name = "paper-plane", fill = "white")`](mailto:mjfrigaard@pm.me)
+[mjfrigaard@pm.e `r fa(name = "paper-plane", fill = "white")`](mailto:mjfrigaard@pm.me)<br>
+[What does "λέξις" mean?](https://jhelvy.github.io/lexis/index.html#what-does-%CE%BB%CE%AD%CE%BE%CE%B9%CF%82-mean)
 ]]
+
 
