@@ -1,0 +1,542 @@
+---
+title: "ODSC: Exploratory Data Visualization with ggplot2"
+subtitle: "Part 1: Building and thinking with graphs"
+author: "Martin Frigaard"
+institute: "California State University | BioMarin"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css:
+      - default
+      - css/lexis.css
+      - css/lexis-fonts.css
+    lib_dir: libs
+    seal: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+
+```{r meta, echo=FALSE}
+# infinite moon reader ----
+# xaringan::inf_mr()
+library(metathis)
+meta() %>%
+  meta_general(
+    description = "ODSC: Exploratory Data Visualization with ggplot2",
+    generator = "xaringan and remark.js"
+  ) %>%
+  meta_name("github-repo" = "https://github.com/mjfrigaard/talks/tree/main/odsc-eda-2022-04") %>%
+  meta_social(
+    title = "ODSC: Exploratory Data Visualization with ggplot2",
+    url = "https://mjfrigaard.github.io/odsc-eda/",
+    og_type = "website",
+    og_author = "Martin Frigaard",
+    twitter_card_type = "summary",
+    twitter_creator = "@mjfrigaard"
+  )
+```
+
+```{r setup, include=FALSE}
+dateWritten <- format(as.Date("2022-02-08"), format = "%B %d %Y")
+today <- format(Sys.Date(), format = "%B %d %Y")
+library(knitr)
+library(tidyverse)
+library(fontawesome)
+options(
+  htmltools.dir.version = FALSE,
+  knitr.table.format = "html",
+  knitr.kable.NA = ""
+)
+knitr::opts_chunk$set(
+  warning = FALSE,
+  message = FALSE,
+  fig.path = "images/",
+  fig.width = 7.252,
+  fig.height = 4,
+  comment = "#>",
+  fig.retina = 3 # Better figure resolution
+)
+# Enables the ability to show all slides in a tile overview by pressing "o"
+xaringanExtra::use_tile_view()
+xaringanExtra::use_panelset()
+xaringanExtra::use_clipboard()
+xaringanExtra::use_share_again()
+xaringanExtra::style_share_again(share_buttons = "all")
+xaringanExtra::use_extra_styles(
+  hover_code_line = TRUE,
+  mute_unhighlighted_code = FALSE
+)
+```
+
+layout: true
+
+<!-- this adds the link footer to all slides, depends on footer-small class in css-->
+
+<div class="footer-small"><span>https://github.com/mjfrigaard/talks/tree/main/odsc-eda-2022-04</span></div>
+
+---
+name: title-slide
+class: title-slide, center, middle, inverse
+
+# `r rmarkdown::metadata$title`
+#.fancy[`r rmarkdown::metadata$subtitle`]
+
+<br>
+
+.large[by Martin Frigaard]
+
+Written: `r dateWritten`
+
+Updated: `r today`
+
+.footer[.right[.fira[[What does "λέξις" mean](https://jhelvy.github.io/lexis/index.html#what-does-%CE%BB%CE%AD%CE%BE%CE%B9%CF%82-mean)
+]]]
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# Resources 
+
+## [Slides]() 
+
+<br>
+
+## [RStudio.Cloud]()
+
+<br>
+
+## [Github Repo](https://github.com/mjfrigaard/talks/tree/main/odsc-eda-2022-04) 
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+## Outline 
+
+.leftcol[
+
+### .red[Part 1]
+
+**Exploratory Data Analysis**
+
+- *What is it, who does it, and why it's important*
+
+**A Bayesian Mindset**
+
+- *Priors -> new information -> posteriors*
+
+**The grammar of graphics**
+
+- *Terms for common graph elements, mental models*
+
+]
+
+--
+ 
+.rightcol[
+
+### Part 2
+
+**Layers, aesthetics, and geoms**
+
+- *Mental representations graph elements*
+
+**Creating graphs with ggplot2**
+
+- *Build from scratch, layer-by-layer*
+
+**.fancy[Re]-creating graphs with ggplot2**
+
+- *Mapping data to graph elements*
+
+]
+
+---
+class: center, middle, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# .fancy[.large[PART 1]]
+
+---
+class: center, middle
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+<br><br>
+
+# **.fancy[.darkblue[.large[Exploratory Data Analysis (EDA)]]]**
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# .center["EDA"]
+
+.leftcol[
+
+### "Exploratory Data Visualization" first coined by American mathematician John Tukey in 1977
+
+]
+
+.rightcol[
+
+```{r eda-tukey, echo=FALSE, fig.align='center', out.height='50%', out.width='50%'}
+knitr::include_graphics("images/eda-tukey.jpg")
+```
+
+]
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# What is EDA? 
+
+#### John T. Behrens, [Principles and Procedures of Exploratory Data Analysis](https://psycnet.apa.org/record/1997-06270-001):
+
+--
+
+<br>
+
+> #### .blue[*Emphasis on substantive understanding of data*]
+>   .blue[*- i.e. "what is going on here?"*]
+
+> #### .blue[*Iterative process with a focus on graphic representations of data*]
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# What is EDA? 
+
+#### John T. Behrens, [Principles and Procedures of Exploratory Data Analysis](https://psycnet.apa.org/record/1997-06270-001):
+
+--
+
+<br>
+
+> #### .blue[*- Includes subset analyses, skepticism, and flexibility*]
+
+> #### .red[*- The role of the data analyst is to listen to the data in as many ways as possible until a plausible "story" of the data is apparent*]
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# Who does EDA? 
+
+#### John Tukey, [Exploratory Data Analysis](http://www.ru.ac.bd/wp-content/uploads/sites/25/2019/03/102_05_01_Tukey-Exploratory-Data-Analysis-1977.pdf):
+
+<br>
+
+> .blue[*A detective investigating a crime needs both tools and understanding.*]
+
+> .blue[*If he has no fingerprint powder, he will fail to find fingerprints on most surfaces.*]
+
+> .blue[*If he does not understand where the criminal is likely to have put his fingers, he will not look in the right places.*]
+
+> .red[*Equally, the analyst of data needs both tool and understanding.*]
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# EDA is a 'state of mind' 
+
+#### Hadley Wickham, [R for Data Science](https://r4ds.had.co.nz/exploratory-data-analysis.html):
+
+<br>
+
+> .blue[*More than anything, EDA is a state of mind. *]
+
+> .red[*During the initial phases of EDA you should feel free to investigate every idea that occurs to you. Some of these ideas will pan out, and some will be dead ends.*]
+
+> .blue[*As your exploration continues, you will home in on a few particularly productive areas that you’ll eventually write up and communicate to others.*]
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# Why is EDA important?
+
+--
+
+> .blue[*"Data are becoming the new raw material of business"* - Craig Mundie, CEO at Microsoft]
+
+--
+
+> .blue[*"Data is the oil of the digital era"* - [The  Economist](https://www.economist.com/leaders/2017/05/06/the-worlds-most-valuable-resource-is-no-longer-oil-but-data)]
+
+--
+
+```{r parkins-data-oil-png, echo=FALSE, eval=TRUE, fig.align='center', out.height='50%', out.width='50%'}
+knitr::include_graphics("images/parkins-data-oil.png")
+```
+
+<div class="footer-small"><span>https://www.economist.com/leaders/2017/05/06/the-worlds-most-valuable-resource-is-no-longer-oil-but-data</span></div>
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+## Why is EDA important?
+
+--
+
+#### ***EDA is a means of .blue[visualizing complexity]***
+
+--
+
+#### - *It's hard to make sense of a dataset or database with millions of rows and thousands of columns*
+
+--
+
+#### - *Fortunately, humans are excellent at seeing patterns:*
+
+--
+
+```{r superior-pattern-processing.png, echo=FALSE, eval=TRUE, fig.align='right', out.height='80%', out.width='80%'}
+knitr::include_graphics("images/superior-pattern-processing.png")
+```
+
+.footer[.small[.right[[Superior pattern processing is the essence of the evolved human brain](https://www.frontiersin.org/articles/10.3389/fnins.2014.00265/full) - Frontiers in Neuroscience]]]
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# What do you need?
+
+<br>
+
+--
+
+## **Tools** = R, RStudio, Adobe, sketch pad, text editor (Atom, Sublime Text, Vim)  
+
+<br>
+
+--
+
+## **Understanding** = *...experience and feedback*
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+## EDA: A Bayesian Mindset
+
+--
+
+### .center[*What we thought we knew (what we expect)*]
+
+--
+
+# .large[.center[+]]
+
+--
+
+### .center[*New information (what we see)*]
+
+--
+
+# .large[.center[=]]
+
+--
+
+### .center[*What we think now (what we've learned)*]
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# EDA: A Bayesian Mindset
+
+<br>
+
+### We all have implicit beliefs (.red[*'priors'*]) about the world
+
+--
+
+<br>
+
+### When we encounter new data or information, our *priors* get updated
+
+--
+
+<br>
+
+### These updated beliefs (.red[*'posteriors'*]) depend on our implicit beliefs and our **perceptions of the new information**
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# EDA: A Bayesian Mindset
+
+--
+
+.cols3[
+
+<br>
+
+```{r bayesian-eda-prior-png, echo=FALSE, eval=TRUE, fig.align='center', out.height='90%', out.width='90%'}
+knitr::include_graphics("images/bayesian-eda-priors.png")
+```
+
+]
+
+--
+
+.cols3[
+
+```{r bayesian-eda-new-png, echo=FALSE, eval=TRUE, fig.align='center', out.height='100%', out.width='100%'}
+knitr::include_graphics("images/bayesian-eda-new.png")
+```
+
+]
+
+--
+
+.cols3[
+
+<br>
+
+```{r bayesian-eda-posteriors-png, echo=FALSE, eval=TRUE, fig.align='center', out.height='90%', out.width='90%'}
+knitr::include_graphics("images/bayesian-eda-posteriors.png")
+```
+
+
+]
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# Purposeful, technical creativity
+
+<br>
+
+### Writing code can be frustrating, especially in the beginning 
+
+<br>
+
+### Time spent writing code doesn't always produce 'tangible' results
+
+<br>
+
+### Buidling visualizations feels like 'creating something'
+
+---
+class: center, middle
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# **.fancy[.darkblue[.large[A Grammar Of Graphics]]]**
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# `ggplot2`: a grammar of graphics
+
+<br>
+
+## What language does
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# `ggplot2`: a grammar of graphics
+
+<br>
+
+## Grammar and syntax 
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# `ggplot2`: a grammar of graphics
+
+<br>
+
+## Common graph elements
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# `ggplot2`: a grammar of graphics
+
+<br>
+
+## A template
+
+
+---
+class: center, middle, inverse, no-slide-number
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# Thanks!
+
+.footer-large[
+.right[
+[@mjfrigaard `r fa(name = "twitter", fill = "white")`](http://twitter.com/mjfrigaard)<br>
+[@mjfrigaard `r fa(name = "github", fill = "white")`](http://github.com/mjfrigaard)<br>
+[mjfrigaard@pm.e `r fa(name = "paper-plane", fill = "white")`](mailto:mjfrigaard@pm.me)
+]]
+

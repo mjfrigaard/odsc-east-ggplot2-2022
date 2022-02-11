@@ -1,0 +1,440 @@
+---
+title: "ODSC: Exploratory Data Visualization with ggplot2"
+subtitle: "Part 2: Building graphs with ggplot2"
+author: "Martin Frigaard"
+institute: "California State University | BioMarin"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css:
+      - default
+      - css/lexis.css
+      - css/lexis-fonts.css
+    lib_dir: libs
+    seal: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+
+```{r meta, echo=FALSE}
+# infinite moon reader ----
+# xaringan::inf_mr()
+library(metathis)
+meta() %>%
+  meta_general(
+    description = "ODSC: Exploratory Data Visualization with ggplot2",
+    generator = "xaringan and remark.js"
+  ) %>%
+  meta_name("github-repo" = "https://github.com/mjfrigaard/talks/tree/main/odsc-eda-2022-04") %>%
+  meta_social(
+    title = "ODSC: Exploratory Data Visualization with ggplot2",
+    url = "https://mjfrigaard.github.io/odsc-eda/",
+    og_type = "website",
+    og_author = "Martin Frigaard",
+    twitter_card_type = "summary",
+    twitter_creator = "@mjfrigaard"
+  )
+```
+
+```{r setup, include=FALSE}
+dateWritten <- format(as.Date("2022-02-08"), format = "%B %d %Y")
+today <- format(Sys.Date(), format = "%B %d %Y")
+library(knitr)
+library(tidyverse)
+library(fontawesome)
+options(
+  htmltools.dir.version = FALSE,
+  knitr.table.format = "html",
+  knitr.kable.NA = ""
+)
+knitr::opts_chunk$set(
+  warning = FALSE,
+  message = FALSE,
+  fig.path = "images/",
+  fig.width = 7.252,
+  fig.height = 4,
+  comment = "#>",
+  fig.retina = 3 # Better figure resolution
+)
+# Enables the ability to show all slides in a tile overview by pressing "o"
+xaringanExtra::use_tile_view()
+xaringanExtra::use_panelset()
+xaringanExtra::use_clipboard()
+xaringanExtra::use_share_again()
+xaringanExtra::style_share_again(share_buttons = "all")
+xaringanExtra::use_extra_styles(
+  hover_code_line = TRUE,
+  mute_unhighlighted_code = FALSE
+)
+```
+
+layout: true
+
+<!-- this adds the link footer to all slides, depends on footer-small class in css-->
+
+<div class="footer-small"><span>https://github.com/mjfrigaard/talks/tree/main/odsc-eda-2022-04</span></div>
+
+---
+name: title-slide
+class: title-slide, center, middle, inverse
+
+# `r rmarkdown::metadata$title`
+#.fancy[`r rmarkdown::metadata$subtitle`]
+
+<br>
+
+.large[by Martin Frigaard]
+
+Written: `r dateWritten`
+
+Updated: `r today`
+
+.footer[.right[.fira[[What does "λέξις" mean](https://jhelvy.github.io/lexis/index.html#what-does-%CE%BB%CE%AD%CE%BE%CE%B9%CF%82-mean)
+]]]
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# Resources 
+
+## [Slides]() 
+
+<br>
+
+## [RStudio.Cloud]()
+
+<br>
+
+## [Github Repo](https://github.com/mjfrigaard/talks/tree/main/odsc-eda-2022-04) 
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+## Outline 
+
+.leftcol[
+
+### Part 1
+
+**Exploratory Data Analysis**
+
+- *What is it, who does it, and why it's important*
+
+**A Bayesian Mindset**
+
+- *Priors -> new information -> posteriors*
+
+**The grammar of graphics**
+
+- *Terms for common graph elements, mental models*
+
+]
+
+--
+ 
+.rightcol[
+
+### .red[Part 2]
+
+**Layers, aesthetics, and geoms**
+
+- *Mental representations graph elements*
+
+**Creating graphs with ggplot2**
+
+- *Build from scratch, layer-by-layer*
+
+**.fancy[Re]-creating graphs with ggplot2**
+
+- *Mapping data to graph elements*
+
+]
+
+---
+class: center, middle, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# .fancy[.large[PART 2]]
+
+
+---
+class: center, middle
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# **.fancy[.darkblue[.large[Layers, aesthetics, and geoms]]]**
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# `ggplot2`: Layers, aesthetics, and geoms
+
+<br>
+
+## Layers
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# `ggplot2`: Layers, aesthetics, and geoms
+
+<br>
+
+## Layers
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# `ggplot2`: Layers, aesthetics, and geoms
+
+<br>
+
+## Aesthetics
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# `ggplot2`: Layers, aesthetics, and geoms
+
+<br>
+
+## Aesthetics
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# `ggplot2`: Layers, aesthetics, and geoms
+
+<br>
+
+## Geoms
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# `ggplot2`: Layers, aesthetics, and geoms
+
+<br>
+
+## Geoms
+
+---
+class: center, middle
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# **.fancy[.darkblue[.large[Creating Graphs with .red[ggplot2]]]]**
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# `ggplot2`: Creating graphs 
+
+<br>
+
+## The data 
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# `ggplot2`: Creating graphs 
+
+<br>
+
+## The data 
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# `ggplot2`: Creating graphs 
+
+<br>
+
+## Graph labels
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+
+# `ggplot2`: Creating graphs 
+
+<br>
+
+## A blank canvas
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# `ggplot2`: Creating graphs 
+
+<br>
+
+## Geoms and mapping
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# `ggplot2`: Creating graphs 
+
+<br>
+
+## Geoms and mapping
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# `ggplot2`: Creating graphs 
+
+<br>
+
+## Add labels
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# `ggplot2`: Creating graphs 
+
+<br>
+
+## Saving graphs
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# `ggplot2`: Creating graphs 
+
+<br>
+
+## Saving graphs
+
+
+---
+class: center, middle
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# **.fancy[.darkblue[.large[.blue[Re]-creating Graphs with .red[ggplot2]]]]**
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# `ggplot2`: .green[Re]-creating graphs 
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# `ggplot2`: .green[Re]-creating graphs 
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# `ggplot2`: .green[Re]-creating graphs 
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# `ggplot2`: .green[Re]-creating graphs 
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# `ggplot2`: .green[Re]-creating graphs 
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# `ggplot2`: .green[Re]-creating graphs 
+
+---
+class: center, middle, inverse, no-slide-number
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# Thanks!
+
+.footer-large[
+.right[
+[@mjfrigaard `r fa(name = "twitter", fill = "white")`](http://twitter.com/mjfrigaard)<br>
+[@mjfrigaard `r fa(name = "github", fill = "white")`](http://github.com/mjfrigaard)<br>
+[mjfrigaard@pm.e `r fa(name = "paper-plane", fill = "white")`](mailto:mjfrigaard@pm.me)
+]]
+

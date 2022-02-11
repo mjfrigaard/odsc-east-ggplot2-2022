@@ -1,0 +1,11 @@
+name: "odsc-ggplot2-2022"
+output_dir: "docs"
+navbar:
+  title: "Exploratory Data Visualization with ggplot2"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Part 1"
+      href: eda-slides-01.html
+    - text: "Part 2"
+      href: eda-slides-02.html
