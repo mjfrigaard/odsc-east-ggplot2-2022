@@ -1,5 +1,5 @@
 ---
-title: "About R Markdown"
+title: "Exploratory Data Visualization with ggplot2"
 output:
   html_document:
     theme: cosmo
