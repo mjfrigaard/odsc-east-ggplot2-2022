@@ -1,5 +1,5 @@
 ---
-title: "Exploratory Data Visualization with ggplot2"
+title: "`ggplot2`: a Framework for Thinking with Graphs"
 output:
   html_document:
     theme: cosmo
@@ -7,35 +7,56 @@ output:
     css: styles.css
 ---
 
-<style type="text/css">
-.title {
-  display: none;
-}
+# (*Currently under development*)
 
-#getting-started img {
-  margin-right: 10px;
-}
+<br><br>
 
-</style>
 
-<div class="row" style="padding-top: 30px;">
-<div class="col-sm-6">
 
-### *`ggplot2`: a Framework for Thinking with Graphs* 
-
-**Currently under development**
-
-#### A talk for **[ODSC East, 2022](https://odsc.com/boston/)** {style="padding-top: 0px;"}
+## A talk for **[ODSC East, 2022](https://odsc.com/boston/)** 
 
 Read the preview full blog post [here](https://opendatascience.com/ggplot2-a-framework-for-thinking-with-graphs/), and [previous tutorials](https://www.storybench.org/getting-started-data-visualization-r-using-ggplot2/) I've written on `ggplot2`.  
 
-#### *Coming soon!*
+***
+
+### [Part 1:](https://mjfrigaard.github.io/odsc-ggplot2-2022/eda-slides-01.html#1)
+
+- **Exploratory Data Analysis**
+
+  - *What is it, who does it, and why it's important*
+
+- **A Bayesian Mindset**
+
+  - *Priors -> new information -> posteriors*
+
+- **The grammar of graphics**
+
+  - *Terms for common graph elements, mental models*
+  
+### [Part 2:](https://mjfrigaard.github.io/odsc-ggplot2-2022/eda-slides-02.html#1) 
+
+- **Layers, aesthetics, and geoms**
+
+  - *Mental representations graph elements*
+
+- **Creating graphs with ggplot2**
+
+  - *Build from scratch, layer-by-layer*
+
+- **Re-creating graphs with ggplot2**
+
+  - *Mapping data to graph elements*
+  
+### [Graph Gallery](https://mjfrigaard.github.io/odsc-ggplot2-2022/eda-graph-gallery.html#1)
+
+- A collection of common graphs and code.
+
+***
+
+## *Coming soon!*
 
 [RStudio.Cloud materials]()
 
-
-</div>
-<div class="col-sm-6">
 
 ```{r ggplot2-png, echo=FALSE, fig.align='center', out.height='100%', out.height='100%'}
 knitr::include_graphics("images/ggplot2.png")

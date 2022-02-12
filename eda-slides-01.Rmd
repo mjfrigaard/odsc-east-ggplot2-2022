@@ -567,6 +567,21 @@ background-size: 12%
 
 ## Common graph elements
 
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# `ggplot2`: a grammar of graphics
+
+<br>
+
+## Building labels first
+
+> *Revision Sharpens Thinking: More particularly, rewriting is the key to improved thinking. It demands a real open-mindedness and objectivity. It demands a willingness to cull verbiage so that ideas stand out clearly. And it demands a willingness to meet logical contradictions head on and trace them to the premises that have created them. In short, it forces a writer to get up his courage and expose his thinking process to his own intelligence.* — Marvin H. Swift, HBR [Clear Writing Means Clear Thinking Means…](https://hbr.org/1973/01/clear-writing-means-clear-thinking-means)
+
 ---
 class: left, top, inverse
 background-image: url(images/ODSC_Logo_2020.png)
