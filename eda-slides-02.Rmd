@@ -158,6 +158,10 @@ background-size: 12%
 
 ### .red[Part 2]
 
+**Displaying Graphs**
+
+- *The principle of appropriate knowledge*
+
 **Layers, aesthetics, and geoms**
 
 - *Mental representations graph elements*

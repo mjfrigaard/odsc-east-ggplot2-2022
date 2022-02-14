@@ -224,12 +224,13 @@ background-size: 12%
 
 <br>
 
-> #### .blue[*Emphasis on substantive understanding of data*]
+> .blue[*Emphasis on substantive understanding of data*]
+
 >   .blue[*- i.e. "what is going on here?"*]
 
 --
 
-> #### .blue[*Iterative process with a focus on graphic representations of data*]
+> .blue[*Iterative process with a focus on graphic representations of data*]
 
 
 ---
@@ -244,11 +245,11 @@ background-size: 12%
 
 <br>
 
-> #### .blue[*- Includes subset analyses, skepticism, and flexibility*]
+> .blue[*- Includes subset analyses, skepticism, and flexibility*]
 
 --
 
-> #### .red[*- The role of the data analyst is to listen to the data in as many ways as possible until a plausible "story" of the data is apparent*]
+> .red[*- The role of the data analyst is to listen to the data in as many ways as possible until a plausible "story" of the data is apparent*]
 
 
 ---
@@ -452,7 +453,65 @@ background-size: 12%
 
 <br>
 
-### These updated beliefs (.red[*'posteriors'*]) depend on our implicit beliefs and our **perceptions of the new information**
+### These updated beliefs (.red[*'posteriors'*]) depend on our implicit beliefs and our **perceptions** of the new information
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# A Bayesian Mindset
+
+--
+
+.leftcol40[
+
+<br>
+
+### *Before EDA, we start with expectations and/or assumptions about the data*
+
+]
+
+--
+
+.rightcol60[
+
+```{r bayesian-eda-prior-png, echo=FALSE, eval=TRUE, fig.align='center', out.height='80%', out.width='80%'}
+knitr::include_graphics("images/bayesian-eda-priors.png")
+```
+
+]
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# A Bayesian Mindset
+
+--
+
+.leftcol40[
+
+<br>
+
+### *During EDA, we observe new information that either confirms or contradicts our prior beliefs*
+
+]
+
+--
+
+.rightcol60[
+
+```{r bayesian-eda-new-png, echo=FALSE, eval=TRUE, fig.align='center', out.height='80%', out.width='80%'}
+knitr::include_graphics("images/bayesian-eda-new.png")
+```
+
+]
 
 
 ---
@@ -465,33 +524,19 @@ background-size: 12%
 
 --
 
-.cols3[
+.leftcol40[
 
 <br>
 
-```{r bayesian-eda-prior-png, echo=FALSE, eval=TRUE, fig.align='center', out.height='90%', out.width='90%'}
-knitr::include_graphics("images/bayesian-eda-priors.png")
-```
+### *After EDA, we have a new set of beliefs which account for the observed data*
 
 ]
 
 --
 
-.cols3[
+.rightcol60[
 
-```{r bayesian-eda-new-png, echo=FALSE, eval=TRUE, fig.align='center', out.height='100%', out.width='100%'}
-knitr::include_graphics("images/bayesian-eda-new.png")
-```
-
-]
-
---
-
-.cols3[
-
-<br>
-
-```{r bayesian-eda-posteriors-png, echo=FALSE, eval=TRUE, fig.align='center', out.height='90%', out.width='90%'}
+```{r bayesian-eda-posteriors-png, echo=FALSE, eval=TRUE, fig.align='center', out.height='80%', out.width='80%'}
 knitr::include_graphics("images/bayesian-eda-posteriors.png")
 ```
 
@@ -505,23 +550,24 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-# EDA is .green[purposeful, technical creativity]
+# EDA is .green[systematic, technical creativity]
 
 <br>
 
-### Writing code can be frustrating, especially in the beginning 
+## The .orange[exploration] stems from: 
 
 --
 
-<br>
-
-### Time spent writing code doesn't always produce 'tangible' results
+### 1) articulating our prior beliefs, 
 
 --
 
-<br>
+### 2) having clear ideas for what we expect to see, and 
 
-### Buidling visualizations feels like 'creating something'
+--
+
+### 3) accurately describing our discoveries 
+
 
 ---
 class: center, middle
@@ -537,11 +583,17 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-# `ggplot2`: a grammar of graphics
+## `ggplot2`: the benefits of grammar & syntax 
 
 <br>
 
-## What language does
+--
+
+### **.fancy[Grammar]:** the system of rules for any given language 
+
+--
+
+### **.fancy[Syntax]:** the form, structure and order for the construction of statements 
 
 ---
 class: left, top, inverse
@@ -549,11 +601,23 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-# `ggplot2`: a grammar of graphics
+## `ggplot2`: the benefits of grammar & syntax 
 
 <br>
 
-## Grammar and syntax 
+### ".blue[objects] are like the R language’s nouns, and functions (**.red[fn]**) are like verbs"
+
+--
+
+```{r object-function-png, echo=FALSE, eval=TRUE, fig.align='center', out.height='100%', out.width='100%'}
+knitr::include_graphics("images/obj-function.png")
+```
+
+--
+
+<br>
+
+### .center[*.red[functions] do things to .blue[objects]*]
 
 ---
 class: left, top, inverse
@@ -561,7 +625,74 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-# `ggplot2`: a grammar of graphics
+## `ggplot2`: the benefits of grammar & syntax
+
+<br>
+
+### Language is a system for 
+
+> .blue[“making infinite use of finite means.”] - [Wilhelm von Humboldt](https://en.wikipedia.org/wiki/Wilhelm_von_Humboldt)
+
+--
+
+<br>
+
+### With a finite number of .blue[objects] & .red[functions], we can use `ggplot2`s grammar and syntax to create an infinite number of graphs!
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# `ggplot2`: layers 
+
+<br>
+
+.leftcol[
+
+### `ggplot2` is comprised of layers  
+
+- Data 
+- Mapping 
+- Statistics 
+- Geometric Objects 
+- Position adjustments 
+
+]
+
+--
+
+.rightcol[
+
+```{r ggplot2-layers-png, echo=FALSE, eval=TRUE, fig.align='center', out.height='90%', out.width='90%'}
+knitr::include_graphics("images/ggplot2-layers.png")
+```
+
+]
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# `ggplot2`: layers
+
+
+
+
+<!-- For `ggplot2`, the analyst explicitly controls the implementation of this general grammar with a separate function call to implement each layer. The result is a toolkit, a set of building blocks available to the user that provides the basis for an extraordinarily wide range of both standard and highly customized visualizations.-->
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# `ggplot2`: layers
 
 <br>
 
@@ -574,13 +705,19 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-# `ggplot2`: a grammar of graphics
-
-<br>
+# `ggplot2`: 
 
 ## Building labels first
 
-> *Revision Sharpens Thinking: More particularly, rewriting is the key to improved thinking. It demands a real open-mindedness and objectivity. It demands a willingness to cull verbiage so that ideas stand out clearly. And it demands a willingness to meet logical contradictions head on and trace them to the premises that have created them. In short, it forces a writer to get up his courage and expose his thinking process to his own intelligence.* — Marvin H. Swift, HBR [Clear Writing Means Clear Thinking Means…](https://hbr.org/1973/01/clear-writing-means-clear-thinking-means)
+> .blue[*Revision Sharpens Thinking: More particularly, rewriting is the key to improved thinking.*]
+
+--
+
+> .blue[*It demands a real open-mindedness and objectivity. It demands a willingness to cull verbiage so that ideas stand out clearly. And it demands a willingness to meet logical contradictions head on and trace them to the premises that have created them.*] 
+
+--
+
+> .red[*In short, it forces a writer to get up his courage and expose his thinking process to his own intelligence.* — Marvin H. Swift, HBR [Clear Writing Means Clear Thinking Means…](https://hbr.org/1973/01/clear-writing-means-clear-thinking-means)]
 
 ---
 class: left, top, inverse
@@ -601,7 +738,25 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-# Thanks!
+# Thanks! 
+
+<br>
+
+--
+
+#### .left[*Tip: writing code can be frustrating, especially in the beginning...*]
+
+--
+
+#### .center[*...it doesn't always produce a tangible result...*]
+
+--
+
+#### .right[*...but creating visualizations is rewarding!!!*]
+
+--
+
+<br><br><br><br>
 
 .footer-large[
 .right[
