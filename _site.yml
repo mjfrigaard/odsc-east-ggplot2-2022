@@ -1,7 +1,7 @@
 name: "odsc-ggplot2-2022"
 output_dir: "docs"
 navbar:
-  title: "ODSC 2022 (Boston) ggplot2"
+  title: "ODSC East 2022 (Boston)"
   left:
     - text: "Home"
       href: index.html
