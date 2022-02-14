@@ -1,25 +1,25 @@
 ---
-title: "`ggplot2`: a Framework for Thinking with Graphs"
+title: "Data Visualization with `ggplot2`"
+subtitle: "A talk for **[ODSC East, 2022](https://odsc.com/boston/)**"
 output:
   html_document:
     theme: cosmo
     highlight: textmate
-    css: styles.css
+    css:
+      - default
+      - css/lexis.css
+      - css/lexis-fonts.css
 ---
 
 # (*Currently under development*)
 
 <br><br>
 
-
-
-## A talk for **[ODSC East, 2022](https://odsc.com/boston/)** 
-
 Read the preview full blog post [here](https://opendatascience.com/ggplot2-a-framework-for-thinking-with-graphs/), and [previous tutorials](https://www.storybench.org/getting-started-data-visualization-r-using-ggplot2/) I've written on `ggplot2`.  
 
 ***
 
-### [Part 1:](https://mjfrigaard.github.io/odsc-ggplot2-2022/eda-slides-01.html#1)
+### [Part 1: thinking with graphs](https://mjfrigaard.github.io/odsc-ggplot2-2022/eda-slides-01.html#1)
 
 - **Exploratory Data Analysis**
 
@@ -31,11 +31,11 @@ Read the preview full blog post [here](https://opendatascience.com/ggplot2-a-fra
 
 - **The grammar of graphics**
 
-  - *Terms for common graph elements, mental models*
+   - *Layers, aesthetics, and geoms*
   
-### [Part 2:](https://mjfrigaard.github.io/odsc-ggplot2-2022/eda-slides-02.html#1) 
+### [Part 2: creating graphs with ggplot2](https://mjfrigaard.github.io/odsc-ggplot2-2022/eda-slides-02.html#1) 
 
-- **Layers, aesthetics, and geoms**
+- **Graphs & mental models**
 
   - *Mental representations graph elements*
 

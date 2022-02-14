@@ -1,6 +1,6 @@
 ---
 title: "ODSC: Exploratory Data Visualization with ggplot2"
-subtitle: "Part 2: Building graphs with ggplot2"
+subtitle: "Part 2: Creating graphs with ggplot2"
 author: "Martin Frigaard"
 institute: "California State University | BioMarin"
 date: "`r Sys.Date()`"
@@ -148,7 +148,7 @@ background-size: 12%
 
 **The grammar of graphics**
 
-- *Terms for common graph elements, mental models*
+- *Layers, aesthetics, and geoms*
 
 ]
 
@@ -156,13 +156,9 @@ background-size: 12%
  
 .rightcol[
 
-### .red[Part 2]
+### Part 2
 
-**Displaying Graphs**
-
-- *The principle of appropriate knowledge*
-
-**Layers, aesthetics, and geoms**
+**Graphs & mental models**
 
 - *Mental representations graph elements*
 

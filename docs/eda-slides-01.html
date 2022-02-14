@@ -4,7 +4,7 @@
     <title>ODSC: Exploratory Data Visualization with ggplot2</title>
     <meta charset="utf-8" />
     <meta name="author" content="Martin Frigaard" />
-    <meta name="date" content="2022-02-12" />
+    <meta name="date" content="2022-02-14" />
     <script src="site_libs/header-attrs/header-attrs.js"></script>
     <link href="site_libs/remark-css/default.css" rel="stylesheet" />
     <meta name="description" content="ODSC: Exploratory Data Visualization with ggplot2"/>
@@ -57,7 +57,7 @@ name: title-slide
 class: title-slide, center, middle, inverse
 
 # ODSC: Exploratory Data Visualization with ggplot2
-#.fancy[Part 1: Building and thinking with graphs]
+#.fancy[Part 1: Thinking with graphs]
 
 &lt;br&gt;
 
@@ -65,7 +65,7 @@ class: title-slide, center, middle, inverse
 
 Written: February 08 2022
 
-Updated: February 12 2022
+Updated: February 14 2022
 
 ---
 class: left, top, inverse
@@ -123,7 +123,7 @@ background-size: 12%
 
 **The grammar of graphics**
 
-- *Terms for common graph elements, mental models*
+- *Layers, aesthetics, and geoms*
 
 ]
 
@@ -133,7 +133,7 @@ background-size: 12%
 
 ### Part 2
 
-**Layers, aesthetics, and geoms**
+**Graphs &amp; mental models**
 
 - *Mental representations graph elements*
 
@@ -197,12 +197,13 @@ background-size: 12%
 
 &lt;br&gt;
 
-&gt; #### .blue[*Emphasis on substantive understanding of data*]
+&gt; .blue[*Emphasis on substantive understanding of data*]
+
 &gt;   .blue[*- i.e. "what is going on here?"*]
 
 --
 
-&gt; #### .blue[*Iterative process with a focus on graphic representations of data*]
+&gt; .blue[*Iterative process with a focus on graphic representations of data*]
 
 
 ---
@@ -217,11 +218,11 @@ background-size: 12%
 
 &lt;br&gt;
 
-&gt; #### .blue[*- Includes subset analyses, skepticism, and flexibility*]
+&gt; .blue[*- Includes subset analyses, skepticism, and flexibility*]
 
 --
 
-&gt; #### .red[*- The role of the data analyst is to listen to the data in as many ways as possible until a plausible "story" of the data is apparent*]
+&gt; .red[*- The role of the data analyst is to listen to the data in as many ways as possible until a plausible "story" of the data is apparent*]
 
 
 ---
@@ -419,7 +420,61 @@ background-size: 12%
 
 &lt;br&gt;
 
-### These updated beliefs (.red[*'posteriors'*]) depend on our implicit beliefs and our **perceptions of the new information**
+### These updated beliefs (.red[*'posteriors'*]) depend on our implicit beliefs and our **perceptions** of the new information
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# A Bayesian Mindset
+
+--
+
+.leftcol40[
+
+&lt;br&gt;
+
+### *Before EDA, we start with expectations and/or assumptions about the data*
+
+]
+
+--
+
+.rightcol60[
+
+&lt;img src="images/bayesian-eda-priors.png" width="80%" height="80%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# A Bayesian Mindset
+
+--
+
+.leftcol40[
+
+&lt;br&gt;
+
+### *During EDA, we observe new information that either confirms or contradicts our prior beliefs*
+
+]
+
+--
+
+.rightcol60[
+
+&lt;img src="images/bayesian-eda-new.png" width="80%" height="80%" style="display: block; margin: auto;" /&gt;
+
+]
 
 
 ---
@@ -432,29 +487,19 @@ background-size: 12%
 
 --
 
-.cols3[
+.leftcol40[
 
 &lt;br&gt;
 
-&lt;img src="images/bayesian-eda-priors.png" width="90%" height="90%" style="display: block; margin: auto;" /&gt;
+### *After EDA, we have a new set of beliefs which account for the observed data*
 
 ]
 
 --
 
-.cols3[
+.rightcol60[
 
-&lt;img src="images/bayesian-eda-new.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
-
-]
-
---
-
-.cols3[
-
-&lt;br&gt;
-
-&lt;img src="images/bayesian-eda-posteriors.png" width="90%" height="90%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/bayesian-eda-posteriors.png" width="80%" height="80%" style="display: block; margin: auto;" /&gt;
 
 
 ]
@@ -466,23 +511,24 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-# EDA is .green[purposeful, technical creativity]
+# EDA is .green[systematic, technical creativity]
 
 &lt;br&gt;
 
-### Writing code can be frustrating, especially in the beginning 
+## The .orange[exploration] stems from: 
 
 --
 
-&lt;br&gt;
-
-### Time spent writing code doesn't always produce 'tangible' results
+### 1) articulating our prior beliefs, 
 
 --
 
-&lt;br&gt;
+### 2) having clear ideas for what we expect to see, and 
 
-### Buidling visualizations feels like 'creating something'
+--
+
+### 3) accurately describing our discoveries 
+
 
 ---
 class: center, middle
@@ -498,11 +544,17 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-# `ggplot2`: a grammar of graphics
+## `ggplot2`: the benefits of grammar &amp; syntax 
 
 &lt;br&gt;
 
-## What language does
+--
+
+### **.fancy[Grammar]:** the system of rules for any given language 
+
+--
+
+### **.fancy[Syntax]:** the form, structure and order for the construction of statements 
 
 ---
 class: left, top, inverse
@@ -510,11 +562,21 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-# `ggplot2`: a grammar of graphics
+## `ggplot2`: the benefits of grammar &amp; syntax 
 
 &lt;br&gt;
 
-## Grammar and syntax 
+### ".blue[objects] are like the R language’s nouns, and functions (**.red[fn]**) are like verbs"
+
+--
+
+&lt;img src="images/obj-function.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+--
+
+&lt;br&gt;
+
+### .center[*.red[functions] do things to .blue[objects]*]
 
 ---
 class: left, top, inverse
@@ -522,7 +584,72 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-# `ggplot2`: a grammar of graphics
+## `ggplot2`: the benefits of grammar &amp; syntax
+
+&lt;br&gt;
+
+### Language is a system for 
+
+&gt; .blue[“making infinite use of finite means.”] - [Wilhelm von Humboldt](https://en.wikipedia.org/wiki/Wilhelm_von_Humboldt)
+
+--
+
+&lt;br&gt;
+
+### With a finite number of .blue[objects] &amp; .red[functions], we can use `ggplot2`s grammar and syntax to create an infinite number of graphs!
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# `ggplot2`: layers 
+
+&lt;br&gt;
+
+.leftcol[
+
+### `ggplot2` is comprised of layers  
+
+- Data 
+- Mapping 
+- Statistics 
+- Geometric Objects 
+- Position adjustments 
+
+]
+
+--
+
+.rightcol[
+
+&lt;img src="images/ggplot2-layers.png" width="90%" height="90%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# `ggplot2`: layers
+
+
+
+
+&lt;!-- For `ggplot2`, the analyst explicitly controls the implementation of this general grammar with a separate function call to implement each layer. The result is a toolkit, a set of building blocks available to the user that provides the basis for an extraordinarily wide range of both standard and highly customized visualizations.--&gt;
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# `ggplot2`: layers
 
 &lt;br&gt;
 
@@ -535,13 +662,19 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-# `ggplot2`: a grammar of graphics
-
-&lt;br&gt;
+# `ggplot2`: 
 
 ## Building labels first
 
-&gt; *Revision Sharpens Thinking: More particularly, rewriting is the key to improved thinking. It demands a real open-mindedness and objectivity. It demands a willingness to cull verbiage so that ideas stand out clearly. And it demands a willingness to meet logical contradictions head on and trace them to the premises that have created them. In short, it forces a writer to get up his courage and expose his thinking process to his own intelligence.* — Marvin H. Swift, HBR [Clear Writing Means Clear Thinking Means…](https://hbr.org/1973/01/clear-writing-means-clear-thinking-means)
+&gt; .blue[*Revision Sharpens Thinking: More particularly, rewriting is the key to improved thinking.*]
+
+--
+
+&gt; .blue[*It demands a real open-mindedness and objectivity. It demands a willingness to cull verbiage so that ideas stand out clearly. And it demands a willingness to meet logical contradictions head on and trace them to the premises that have created them.*] 
+
+--
+
+&gt; .red[*In short, it forces a writer to get up his courage and expose his thinking process to his own intelligence.* — Marvin H. Swift, HBR [Clear Writing Means Clear Thinking Means…](https://hbr.org/1973/01/clear-writing-means-clear-thinking-means)]
 
 ---
 class: left, top, inverse
@@ -562,7 +695,25 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-# Thanks!
+# Thanks! 
+
+&lt;br&gt;
+
+--
+
+#### .left[*Tip: writing code can be frustrating, especially in the beginning...*]
+
+--
+
+#### .center[*...it doesn't always produce a tangible result...*]
+
+--
+
+#### .right[*...but creating visualizations is rewarding!!!*]
+
+--
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
 .footer-large[
 .right[
