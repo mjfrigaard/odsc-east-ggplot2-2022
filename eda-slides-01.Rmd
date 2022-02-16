@@ -554,7 +554,7 @@ background-size: 12%
 
 <br>
 
-## The .orange[exploration] stems from: 
+## The .orange['exploration'] stems from: 
 
 --
 
@@ -591,9 +591,11 @@ background-size: 12%
 
 ### **.fancy[Grammar]:** the system of rules for any given language 
 
+<br>
+
 --
 
-### **.fancy[Syntax]:** the form, structure and order for the construction of statements 
+### **.fancy[Syntax]:** the form, structure and order for constructing statements 
 
 ---
 class: left, top, inverse
@@ -619,26 +621,6 @@ knitr::include_graphics("images/obj-function.png")
 
 ### .center[*.red[functions] do things to .blue[objects]*]
 
----
-class: left, top, inverse
-background-image: url(images/ODSC_Logo_2020.png)
-background-position: 95% 8%
-background-size: 12%
-
-## `ggplot2`: the benefits of grammar & syntax
-
-<br>
-
-### Language is a system for 
-
-> .blue[“making infinite use of finite means.”] - [Wilhelm von Humboldt](https://en.wikipedia.org/wiki/Wilhelm_von_Humboldt)
-
---
-
-<br>
-
-### With a finite number of .blue[objects] & .red[functions], we can use `ggplot2`s grammar and syntax to create an infinite number of graphs!
-
 
 ---
 class: left, top, inverse
@@ -646,7 +628,7 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-# `ggplot2`: layers 
+# `ggplot2`: a layered language for graphs 
 
 <br>
 
@@ -657,7 +639,7 @@ background-size: 12%
 - Data 
 - Mapping 
 - Statistics 
-- Geometric Objects 
+- Geometric objects 
 - Position adjustments 
 
 ]
@@ -679,9 +661,16 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-# `ggplot2`: layers
+# `ggplot2`: data
 
 
+### The data layer consists of a rectangular object (like a spreadsheet) with columns and rows
+
+--
+
+```{r data-layer-png, echo=FALSE, eval=TRUE, fig.align='center', out.height='70%', out.width='70%'}
+knitr::include_graphics("images/data-layer.png")
+```
 
 
 <!-- For `ggplot2`, the analyst explicitly controls the implementation of this general grammar with a separate function call to implement each layer. The result is a toolkit, a set of building blocks available to the user that provides the basis for an extraordinarily wide range of both standard and highly customized visualizations.-->
@@ -692,11 +681,68 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
+# `ggplot2`: mapping
+
+
+### The mapping layer assigns columns (variables) from the data to a visual property (i.e. graph '.red[aes]thetic')
+
+--
+
+```{r mapping-layer-png, echo=FALSE, eval=TRUE, fig.align='center', out.height='75%', out.width='75%'}
+knitr::include_graphics("images/mapping-layer.png")
+```
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# `ggplot2`: geoms
+
+### `geom_*()` functions include statistical transformations, shapes, and position adjustments for how to 'draw' the data on the graph
+
+--
+
+```{r geom-layer-png, echo=FALSE, eval=TRUE, fig.align='center', out.height='75%', out.width='75%'}
+knitr::include_graphics("images/geom-layer.png")
+```
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
 # `ggplot2`: layers
+
+### We can have multiple layers (data, mappings, geoms) in a single graph
+
+--
+
+```{r multiple-layers-png, echo=FALSE, eval=TRUE, fig.align='center', out.height='70%', out.width='70%'}
+knitr::include_graphics("images/multiple-layers.png")
+```
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+## `ggplot2`: layers = infinitely extensible
 
 <br>
 
-## Common graph elements
+### Language is a system for 
+
+> .blue[“making infinite use of finite means.”] - [Wilhelm von Humboldt](https://en.wikipedia.org/wiki/Wilhelm_von_Humboldt)
+
+--
+
+<br>
+
+### With a finite number of .blue[objects] & .red[functions], we can combine `ggplot2`s grammar and syntax to create an infinite number of graphs!
 
 
 ---
@@ -705,9 +751,134 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-# `ggplot2`: 
+# `ggplot2`: before we start
 
-## Building labels first
+<br>
+
+### **Build the labels first!**
+
+#### Create a title, subtitle (with data source), and x/y axis labels 
+
+--
+
+.leftcol60[.code60[
+
+```{r labs_pengiuns, eval=FALSE}
+labs_pengiuns <- ggplot2::labs(
+              title = "Flipper vs. Bill Length", 
+              subtitle = "source: palmerpenguins::penguins", 
+              x = "flipper length (mm)", 
+              y = "bill length (mm)")
+```
+
+]]
+
+--
+
+.rightcol40[
+
+.center[.large[.red[<- our expectations]]]
+
+]
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+
+# `ggplot2`: build graph, check labels
+
+
+.leftcol40[.code50[
+
+```{r labs_pengiuns-penguins, echo=FALSE}
+penguins <- palmerpenguins::penguins
+```
+
+```{r penguins, fig.show='hide'}
+labs_pengiuns <- ggplot2::labs(
+    title = "Flipper vs. Bill Length", 
+    subtitle = "source: palmerpenguins::penguins", 
+    x = "flipper length (mm)", 
+    y = "bill length (mm)") 
+
+ggplot(data = penguins, 
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm) 
+       ) + 
+  labs_pengiuns
+```
+
+
+]]
+
+--
+
+.rightcol60[
+
+```{r plot-penguins, ref.label='penguins', echo=FALSE, fig.align='center', out.width='100%', out.height='100%'}
+
+```
+
+### .red[What's wrong here?]
+
+
+]
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+
+## `ggplot2`: build graph, check labels, .red[revise]
+
+--
+
+.leftcol40[.code50[
+
+```{r palmerpenguins-penguins, echo=FALSE}
+penguins <- palmerpenguins::penguins
+```
+
+```{r penguins-revise, fig.show='hide'}
+labs_pengiuns <- ggplot2::labs(
+    title = "Flipper vs. Bill Length", 
+    subtitle = "source: palmerpenguins::penguins", 
+    x = "flipper length (mm)", #<<
+    y = "bill length (mm)") #<<
+
+ggplot(data = penguins, 
+       mapping = aes(x = flipper_length_mm, #<<
+                     y = bill_length_mm) #<<
+       ) + 
+  labs_pengiuns
+```
+
+]]
+
+--
+
+.rightcol60[
+
+```{r plot-penguins-revise, ref.label='penguins-revise', echo=FALSE, fig.align='center', out.width='100%', out.height='100%'}
+
+```
+
+]
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+
+## `ggplot2`: build graph, check labels, .red[revise]
 
 > .blue[*Revision Sharpens Thinking: More particularly, rewriting is the key to improved thinking.*]
 
