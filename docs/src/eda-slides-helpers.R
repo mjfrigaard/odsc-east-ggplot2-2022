@@ -40,36 +40,34 @@ movies_data <- filter(movies_data, !is.na(budget)) %>%
   ))
 
 # set theme ----
-ggplot2::theme_set(theme(
-  axis.text = element_text(size = 8),
-  axis.text.x = element_text(size = 8),
-  axis.text.y = element_text(size = 8),
-  plot.title = element_text(size = 10),
-  axis.title = element_text(size = 8),
-  legend.text = element_text(size = 5),
-  legend.title = element_text(size = 6),
-  legend.position = "left",
-  legend.key.size = unit(0.4, 'cm')
-  ))
+# ggplot2::theme_set(theme(
+#   axis.text = element_text(size = 8),
+#   axis.text.x = element_text(size = 8),
+#   axis.text.y = element_text(size = 8),
+#   plot.title = element_text(size = 10),
+#   axis.title = element_text(size = 8),
+#   legend.text = element_text(size = 5),
+#   legend.title = element_text(size = 6),
+#   legend.position = "left",
+#   legend.key.size = unit(0.4, 'cm')
+#   ))
 
 
 
 # penguins data -----------------------------------------------------------
 penguins <- palmerpenguins::penguins
 
-
-# layers ------------------------------------------------------------------
-# initialize
-
+## labels -----------------------------------------------------------------
 labs_pengiuns <- ggplot2::labs(
               title = "Flipper vs. Bill Length", 
               subtitle = "source: palmerpenguins::penguins", 
               x = "flipper length (mm)", 
               y = "bill length (mm)")
-
+# initialize
 ggplot(data = penguins) + 
   labs_pengiuns
 
+# layers ------------------------------------------------------------------
 # no geom
 ggplot(data = penguins, 
        mapping = aes(x = flipper_length_mm, 
@@ -86,10 +84,24 @@ ggplot(data = penguins,
        mapping = aes(x = flipper_length_mm, 
                      y = bill_length_mm)) +
   geom_point() + 
+  
   geom_smooth(
     mapping = aes(x = flipper_length_mm, 
                      y = bill_length_mm, 
                      color = species))
+
+#  facets
+ggplot(data = penguins, 
+       mapping = aes(x = flipper_length_mm, 
+                     y = bill_length_mm)) +
+  geom_point() + 
+  
+  geom_smooth(
+    mapping = aes(x = flipper_length_mm, 
+                     y = bill_length_mm, 
+                     color = species)) + 
+  
+  facet_wrap(facets = . ~ island)
 
 # local mappings
 ggplot(data = penguins) +

@@ -4,7 +4,7 @@
     <title>ODSC: Exploratory Data Visualization with ggplot2</title>
     <meta charset="utf-8" />
     <meta name="author" content="Martin Frigaard" />
-    <meta name="date" content="2022-02-16" />
+    <meta name="date" content="2022-02-17" />
     <script src="site_libs/header-attrs/header-attrs.js"></script>
     <link href="site_libs/remark-css/default.css" rel="stylesheet" />
     <meta name="description" content="ODSC: Exploratory Data Visualization with ggplot2"/>
@@ -65,7 +65,7 @@ class: title-slide, center, middle, inverse
 
 Written: February 08 2022
 
-Updated: February 16 2022
+Updated: February 17 2022
 
 ---
 class: left, top, inverse
@@ -155,6 +155,20 @@ background-size: 12%
 
 # .fancy[.large[PART 2]]
 
+--
+
+#### .left[*Tip: writing code can be frustrating, especially in the beginning...*]
+
+--
+
+#### .center[*...it doesn't always produce a tangible result...*]
+
+--
+
+#### .right[*...but creating visualizations is rewarding!!!*]
+
+--
+
 
 ---
 class: center, middle
@@ -163,6 +177,148 @@ background-position: 95% 8%
 background-size: 12%
 
 # **.fancy[.darkblue[.large[Layers, aesthetics, and geoms]]]**
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# `ggplot2`: before we start
+
+&lt;br&gt;
+
+### **Build the labels first!**
+
+#### Create a title, subtitle (with data source), and x/y axis labels 
+
+--
+
+.leftcol60[.code60[
+
+
+```r
+labs_pengiuns &lt;- ggplot2::labs(
+              title = "Flipper vs. Bill Length", 
+              subtitle = "source: palmerpenguins::penguins", 
+              x = "flipper length (mm)", 
+              y = "bill length (mm)")
+```
+
+]]
+
+--
+
+.rightcol40[
+
+.center[.large[.red[&lt;- our expectations]]]
+
+]
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+
+# `ggplot2`: build graph, check labels
+
+
+.leftcol40[.code50[
+
+
+
+
+```r
+labs_pengiuns &lt;- ggplot2::labs(
+    title = "Flipper vs. Bill Length", 
+    subtitle = "source: palmerpenguins::penguins", 
+    x = "flipper length (mm)", 
+    y = "bill length (mm)") 
+
+ggplot(data = penguins, 
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm) 
+       ) + 
+  labs_pengiuns
+```
+
+
+]]
+
+--
+
+.rightcol60[
+
+&lt;img src="images/plot-penguins-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+### .red[What's wrong here?]
+
+
+]
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+
+## `ggplot2`: build graph, check labels, .red[revise]
+
+--
+
+.leftcol40[.code50[
+
+
+
+
+```r
+labs_pengiuns &lt;- ggplot2::labs(
+    title = "Flipper vs. Bill Length", 
+    subtitle = "source: palmerpenguins::penguins", 
+*   x = "flipper length (mm)",
+*   y = "bill length (mm)")
+
+ggplot(data = penguins, 
+*      mapping = aes(x = flipper_length_mm,
+*                    y = bill_length_mm)
+       ) + 
+  labs_pengiuns
+```
+
+]]
+
+--
+
+.rightcol60[
+
+&lt;img src="images/plot-penguins-revise-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+
+## `ggplot2`: build graph, check labels, .red[revise]
+
+&gt; .blue[*Revision Sharpens Thinking: More particularly, rewriting is the key to improved thinking.*]
+
+--
+
+&gt; .blue[*It demands a real open-mindedness and objectivity. It demands a willingness to cull verbiage so that ideas stand out clearly. And it demands a willingness to meet logical contradictions head on and trace them to the premises that have created them.*] 
+
+--
+
+&gt; .red[*In short, it forces a writer to get up his courage and expose his thinking process to his own intelligence.* — Marvin H. Swift, HBR [Clear Writing Means Clear Thinking Means…](https://hbr.org/1973/01/clear-writing-means-clear-thinking-means)]
 
 ---
 class: left, top, inverse
