@@ -4,9 +4,9 @@
     <title>ODSC: Exploratory Data Visualization with ggplot2</title>
     <meta charset="utf-8" />
     <meta name="author" content="Martin Frigaard" />
-    <meta name="date" content="2022-02-16" />
-    <script src="site_libs/header-attrs/header-attrs.js"></script>
-    <link href="site_libs/remark-css/default.css" rel="stylesheet" />
+    <meta name="date" content="2022-02-17" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
     <meta name="description" content="ODSC: Exploratory Data Visualization with ggplot2"/>
     <meta name="generator" content="xaringan and remark.js"/>
     <meta name="github-repo" content="mjfrigaard/odsc-ggplot2-2022/tree/gh-pages"/>
@@ -22,19 +22,19 @@
     <meta property="og:type" content="website"/>
     <meta property="og:locale" content="en_US"/>
     <meta property="article:author" content="Martin Frigaard"/>
-    <link href="site_libs/tile-view/tile-view.css" rel="stylesheet" />
-    <script src="site_libs/tile-view/tile-view.js"></script>
-    <link href="site_libs/panelset/panelset.css" rel="stylesheet" />
-    <script src="site_libs/panelset/panelset.js"></script>
-    <script src="site_libs/clipboard/clipboard.min.js"></script>
-    <link href="site_libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
-    <script src="site_libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
     <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
-    <link href="site_libs/shareon/shareon.min.css" rel="stylesheet" />
-    <script src="site_libs/shareon/shareon.min.js"></script>
-    <link href="site_libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
-    <script src="site_libs/xaringanExtra-shareagain/shareagain.js"></script>
-    <link href="site_libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
+    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
+    <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/lexis.css" type="text/css" />
     <link rel="stylesheet" href="css/lexis-fonts.css" type="text/css" />
   </head>
@@ -65,7 +65,7 @@ class: title-slide, center, middle, inverse
 
 Written: February 08 2022
 
-Updated: February 16 2022
+Updated: February 17 2022
 
 ---
 class: left, top, inverse
@@ -544,19 +544,19 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-## `ggplot2`: the benefits of grammar &amp; syntax 
+# `ggplot2`: grammar &amp; syntax 
 
 &lt;br&gt;
 
 --
 
-### **.fancy[Grammar]:** the system of rules for any given language 
+## **.fancy[Grammar]:** the system of rules for any given language 
 
 &lt;br&gt;
 
 --
 
-### **.fancy[Syntax]:** the form, structure and order for constructing statements 
+## **.fancy[Syntax]:** the form, structure and order for constructing statements 
 
 ---
 class: left, top, inverse
@@ -625,7 +625,7 @@ background-size: 12%
 
 --
 
-&lt;img src="images/data-layer.png" width="70%" height="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/data-layer.png" width="68%" height="62%" style="display: block; margin: auto;" /&gt;
 
 
 &lt;!-- For `ggplot2`, the analyst explicitly controls the implementation of this general grammar with a separate function call to implement each layer. The result is a toolkit, a set of building blocks available to the user that provides the basis for an extraordinarily wide range of both standard and highly customized visualizations.--&gt;
@@ -643,7 +643,7 @@ background-size: 12%
 
 --
 
-&lt;img src="images/mapping-layer.png" width="75%" height="75%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/mapping-layer.png" width="72%" height="68%" style="display: block; margin: auto;" /&gt;
 
 ---
 class: left, top, inverse
@@ -657,7 +657,7 @@ background-size: 12%
 
 --
 
-&lt;img src="images/geom-layer.png" width="75%" height="75%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/geom-layer.png" width="78%" height="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 class: left, top, inverse
@@ -671,7 +671,7 @@ background-size: 12%
 
 --
 
-&lt;img src="images/multiple-layers.png" width="70%" height="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/multiple-layers.png" width="80%" height="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 class: left, top, inverse
@@ -685,7 +685,7 @@ background-size: 12%
 
 ### Language is a system for 
 
-&gt; .blue[“making infinite use of finite means.”] - [Wilhelm von Humboldt](https://en.wikipedia.org/wiki/Wilhelm_von_Humboldt)
+&gt; .red[“making infinite use of finite means.”] - [Wilhelm von Humboldt](https://en.wikipedia.org/wiki/Wilhelm_von_Humboldt)
 
 --
 
@@ -700,80 +700,49 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-# `ggplot2`: before we start
+## `ggplot2`: layers = infinitely extensible
+
+
+
+#### We can build graphs layer-by-layer
+
+.cols3[.code50[
 
 &lt;br&gt;
 
-### **Build the labels first!**
-
-#### Create a title, subtitle (with data source), and x/y axis labels 
-
---
-
-.leftcol60[.code60[
+.center[.red[code]]
 
 
 ```r
-labs_pengiuns &lt;- ggplot2::labs(
-              title = "Flipper vs. Bill Length", 
-              subtitle = "source: palmerpenguins::penguins", 
-              x = "flipper length (mm)", 
-              y = "bill length (mm)")
-```
-
-]]
-
---
-
-.rightcol40[
-
-.center[.large[.red[&lt;- our expectations]]]
-
-]
-
----
-class: left, top, inverse
-background-image: url(images/ODSC_Logo_2020.png)
-background-position: 95% 8%
-background-size: 12%
-
-
-# `ggplot2`: build graph, check labels
-
-
-.leftcol40[.code50[
-
-
-
-
-```r
-labs_pengiuns &lt;- ggplot2::labs(
-    title = "Flipper vs. Bill Length", 
-    subtitle = "source: palmerpenguins::penguins", 
-    x = "flipper length (mm)", 
-    y = "bill length (mm)") 
-
 ggplot(data = penguins, 
-       mapping = aes(x = bill_length_mm, 
-                     y = flipper_length_mm) 
-       ) + 
-  labs_pengiuns
+  mapping = aes(x = flipper_length_mm, 
+                y = bill_length_mm)) + 
+  geom_point() 
 ```
-
 
 ]]
 
 --
 
-.rightcol60[
+.cols3[
 
-&lt;img src="images/plot-penguins-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+.center[.blue[layer]]
 
-### .red[What's wrong here?]
-
+&lt;img src="images/layer-breakdown-01.png" width="83%" height="83%" style="display: block; margin: auto;" /&gt;
 
 ]
 
+--
+
+.cols3[
+
+&lt;br&gt;
+
+.center[.green[graph]]
+
+&lt;img src="images/layer-breakdown-01-plot-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+]
 
 ---
 class: left, top, inverse
@@ -781,37 +750,50 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
+## `ggplot2`: layers = infinitely extensible
 
-## `ggplot2`: build graph, check labels, .red[revise]
+#### New layers can 'inherit' data from previous layers (or include their own data)
 
---
+.cols3[.code50[
 
-.leftcol40[.code50[
+&lt;br&gt;
 
-
+.center[.red[code]]
 
 
 ```r
-labs_pengiuns &lt;- ggplot2::labs(
-    title = "Flipper vs. Bill Length", 
-    subtitle = "source: palmerpenguins::penguins", 
-*   x = "flipper length (mm)",
-*   y = "bill length (mm)")
-
 ggplot(data = penguins, 
-*      mapping = aes(x = flipper_length_mm,
-*                    y = bill_length_mm)
-       ) + 
-  labs_pengiuns
+    mapping = aes(x = flipper_length_mm, 
+                  y = bill_length_mm)) +
+  geom_point() + 
+  
+* geom_smooth(
+*   mapping = aes(x = flipper_length_mm,
+*                    y = bill_length_mm,
+*                    color = species))
 ```
 
 ]]
 
 --
 
-.rightcol60[
+.cols3[
 
-&lt;img src="images/plot-penguins-revise-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+.center[.blue[layer]]
+
+&lt;img src="images/layer-breakdown-02.png" width="58%" height="58%" style="display: block; margin: auto;" /&gt;
+
+]
+
+--
+
+&lt;br&gt;
+
+.center[.green[graph]]
+
+.cols3[
+
+&lt;img src="images/layer-breakdown-02-plot-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -821,18 +803,55 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
+## `ggplot2`: layers = infinitely extensible
 
-## `ggplot2`: build graph, check labels, .red[revise]
+#### Additional functions for facets, themes, etc.
 
-&gt; .blue[*Revision Sharpens Thinking: More particularly, rewriting is the key to improved thinking.*]
+.cols3[.code50[
+
+&lt;br&gt;
+
+.center[.red[code]]
+
+
+```r
+ggplot(data = penguins, 
+    mapping = aes(x = flipper_length_mm, 
+                  y = bill_length_mm)) +
+  geom_point() + 
+  
+  geom_smooth(
+    mapping = aes(x = flipper_length_mm, 
+                     y = bill_length_mm, 
+                     color = species)) + 
+  
+* facet_wrap(facets = . ~ island)
+```
+
+]]
 
 --
 
-&gt; .blue[*It demands a real open-mindedness and objectivity. It demands a willingness to cull verbiage so that ideas stand out clearly. And it demands a willingness to meet logical contradictions head on and trace them to the premises that have created them.*] 
+.cols3[
+
+.center[.blue[layer]]
+
+&lt;img src="images/layer-breakdown-03.png" width="45%" height="46%" style="display: block; margin: auto;" /&gt;
+
+]
 
 --
 
-&gt; .red[*In short, it forces a writer to get up his courage and expose his thinking process to his own intelligence.* — Marvin H. Swift, HBR [Clear Writing Means Clear Thinking Means…](https://hbr.org/1973/01/clear-writing-means-clear-thinking-means)]
+.cols3[
+
+&lt;br&gt;
+
+.center[.green[graph]]
+
+&lt;img src="images/layer-breakdown-03-plot-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
 
 ---
 class: left, top, inverse
@@ -855,23 +874,7 @@ background-size: 12%
 
 # Thanks! 
 
-&lt;br&gt;
-
---
-
-#### .left[*Tip: writing code can be frustrating, especially in the beginning...*]
-
---
-
-#### .center[*...it doesn't always produce a tangible result...*]
-
---
-
-#### .right[*...but creating visualizations is rewarding!!!*]
-
---
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
 .footer-large[
 .right[

@@ -583,19 +583,19 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-## `ggplot2`: the benefits of grammar & syntax 
+# `ggplot2`: grammar & syntax 
 
 <br>
 
 --
 
-### **.fancy[Grammar]:** the system of rules for any given language 
+## **.fancy[Grammar]:** the system of rules for any given language 
 
 <br>
 
 --
 
-### **.fancy[Syntax]:** the form, structure and order for constructing statements 
+## **.fancy[Syntax]:** the form, structure and order for constructing statements 
 
 ---
 class: left, top, inverse
@@ -668,7 +668,7 @@ background-size: 12%
 
 --
 
-```{r data-layer-png, echo=FALSE, eval=TRUE, fig.align='center', out.height='70%', out.width='70%'}
+```{r data-layer-png, echo=FALSE, eval=TRUE, fig.align='center', out.height='62%', out.width='68%'}
 knitr::include_graphics("images/data-layer.png")
 ```
 
@@ -688,7 +688,7 @@ background-size: 12%
 
 --
 
-```{r mapping-layer-png, echo=FALSE, eval=TRUE, fig.align='center', out.height='75%', out.width='75%'}
+```{r mapping-layer-png, echo=FALSE, eval=TRUE, fig.align='center', out.height='68%', out.width='72%'}
 knitr::include_graphics("images/mapping-layer.png")
 ```
 
@@ -704,7 +704,7 @@ background-size: 12%
 
 --
 
-```{r geom-layer-png, echo=FALSE, eval=TRUE, fig.align='center', out.height='75%', out.width='75%'}
+```{r geom-layer-png, echo=FALSE, eval=TRUE, fig.align='center', out.height='70%', out.width='78%'}
 knitr::include_graphics("images/geom-layer.png")
 ```
 
@@ -720,7 +720,7 @@ background-size: 12%
 
 --
 
-```{r multiple-layers-png, echo=FALSE, eval=TRUE, fig.align='center', out.height='70%', out.width='70%'}
+```{r multiple-layers-png, echo=FALSE, eval=TRUE, fig.align='center', out.height='70%', out.width='80%'}
 knitr::include_graphics("images/multiple-layers.png")
 ```
 
@@ -736,7 +736,7 @@ background-size: 12%
 
 ### Language is a system for 
 
-> .blue[“making infinite use of finite means.”] - [Wilhelm von Humboldt](https://en.wikipedia.org/wiki/Wilhelm_von_Humboldt)
+> .red[“making infinite use of finite means.”] - [Wilhelm von Humboldt](https://en.wikipedia.org/wiki/Wilhelm_von_Humboldt)
 
 --
 
@@ -751,121 +751,50 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-# `ggplot2`: before we start
-
-<br>
-
-### **Build the labels first!**
-
-#### Create a title, subtitle (with data source), and x/y axis labels 
-
---
-
-.leftcol60[.code60[
-
-```{r labs_pengiuns, eval=FALSE}
-labs_pengiuns <- ggplot2::labs(
-              title = "Flipper vs. Bill Length", 
-              subtitle = "source: palmerpenguins::penguins", 
-              x = "flipper length (mm)", 
-              y = "bill length (mm)")
-```
-
-]]
-
---
-
-.rightcol40[
-
-.center[.large[.red[<- our expectations]]]
-
-]
-
----
-class: left, top, inverse
-background-image: url(images/ODSC_Logo_2020.png)
-background-position: 95% 8%
-background-size: 12%
-
-
-# `ggplot2`: build graph, check labels
-
-
-.leftcol40[.code50[
-
-```{r labs_pengiuns-penguins, echo=FALSE}
-penguins <- palmerpenguins::penguins
-```
-
-```{r penguins, fig.show='hide'}
-labs_pengiuns <- ggplot2::labs(
-    title = "Flipper vs. Bill Length", 
-    subtitle = "source: palmerpenguins::penguins", 
-    x = "flipper length (mm)", 
-    y = "bill length (mm)") 
-
-ggplot(data = penguins, 
-       mapping = aes(x = bill_length_mm, 
-                     y = flipper_length_mm) 
-       ) + 
-  labs_pengiuns
-```
-
-
-]]
-
---
-
-.rightcol60[
-
-```{r plot-penguins, ref.label='penguins', echo=FALSE, fig.align='center', out.width='100%', out.height='100%'}
-
-```
-
-### .red[What's wrong here?]
-
-
-]
-
-
----
-class: left, top, inverse
-background-image: url(images/ODSC_Logo_2020.png)
-background-position: 95% 8%
-background-size: 12%
-
-
-## `ggplot2`: build graph, check labels, .red[revise]
-
---
-
-.leftcol40[.code50[
+## `ggplot2`: layers = infinitely extensible
 
 ```{r palmerpenguins-penguins, echo=FALSE}
 penguins <- palmerpenguins::penguins
 ```
 
-```{r penguins-revise, fig.show='hide'}
-labs_pengiuns <- ggplot2::labs(
-    title = "Flipper vs. Bill Length", 
-    subtitle = "source: palmerpenguins::penguins", 
-    x = "flipper length (mm)", #<<
-    y = "bill length (mm)") #<<
+#### We can build graphs layer-by-layer
 
+.cols3[.code50[
+
+<br>
+
+.center[.red[code]]
+
+```{r layer-breakdown-01, fig.show='hide'}
 ggplot(data = penguins, 
-       mapping = aes(x = flipper_length_mm, #<<
-                     y = bill_length_mm) #<<
-       ) + 
-  labs_pengiuns
+  mapping = aes(x = flipper_length_mm, 
+                y = bill_length_mm)) + 
+  geom_point() 
 ```
 
 ]]
 
 --
 
-.rightcol60[
+.cols3[
 
-```{r plot-penguins-revise, ref.label='penguins-revise', echo=FALSE, fig.align='center', out.width='100%', out.height='100%'}
+.center[.blue[layer]]
+
+```{r layer-breakdown-01-png, eval=TRUE, echo=FALSE, fig.align='center', out.height='83%', out.width='83%'}
+knitr::include_graphics("images/layer-breakdown-01.png")
+```
+
+]
+
+--
+
+.cols3[
+
+<br>
+
+.center[.green[graph]]
+
+```{r layer-breakdown-01-plot, ref.label='layer-breakdown-01', echo=FALSE, fig.align='center', out.width='100%', out.height='100%'}
 
 ```
 
@@ -877,18 +806,114 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
+## `ggplot2`: layers = infinitely extensible
 
-## `ggplot2`: build graph, check labels, .red[revise]
+#### New layers can 'inherit' data from previous layers (or include their own data)
 
-> .blue[*Revision Sharpens Thinking: More particularly, rewriting is the key to improved thinking.*]
+.cols3[.code50[
+
+<br>
+
+.center[.red[code]]
+
+```{r layer-breakdown-02, fig.show='hide'}
+ggplot(data = penguins, 
+    mapping = aes(x = flipper_length_mm, 
+                  y = bill_length_mm)) +
+  geom_point() + 
+  
+  geom_smooth( #<<
+    mapping = aes(x = flipper_length_mm, #<<
+                     y = bill_length_mm, #<<
+                     color = species)) #<<
+```
+
+]]
 
 --
 
-> .blue[*It demands a real open-mindedness and objectivity. It demands a willingness to cull verbiage so that ideas stand out clearly. And it demands a willingness to meet logical contradictions head on and trace them to the premises that have created them.*] 
+.cols3[
+
+.center[.blue[layer]]
+
+```{r layer-breakdown-02-png, eval=TRUE, echo=FALSE, fig.align='center', out.height='58%', out.width='58%'}
+knitr::include_graphics("images/layer-breakdown-02.png")
+```
+
+]
 
 --
 
-> .red[*In short, it forces a writer to get up his courage and expose his thinking process to his own intelligence.* — Marvin H. Swift, HBR [Clear Writing Means Clear Thinking Means…](https://hbr.org/1973/01/clear-writing-means-clear-thinking-means)]
+<br>
+
+.center[.green[graph]]
+
+.cols3[
+
+```{r layer-breakdown-02-plot, ref.label='layer-breakdown-02', echo=FALSE, fig.align='center', out.width='100%', out.height='100%'}
+
+```
+
+]
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+## `ggplot2`: layers = infinitely extensible
+
+#### Additional functions for facets, themes, etc.
+
+.cols3[.code50[
+
+<br>
+
+.center[.red[code]]
+
+```{r layer-breakdown-03, fig.show='hide'}
+ggplot(data = penguins, 
+    mapping = aes(x = flipper_length_mm, 
+                  y = bill_length_mm)) +
+  geom_point() + 
+  
+  geom_smooth(
+    mapping = aes(x = flipper_length_mm, 
+                     y = bill_length_mm, 
+                     color = species)) + 
+  
+  facet_wrap(facets = . ~ island) #<<
+```
+
+]]
+
+--
+
+.cols3[
+
+.center[.blue[layer]]
+
+```{r layer-breakdown-03-png, eval=TRUE, echo=FALSE, fig.align='center', out.height='46%', out.width='45%'}
+knitr::include_graphics("images/layer-breakdown-03.png")
+```
+
+]
+
+--
+
+.cols3[
+
+<br>
+
+.center[.green[graph]]
+
+```{r layer-breakdown-03-plot, ref.label='layer-breakdown-03', echo=FALSE, fig.align='center', out.width='100%', out.height='100%'}
+
+```
+
+]
+
 
 ---
 class: left, top, inverse
@@ -911,23 +936,7 @@ background-size: 12%
 
 # Thanks! 
 
-<br>
-
---
-
-#### .left[*Tip: writing code can be frustrating, especially in the beginning...*]
-
---
-
-#### .center[*...it doesn't always produce a tangible result...*]
-
---
-
-#### .right[*...but creating visualizations is rewarding!!!*]
-
---
-
-<br><br><br><br>
+<br><br><br><br><br>
 
 .footer-large[
 .right[
