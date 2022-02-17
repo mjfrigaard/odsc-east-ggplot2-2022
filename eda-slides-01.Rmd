@@ -818,8 +818,10 @@ background-size: 12%
 
 ```{r layer-breakdown-02, fig.show='hide'}
 ggplot(data = penguins, 
-    mapping = aes(x = flipper_length_mm, 
+       
+   mapping = aes(x = flipper_length_mm, 
                   y = bill_length_mm)) +
+  
   geom_point() + 
   
   geom_smooth( #<<
@@ -874,16 +876,17 @@ background-size: 12%
 
 ```{r layer-breakdown-03, fig.show='hide'}
 ggplot(data = penguins, 
+       
     mapping = aes(x = flipper_length_mm, 
                   y = bill_length_mm)) +
-  geom_point() + 
+    geom_point() + 
   
-  geom_smooth(
+    geom_smooth(
     mapping = aes(x = flipper_length_mm, 
                      y = bill_length_mm, 
                      color = species)) + 
   
-  facet_wrap(facets = . ~ island) #<<
+    facet_wrap(facets = . ~ island) #<<
 ```
 
 ]]
@@ -921,11 +924,81 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-# `ggplot2`: a grammar of graphics
+# `ggplot2`: templates
 
-<br>
 
-## A template
+.leftcol[
+
+Data, aesthetic mappings, geom
+
+.code50[
+
+```{r template-01, eval=FALSE, echo=TRUE}
+ggplot(data = <DATA>) +
+     geom_*(mapping = aes(<AESTHETIC MAPPINGS>)) #<<
+```
+
+]
+
+More geoms and aesthetic mappings  
+
+.code50[
+
+```{r template-02, eval=FALSE, echo=TRUE}
+ggplot(data = <DATA>) +
+     geom_*(mapping = aes(<AESTHETIC MAPPINGS>)) + 
+     geom_*(mapping = aes(<AESTHETIC MAPPINGS>)) #<<
+```
+
+]
+
+Faceting
+
+.code50[
+
+```{r template-03, eval=FALSE, echo=TRUE}
+ggplot(data = <DATA>) +
+     geom_*(mapping = aes(<AESTHETIC MAPPINGS>)) + 
+     geom_*(mapping = aes(<AESTHETIC MAPPINGS>)) +
+     facet_* #<<
+```
+
+]
+
+]
+
+.leftcol[
+
+Themes
+
+.code50[
+
+```{r template-04, eval=FALSE, echo=TRUE}
+ggplot(data = <DATA>) +
+     geom_*(mapping = aes(<AESTHETIC MAPPINGS>)) + 
+     geom_*(mapping = aes(<AESTHETIC MAPPINGS>)) +
+     facet_* + 
+     theme_* #<<
+```
+
+]
+
+Don't forget labels! 
+
+.code50[
+
+```{r template-05, eval=FALSE, echo=TRUE}
+ggplot(data = <DATA>) +
+     geom_*(mapping = aes(<AESTHETIC MAPPINGS>)) + 
+     geom_*(mapping = aes(<AESTHETIC MAPPINGS>)) +
+     facet_* + 
+     theme_* +
+     <LABELS> #<<
+```
+
+]
+
+]
 
 
 ---

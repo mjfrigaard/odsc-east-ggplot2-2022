@@ -763,8 +763,10 @@ background-size: 12%
 
 ```r
 ggplot(data = penguins, 
-    mapping = aes(x = flipper_length_mm, 
+       
+   mapping = aes(x = flipper_length_mm, 
                   y = bill_length_mm)) +
+  
   geom_point() + 
   
 * geom_smooth(
@@ -816,16 +818,17 @@ background-size: 12%
 
 ```r
 ggplot(data = penguins, 
+       
     mapping = aes(x = flipper_length_mm, 
                   y = bill_length_mm)) +
-  geom_point() + 
+    geom_point() + 
   
-  geom_smooth(
+    geom_smooth(
     mapping = aes(x = flipper_length_mm, 
                      y = bill_length_mm, 
                      color = species)) + 
   
-* facet_wrap(facets = . ~ island)
+*   facet_wrap(facets = . ~ island)
 ```
 
 ]]
@@ -859,11 +862,86 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-# `ggplot2`: a grammar of graphics
+# `ggplot2`: templates
 
-&lt;br&gt;
 
-## A template
+.leftcol[
+
+Data, aesthetic mappings, geom
+
+.code50[
+
+
+```r
+ggplot(data = &lt;DATA&gt;) +
+*    geom_*(mapping = aes(&lt;AESTHETIC MAPPINGS&gt;))
+```
+
+]
+
+More geoms and aesthetic mappings  
+
+.code50[
+
+
+```r
+ggplot(data = &lt;DATA&gt;) +
+     geom_*(mapping = aes(&lt;AESTHETIC MAPPINGS&gt;)) + 
+*    geom_*(mapping = aes(&lt;AESTHETIC MAPPINGS&gt;))
+```
+
+]
+
+Faceting
+
+.code50[
+
+
+```r
+ggplot(data = &lt;DATA&gt;) +
+     geom_*(mapping = aes(&lt;AESTHETIC MAPPINGS&gt;)) + 
+     geom_*(mapping = aes(&lt;AESTHETIC MAPPINGS&gt;)) +
+*    facet_*
+```
+
+]
+
+]
+
+.leftcol[
+
+Themes
+
+.code50[
+
+
+```r
+ggplot(data = &lt;DATA&gt;) +
+     geom_*(mapping = aes(&lt;AESTHETIC MAPPINGS&gt;)) + 
+     geom_*(mapping = aes(&lt;AESTHETIC MAPPINGS&gt;)) +
+     facet_* + 
+*    theme_*
+```
+
+]
+
+Don't forget labels! 
+
+.code50[
+
+
+```r
+ggplot(data = &lt;DATA&gt;) +
+     geom_*(mapping = aes(&lt;AESTHETIC MAPPINGS&gt;)) + 
+     geom_*(mapping = aes(&lt;AESTHETIC MAPPINGS&gt;)) +
+     facet_* + 
+     theme_* +
+*    &lt;LABELS&gt;
+```
+
+]
+
+]
 
 
 ---
