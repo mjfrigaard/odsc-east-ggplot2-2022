@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>ODSC: Exploratory Data Visualization with ggplot2</title>
+    <title>ODSC: Data Visualization with ggplot2</title>
     <meta charset="utf-8" />
     <meta name="author" content="Martin Frigaard" />
-    <meta name="date" content="2022-02-17" />
+    <meta name="date" content="2022-03-08" />
     <script src="site_libs/header-attrs/header-attrs.js"></script>
     <link href="site_libs/remark-css/default.css" rel="stylesheet" />
-    <meta name="description" content="ODSC: Exploratory Data Visualization with ggplot2"/>
+    <meta name="description" content="ODSC: Data Visualization with ggplot2"/>
     <meta name="generator" content="xaringan and remark.js"/>
     <meta name="github-repo" content="mjfrigaard/odsc-ggplot2-2022/tree/gh-pages"/>
-    <meta name="twitter:title" content="ODSC: Exploratory Data Visualization with ggplot2"/>
-    <meta name="twitter:description" content="ODSC: Exploratory Data Visualization with ggplot2"/>
+    <meta name="twitter:title" content="ODSC: Data Visualization with ggplot2"/>
+    <meta name="twitter:description" content="ODSC: Data Visualization with ggplot2"/>
     <meta name="twitter:url" content="https://mjfrigaard.github.io/odsc-ggplot2-2022/"/>
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:creator" content="@mjfrigaard"/>
     <meta name="twitter:site" content="@mjfrigaard"/>
-    <meta property="og:title" content="ODSC: Exploratory Data Visualization with ggplot2"/>
-    <meta property="og:description" content="ODSC: Exploratory Data Visualization with ggplot2"/>
+    <meta property="og:title" content="ODSC: Data Visualization with ggplot2"/>
+    <meta property="og:description" content="ODSC: Data Visualization with ggplot2"/>
     <meta property="og:url" content="https://mjfrigaard.github.io/odsc-ggplot2-2022/"/>
     <meta property="og:type" content="website"/>
     <meta property="og:locale" content="en_US"/>
@@ -56,7 +56,7 @@ layout: true
 name: title-slide
 class: title-slide, center, middle, inverse
 
-# ODSC: Exploratory Data Visualization with ggplot2
+# ODSC: Data Visualization with ggplot2
 #.fancy[Part 1: Thinking with graphs]
 
 &lt;br&gt;
@@ -65,7 +65,7 @@ class: title-slide, center, middle, inverse
 
 Written: February 08 2022
 
-Updated: February 17 2022
+Updated: March 08 2022
 
 ---
 class: left, top, inverse
@@ -865,23 +865,43 @@ background-size: 12%
 # `ggplot2`: templates
 
 
-.leftcol[
+.leftcol55[
 
-Data, aesthetic mappings, geom
+### Basic Template: Data, aesthetic mappings, geom
 
-.code50[
+.code70[
 
 
 ```r
 ggplot(data = &lt;DATA&gt;) +
-*    geom_*(mapping = aes(&lt;AESTHETIC MAPPINGS&gt;))
+     geom_*(mapping = aes(&lt;AESTHETIC MAPPINGS&gt;)) 
 ```
 
 ]
+]
 
-More geoms and aesthetic mappings  
+.rightcol45[
 
-.code50[
+&lt;br&gt;
+
+&lt;img src="images/layer-breakdown-01.png" width="83%" height="83%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# `ggplot2`: templates
+
+.leftcol55[
+
+### Template + 1 Layer: More geoms and aesthetic mappings  
+
+.code70[
 
 
 ```r
@@ -890,29 +910,61 @@ ggplot(data = &lt;DATA&gt;) +
 *    geom_*(mapping = aes(&lt;AESTHETIC MAPPINGS&gt;))
 ```
 
+]]
+
+.rightcol45[
+
+&lt;img src="images/layer-breakdown-02.png" width="53%" height="53%" style="display: block; margin: auto;" /&gt;
+
 ]
 
-Faceting
 
-.code50[
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# `ggplot2`: templates
+
+.leftcol55[
+
+### Template + 2 Layers: Faceting
+
+.code70[
 
 
 ```r
 ggplot(data = &lt;DATA&gt;) +
      geom_*(mapping = aes(&lt;AESTHETIC MAPPINGS&gt;)) + 
      geom_*(mapping = aes(&lt;AESTHETIC MAPPINGS&gt;)) +
-*    facet_*
+     facet_* 
 ```
 
 ]
+]
+
+.rightcol45[
+
+&lt;img src="images/layer-breakdown-03.png" width="43%" height="43%" style="display: block; margin: auto;" /&gt;
 
 ]
 
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# .red[templates] = .blue[infinitely extensible!]
+
 .leftcol[
 
-Themes
+### Themes
 
-.code50[
+&lt;br&gt;
+
+.code60[
 
 
 ```r
@@ -925,9 +977,16 @@ ggplot(data = &lt;DATA&gt;) +
 
 ]
 
-Don't forget labels! 
 
-.code50[
+]
+
+.rightcol[
+
+### Don't forget labels! 
+
+&lt;br&gt;
+
+.code60[
 
 
 ```r
@@ -943,14 +1002,13 @@ ggplot(data = &lt;DATA&gt;) +
 
 ]
 
-
 ---
 class: center, middle, inverse, no-slide-number
 background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-# Thanks! 
+# Next up: Part 2!
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
