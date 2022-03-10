@@ -1,0 +1,23 @@
+.leftcol[
+
+.code60[
+
+```{r , fig.show='hide'}
+
+```
+
+
+]
+]
+
+--
+
+.rightcol[
+
+
+
+```{r -out, ref.label='g02-geom', echo=FALSE, fig.align='center', out.width='100%', out.height='100%'}
+
+```
+
+]
