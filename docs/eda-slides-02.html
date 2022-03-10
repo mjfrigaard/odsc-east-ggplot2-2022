@@ -4,7 +4,7 @@
     <title>ODSC: Data Visualization with ggplot2</title>
     <meta charset="utf-8" />
     <meta name="author" content="Martin Frigaard" />
-    <meta name="date" content="2022-03-08" />
+    <meta name="date" content="2022-03-10" />
     <script src="site_libs/header-attrs/header-attrs.js"></script>
     <link href="site_libs/remark-css/default.css" rel="stylesheet" />
     <meta name="description" content="ODSC: Data Visualization with ggplot2"/>
@@ -65,7 +65,7 @@ class: title-slide, center, middle, inverse
 
 Written: February 08 2022
 
-Updated: March 08 2022
+Updated: March 10 2022
 
 ---
 class: left, top, inverse
@@ -95,7 +95,7 @@ background-size: 12%
 
 ## Materials:
 
-### - [RStudio.Cloud]() (*coming soon!*)
+### - [RStudio.Cloud](https://rstudio.cloud/spaces/225054/project/3704185)
 
 ### - [Github Repo](https://github.com/mjfrigaard/odsc-ggplot2-2022/tree/gh-pages) 
 
@@ -166,19 +166,6 @@ background-size: 12%
 --
 
 #### .right[*...but creating visualizations is rewarding!!!*]
-
---
-
-
----
-class: center, middle
-background-image: url(images/ODSC_Logo_2020.png)
-background-position: 95% 8%
-background-size: 12%
-
-# **.fancy[.darkblue[.large[Layers, aesthetics, and geoms]]]**
-
-## Let's get started!
 
 
 ---
@@ -312,7 +299,7 @@ background-position: 95% 8%
 background-size: 12%
 
 
-## `ggplot2`: build graph, check labels, .red[revise]
+## `ggplot2`: build graph, check labels, .red[REVISE]
 
 &gt; .blue[*Revision Sharpens Thinking: More particularly, rewriting is the key to improved thinking.*]
 
@@ -324,29 +311,16 @@ background-size: 12%
 
 &gt; .red[*In short, it forces a writer to get up his courage and expose his thinking process to his own intelligence.* — Marvin H. Swift, HBR [Clear Writing Means Clear Thinking Means…](https://hbr.org/1973/01/clear-writing-means-clear-thinking-means)]
 
----
-class: left, top, inverse
-background-image: url(images/ODSC_Logo_2020.png)
-background-position: 97% 6%
-background-size: 10%
-
-# .red[graph 01]: Layers, aesthetics, and geoms
-
-&lt;br&gt;
-
-## Layers
 
 ---
-class: left, top, inverse
+class: center, middle
 background-image: url(images/ODSC_Logo_2020.png)
-background-position: 97% 6%
-background-size: 10%
+background-position: 95% 8%
+background-size: 12%
 
-# .red[graph 01]: Layers, aesthetics, and geoms
+# **.fancy[.darkblue[.large[Layers, aesthetics, and geoms]]]**
 
-&lt;br&gt;
-
-## Layers
+## Let's get started!
 
 ---
 class: left, top, inverse
@@ -354,23 +328,13 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 97% 6%
 background-size: 10%
 
-# .red[graph 02]: Layers, aesthetics, and geoms
+# RStudio.Cloud: Set up
 
-&lt;br&gt;
+## In your RStudio.Cloud, you will see the following: 
 
-## Aesthetics
+&lt;img src="images/rscloud-landing.png" width="90%" height="90%" style="display: block; margin: auto;" /&gt;
 
----
-class: left, top, inverse
-background-image: url(images/ODSC_Logo_2020.png)
-background-position: 97% 6%
-background-size: 10%
-
-# .red[graph 02]: Layers, aesthetics, and geoms
-
-&lt;br&gt;
-
-## Aesthetics
+## Click on .red[odsc-ggplot2-2022] project
 
 ---
 class: left, top, inverse
@@ -378,11 +342,11 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 97% 6%
 background-size: 10%
 
-# .red[graph 03]: Layers, aesthetics, and geoms
+# RStudio.Cloud: Set up
 
-&lt;br&gt;
+## In your RStudio IDE, you will see the following: 
 
-## Geoms
+&lt;img src="images/rscloud-env.png" width="80%" height="80%" style="display: block; margin: auto;" /&gt;
 
 ---
 class: left, top, inverse
@@ -390,11 +354,400 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 97% 6%
 background-size: 10%
 
-# .red[graph 03]: Layers, aesthetics, and geoms
+# RStudio.Cloud: Set up
 
-&lt;br&gt;
+## In the .blue[Files] pane, click on the `inst.R` file to open it
 
-## Geoms
+&lt;img src="images/rscloud-open-inst.png" width="80%" height="80%" style="display: block; margin: auto;" /&gt;
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# RStudio.Cloud: Set up
+
+## In the .blue[Source] pane, click on the .blue[Source] icon to run `inst.R`
+
+&lt;img src="images/rscloud-source-inst.png" width="80%" height="80%" style="display: block; margin: auto;" /&gt;
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# RStudio.Cloud: Exercises 
+
+## The exercises are in the `graphs/` folder 
+
+&lt;img src="images/graphs-files.png" width="80%" height="80%" style="display: block; margin: auto;" /&gt;
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# RStudio.Cloud: Solutions 
+
+## Each exercise has a solution file in `solutions/` folder
+
+&lt;img src="images/sols-files.png" width="80%" height="80%" style="display: block; margin: auto;" /&gt;
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# .red[graph-01]: The data layer
+
+We're going to use the `palmerpenguins::penguins`
+
+Below are some options for viewing the data:
+
+--
+
+.cols3[.code90[
+
+
+```r
+View(penguins)
+```
+
+
+]]
+
+.cols3[.code90[
+
+
+```r
+glimpse(penguins)
+```
+
+]]
+
+
+.cols3[.code90[
+
+
+```r
+str(penguins)
+```
+
+]]
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# .red[graph-01]: The data layer
+
+## `View()` opens the RStudio data viewer
+
+&lt;img src="images/penguins-View.png" width="80%" height="80%" style="display: block; margin: auto;" /&gt;
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# .red[graph-01]: The data layer
+
+## `glimpse()` and `str()` are displayed in the console
+
+.leftcol[
+
+&lt;img src="images/penguins-glimpse.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.rightcol[
+
+&lt;img src="images/penguins-str.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# .red[graph-01]: Initialize plot with data
+
+
+.leftcol[
+
+Recall our template from Part 1:
+
+.code60[
+
+
+```r
+ggplot(data = &lt;DATA&gt;) +
+     geom_*(mapping = aes(&lt;AESTHETIC MAPPINGS&gt;)) 
+```
+
+]
+]
+
+--
+
+.rightcol[
+
+Replace `&lt;DATA&gt;` with `penguins`
+
+.code60[
+
+
+```r
+*ggplot(data = penguins)
+```
+
+&lt;img src="images/initialize-1.png" width="522.144" /&gt;
+
+]
+]
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# .red[graph-01]: Build labels! 
+
+We want to build the labels *before* mapping variables 
+
+- title = "Bill and flipper length of Palmer penguins"
+- subtitle = "Size measurements for adult foraging penguins"
+- caption = "https://allisonhorst.github.io/palmerpenguins/"
+- x = "Bill length (mm)"
+- y = "Flipper length (mm)"
+
+
+```r
+# build labels 
+labs_bill_vs_flippper &lt;- ggplot2::labs(
+  title = "Bill and flipper length of Palmer penguins", 
+  subtitle = "Size measurements for adult foraging penguins",
+  x = "Bill length (mm)", 
+  y = "Flipper length (mm)")
+```
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# .red[graph-01]: Map variables to positions
+
+Now that we have our labels, we know where to put our variables
+
+.leftcol[
+.code60[
+
+Refer to template:
+
+
+```r
+ggplot(data = &lt;DATA&gt;) +
+     geom_*(mapping = aes(x = &lt;AESTHETIC MAPPINGS&gt;,
+                          y = &lt;AESTHETIC MAPPINGS&gt;)) 
+```
+
+Map `x` and `y`
+
+
+```r
+ggplot(data = penguins, 
+*      mapping = aes(x = bill_length_mm,
+*                    y = flipper_length_mm))
+```
+
+]
+]
+
+--
+
+.rightcol[
+
+Mapping variables *outside* `geom_*` functions gives us a blank canvas!
+
+&lt;img src="images/g01-position-out-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# .red[graph-02]: Adding geoms
+
+
+.leftcol[
+
+Add the `geom_point()` function (use the `+` symbol)
+
+.code60[
+
+
+```r
+ggplot(data = penguins, 
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm)) + 
+*      geom_point()
+```
+
+
+]
+]
+
+--
+
+.rightcol[
+
+The `geom_point()` function tells R we want to see the points (or dots) on our canvas
+
+&lt;img src="images/g02-geom-out-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# .red[graph-02]: Don't forget the labels! 
+
+
+.leftcol[
+
+Finally, we want to add the labels we created (`labs_bill_vs_flippper`)
+
+.code60[
+
+
+```r
+ggplot(data = penguins, 
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm)) + 
+  geom_point() + 
+* labs_bill_vs_flippper
+```
+
+
+]
+]
+
+--
+
+.rightcol[
+
+Now we have our first graph!
+
+&lt;img src="images/g02-labels-out-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# .red[graph 03]: Global vs. local mapping
+
+.leftcol[
+
+We've just created a graph by setting global aesthetics 
+
+.code60[
+
+
+```r
+ggplot(data = penguins, 
+*      mapping = aes(x = bill_length_mm,
+*                    y = flipper_length_mm)) +
+  geom_point() + 
+  labs_bill_vs_flippper
+```
+
+We can also set aesthetics locally (*inside* the `geom_*` function)
+
+
+```r
+ggplot(data = penguins) + 
+* geom_point(
+*   mapping = aes(x = bill_length_mm,
+*                 y = flipper_length_mm)) +
+  labs_bill_vs_flippper
+```
+
+
+]
+]
+
+--
+
+.rightcol[
+
+This creates the same plot. 
+
+&lt;img src="images/g03-local-out-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+Read more [here](https://ggplot2-book.org/collective-geoms.html#different-groups-on-different-layers).
+
+]
+
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# .red[graph-04]: Using color 
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# .red[graph-05]: Multiple geoms
+
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 10%
+
+# .red[graph-06]: Multiple geoms
+
+
 
 ---
 class: center, middle
@@ -570,6 +923,39 @@ background-position: 97% 6%
 background-size: 10%
 
 # `ggplot2`: .green[Re]-creating graphs 
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# `ggplot2`: templates
+
+
+.leftcol55[
+
+### Basic Template: Data, aesthetic mappings, geom
+
+.code70[
+
+
+```r
+ggplot(data = &lt;DATA&gt;) +
+     geom_*(mapping = aes(&lt;AESTHETIC MAPPINGS&gt;)) 
+```
+
+]
+]
+
+.rightcol45[
+
+&lt;br&gt;
+
+&lt;img src="images/layer-breakdown-01.png" width="83%" height="83%" style="display: block; margin: auto;" /&gt;
+
+]
 
 ---
 class: center, middle, inverse, no-slide-number

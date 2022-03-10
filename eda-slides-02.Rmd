@@ -577,12 +577,11 @@ We want to build the labels *before* mapping variables
 - x = "Bill length (mm)"
 - y = "Flipper length (mm)"
 
-```{r labs_g01}
+```{r labs_g01, eval=TRUE}
 # build labels 
-labs_bill_vs_flippper <- labs(
+labs_bill_vs_flippper <- ggplot2::labs(
   title = "Bill and flipper length of Palmer penguins", 
-  subtitle = "Size measurements for adult foraging penguins", 
-  caption = "https://allisonhorst.github.io/palmerpenguins/", 
+  subtitle = "Size measurements for adult foraging penguins",
   x = "Bill length (mm)", 
   y = "Flipper length (mm)")
 ```
@@ -686,7 +685,7 @@ Finally, we want to add the labels we created (`labs_bill_vs_flippper`)
 
 .code60[
 
-```{r g02-labels, fig.show='hide'}
+```{r g02-labels, fig.show='hide', eval=FALSE}
 ggplot(data = penguins, 
        mapping = aes(x = bill_length_mm, 
                      y = flipper_length_mm)) + 
@@ -704,8 +703,12 @@ ggplot(data = penguins,
 
 Now we have our first graph!
 
-```{r g02-labels-out, ref.label='g02-labels', echo=FALSE, fig.align='center', out.width='100%', out.height='100%'}
-
+```{r g02-labels-out, echo=FALSE, fig.align='center', out.width='100%', out.height='100%'}
+ggplot(data = penguins, 
+       mapping = aes(x = bill_length_mm, 
+                     y = flipper_length_mm)) + 
+  geom_point() + 
+  labs_bill_vs_flippper #<<
 ```
 
 ]
