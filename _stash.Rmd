@@ -16,7 +16,7 @@
 
 
 
-```{r -out, ref.label='g02-geom', echo=FALSE, fig.align='center', out.width='100%', out.height='100%'}
+```{r , ref.label='named_chunk', echo=FALSE, fig.align='center', out.width='100%', out.height='100%'}
 
 ```
 

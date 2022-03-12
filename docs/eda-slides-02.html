@@ -4,7 +4,7 @@
     <title>ODSC: Data Visualization with ggplot2</title>
     <meta charset="utf-8" />
     <meta name="author" content="Martin Frigaard" />
-    <meta name="date" content="2022-03-10" />
+    <meta name="date" content="2022-03-11" />
     <script src="site_libs/header-attrs/header-attrs.js"></script>
     <link href="site_libs/remark-css/default.css" rel="stylesheet" />
     <meta name="description" content="ODSC: Data Visualization with ggplot2"/>
@@ -35,6 +35,8 @@
     <link href="site_libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
     <script src="site_libs/xaringanExtra-shareagain/shareagain.js"></script>
     <link href="site_libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
+    <link href="site_libs/pagedtable/css/pagedtable.css" rel="stylesheet" />
+    <script src="site_libs/pagedtable/js/pagedtable.js"></script>
     <link rel="stylesheet" href="css/lexis.css" type="text/css" />
     <link rel="stylesheet" href="css/lexis-fonts.css" type="text/css" />
   </head>
@@ -65,7 +67,7 @@ class: title-slide, center, middle, inverse
 
 Written: February 08 2022
 
-Updated: March 10 2022
+Updated: March 11 2022
 
 ---
 class: left, top, inverse
@@ -133,17 +135,17 @@ background-size: 12%
 
 ### .red[Part 2]
 
-**Graphs &amp; mental models**
+**Start with labels**
 
-- *Mental representations graph elements*
+- *Setting your expectations*
 
 **Creating graphs with ggplot2**
 
-- *Build from scratch, layer-by-layer*
+- *Building graphs from scratch, layer-by-layer*
 
-**.fancy[Re]-creating graphs with ggplot2**
+**Visual encodings**
 
-- *Mapping data to graph elements*
+- *Using color, size, shape, and facets*
 
 ]
 
@@ -180,7 +182,7 @@ background-size: 12%
 
 ### **Build the labels first!**
 
-#### Create a title, subtitle (with data source), and x/y axis labels 
+### - Create a title, subtitle (with data source), and x/y axis labels 
 
 --
 
@@ -318,33 +320,31 @@ background-image: url(images/ODSC_Logo_2020.png)
 background-position: 95% 8%
 background-size: 12%
 
-# **.fancy[.darkblue[.large[Layers, aesthetics, and geoms]]]**
-
-## Let's get started!
+# **.fancy[.darkblue[.large[Exercises &amp; Solutions]]]**
 
 ---
 class: left, top, inverse
 background-image: url(images/ODSC_Logo_2020.png)
 background-position: 97% 6%
-background-size: 10%
+background-size: 8%
 
 # RStudio.Cloud: Set up
 
-## In your RStudio.Cloud, you will see the following: 
+### In your RStudio.Cloud, you will see the following: 
 
 &lt;img src="images/rscloud-landing.png" width="90%" height="90%" style="display: block; margin: auto;" /&gt;
 
-## Click on .red[odsc-ggplot2-2022] project
+### Click on .red[odsc-ggplot2-2022] project
 
 ---
 class: left, top, inverse
 background-image: url(images/ODSC_Logo_2020.png)
 background-position: 97% 6%
-background-size: 10%
+background-size: 8%
 
 # RStudio.Cloud: Set up
 
-## In your RStudio IDE, you will see the following: 
+### In your RStudio IDE, you will see the following: 
 
 &lt;img src="images/rscloud-env.png" width="80%" height="80%" style="display: block; margin: auto;" /&gt;
 
@@ -352,11 +352,11 @@ background-size: 10%
 class: left, top, inverse
 background-image: url(images/ODSC_Logo_2020.png)
 background-position: 97% 6%
-background-size: 10%
+background-size: 8%
 
 # RStudio.Cloud: Set up
 
-## In the .blue[Files] pane, click on the `inst.R` file to open it
+### In the .blue[Files] pane, click on the `inst.R` file to open it
 
 &lt;img src="images/rscloud-open-inst.png" width="80%" height="80%" style="display: block; margin: auto;" /&gt;
 
@@ -365,24 +365,26 @@ background-size: 10%
 class: left, top, inverse
 background-image: url(images/ODSC_Logo_2020.png)
 background-position: 97% 6%
-background-size: 10%
+background-size: 8%
 
 # RStudio.Cloud: Set up
 
-## In the .blue[Source] pane, click on the .blue[Source] icon to run `inst.R`
+### In the .blue[Source] pane, click on the *Source* icon to run `inst.R`
 
-&lt;img src="images/rscloud-source-inst.png" width="80%" height="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/rscloud-source-inst.png" width="60%" height="60%" style="display: block; margin: auto;" /&gt;
+
+### This sends the code in the .blue[Source] pane to the .blue[Console]
 
 
 ---
 class: left, top, inverse
 background-image: url(images/ODSC_Logo_2020.png)
 background-position: 97% 6%
-background-size: 10%
+background-size: 8%
 
 # RStudio.Cloud: Exercises 
 
-## The exercises are in the `graphs/` folder 
+### The exercises are in the `graphs/` folder 
 
 &lt;img src="images/graphs-files.png" width="80%" height="80%" style="display: block; margin: auto;" /&gt;
 
@@ -390,11 +392,11 @@ background-size: 10%
 class: left, top, inverse
 background-image: url(images/ODSC_Logo_2020.png)
 background-position: 97% 6%
-background-size: 10%
+background-size: 8%
 
 # RStudio.Cloud: Solutions 
 
-## Each exercise has a solution file in `solutions/` folder
+### Each exercise has a solution file in `solutions/` folder
 
 &lt;img src="images/sols-files.png" width="80%" height="80%" style="display: block; margin: auto;" /&gt;
 
@@ -403,13 +405,13 @@ background-size: 10%
 class: left, top, inverse
 background-image: url(images/ODSC_Logo_2020.png)
 background-position: 97% 6%
-background-size: 10%
+background-size: 8%
 
-# .red[graph-01]: The data layer
+# The data 
 
-We're going to use the `palmerpenguins::penguins`
+### We're going to use the `palmerpenguins::penguins`
 
-Below are some options for viewing the data:
+### - Below are three options for viewing a dataset in RStudio:
 
 --
 
@@ -423,6 +425,8 @@ View(penguins)
 
 ]]
 
+--
+
 .cols3[.code90[
 
 
@@ -432,6 +436,7 @@ glimpse(penguins)
 
 ]]
 
+--
 
 .cols3[.code90[
 
@@ -446,11 +451,11 @@ str(penguins)
 class: left, top, inverse
 background-image: url(images/ODSC_Logo_2020.png)
 background-position: 97% 6%
-background-size: 10%
+background-size: 8%
 
-# .red[graph-01]: The data layer
+# Viewing data
 
-## `View()` opens the RStudio data viewer
+### `View()` opens the RStudio data viewer
 
 &lt;img src="images/penguins-View.png" width="80%" height="80%" style="display: block; margin: auto;" /&gt;
 
@@ -459,11 +464,11 @@ background-size: 10%
 class: left, top, inverse
 background-image: url(images/ODSC_Logo_2020.png)
 background-position: 97% 6%
-background-size: 10%
+background-size: 8%
 
-# .red[graph-01]: The data layer
+# Viewing data
 
-## `glimpse()` and `str()` are displayed in the console
+### `glimpse()` and `str()` are displayed in the console
 
 .leftcol[
 
@@ -477,58 +482,23 @@ background-size: 10%
 
 ]
 
+---
+class: center, middle
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# **.fancy[.darkblue[.large[Build from scratch, layer-by-layer]]]**
 
 ---
 class: left, top, inverse
 background-image: url(images/ODSC_Logo_2020.png)
 background-position: 97% 6%
-background-size: 10%
+background-size: 8%
 
-# .red[graph-01]: Initialize plot with data
+# .red[graph 01] Layer 0 = LABELS! 
 
-
-.leftcol[
-
-Recall our template from Part 1:
-
-.code60[
-
-
-```r
-ggplot(data = &lt;DATA&gt;) +
-     geom_*(mapping = aes(&lt;AESTHETIC MAPPINGS&gt;)) 
-```
-
-]
-]
-
---
-
-.rightcol[
-
-Replace `&lt;DATA&gt;` with `penguins`
-
-.code60[
-
-
-```r
-*ggplot(data = penguins)
-```
-
-&lt;img src="images/initialize-1.png" width="522.144" /&gt;
-
-]
-]
-
----
-class: left, top, inverse
-background-image: url(images/ODSC_Logo_2020.png)
-background-position: 97% 6%
-background-size: 10%
-
-# .red[graph-01]: Build labels! 
-
-We want to build the labels *before* mapping variables 
+We want to build the labels **first**:
 
 - title = "Bill and flipper length of Palmer penguins"
 - subtitle = "Size measurements for adult foraging penguins"
@@ -550,25 +520,77 @@ labs_bill_vs_flippper &lt;- ggplot2::labs(
 class: left, top, inverse
 background-image: url(images/ODSC_Logo_2020.png)
 background-position: 97% 6%
-background-size: 10%
+background-size: 8%
 
-# .red[graph-01]: Map variables to positions
+# .red[graph 01] Layer 1: Initialize plot with data
 
-Now that we have our labels, we know where to put our variables
 
 .leftcol[
-.code60[
 
-Refer to template:
+.small[The `ggplot2::ggplot()` function initiates the plot]
+
+.code60[
 
 
 ```r
-ggplot(data = &lt;DATA&gt;) +
-     geom_*(mapping = aes(x = &lt;AESTHETIC MAPPINGS&gt;,
-                          y = &lt;AESTHETIC MAPPINGS&gt;)) 
+ggplot(data = )
 ```
 
-Map `x` and `y`
+]
+
+.small[Place `penguins` in the data argument]
+
+.code60[
+
+
+```r
+*ggplot(data = penguins)
+```
+
+]
+]
+
+--
+
+.rightcol[
+
+.small[This gives us a blank canvas!]
+
+.code60[
+
+&lt;img src="images/g01-initialize-out-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+]
+]
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 8%
+
+# .red[graph 02] Layer 2: Map variables to positions
+
+We have our data and labels--we just need to add our variables
+
+.leftcol[
+
+.small[Map `bill_length_mm` to `x`]
+
+.code60[
+
+
+```r
+ggplot(data = penguins, 
+*      mapping = aes(x = bill_length_mm,
+                     )) 
+```
+
+]
+
+.small[Map `flipper_length_mm` to `y`]
+
+.code60[
 
 
 ```r
@@ -584,24 +606,30 @@ ggplot(data = penguins,
 
 .rightcol[
 
-Mapping variables *outside* `geom_*` functions gives us a blank canvas!
+.small[Now our canvas has `x` and `y` axes]
 
-&lt;img src="images/g01-position-out-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/g02-position-out-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
 
 ]
+
+--
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+Now we have our variables on our graph!
 
 ---
 class: left, top, inverse
 background-image: url(images/ODSC_Logo_2020.png)
 background-position: 97% 6%
-background-size: 10%
+background-size: 8%
 
-# .red[graph-02]: Adding geoms
+# .red[graph 03] Layer 3: Adding geoms
 
 
 .leftcol[
 
-Add the `geom_point()` function (use the `+` symbol)
+Add the `geom_point()` function with the `+` symbol
 
 .code60[
 
@@ -613,7 +641,6 @@ ggplot(data = penguins,
 *      geom_point()
 ```
 
-
 ]
 ]
 
@@ -623,7 +650,7 @@ ggplot(data = penguins,
 
 The `geom_point()` function tells R we want to see the points (or dots) on our canvas
 
-&lt;img src="images/g02-geom-out-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/g03-geom-out-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -632,14 +659,14 @@ The `geom_point()` function tells R we want to see the points (or dots) on our c
 class: left, top, inverse
 background-image: url(images/ODSC_Logo_2020.png)
 background-position: 97% 6%
-background-size: 10%
+background-size: 8%
 
-# .red[graph-02]: Don't forget the labels! 
+# .red[graph 04] Layer 4: Don't forget the labels! 
 
 
 .leftcol[
 
-Finally, we want to add the labels we created (`labs_bill_vs_flippper`)
+.small[Finally, we want to add the labels we created (`labs_bill_vs_flippper`)]
 
 .code60[
 
@@ -652,7 +679,6 @@ ggplot(data = penguins,
 * labs_bill_vs_flippper
 ```
 
-
 ]
 ]
 
@@ -660,24 +686,35 @@ ggplot(data = penguins,
 
 .rightcol[
 
-Now we have our first graph!
+.small[And we have our first graph!]
 
-&lt;img src="images/g02-labels-out-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/g04-labels-out-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 
+---
+class: center, middle
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# **.fancy[.darkblue[.large[Detour: global vs. local mapping]]]**
 
 ---
 class: left, top, inverse
 background-image: url(images/ODSC_Logo_2020.png)
 background-position: 97% 6%
-background-size: 10%
+background-size: 8%
 
-# .red[graph 03]: Global vs. local mapping
+# Global vs. local mapping
+
+We've just created a graph by setting .green[global] aesthetics 
+
+.green[Global] means aesthetic mappings are set when the graph is initialized with the `ggplot()` function
+
+--
 
 .leftcol[
-
-We've just created a graph by setting global aesthetics 
 
 .code60[
 
@@ -689,8 +726,57 @@ ggplot(data = penguins,
   geom_point() + 
   labs_bill_vs_flippper
 ```
+]
 
-We can also set aesthetics locally (*inside* the `geom_*` function)
+.small[If we map aesthetics `ggplot()`, all the following `geom_*()` layers will inherit these aesthetics.]
+
+]
+
+--
+
+.rightcol[
+
+.small[Recall what goes into each layer from Part 1]
+
+&lt;img src="images/layer-breakdown-01.png" width="52%" height="52%" style="display: block; margin: auto;" /&gt;
+
+
+
+]
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 8%
+
+# Global vs. local mapping
+
+Mapping aesthetics .green[globally] and then adding the `geom_*()` function results in the same graph as when we map aesthetics .green[locally] (*inside* the `geom_*()` function)
+
+
+.leftcol[
+.code40[
+
+
+```r
+ggplot(data = penguins,
+*      mapping = aes(x = bill_length_mm,
+*                    y = flipper_length_mm)) +
+* geom_point() +
+  labs_bill_vs_flippper
+```
+
+&lt;img src="images/g05-global-out-1.png" width="80%" height="80%" style="display: block; margin: auto 0 auto auto;" /&gt;
+
+]]
+
+
+--
+
+.rightcol[ 
+.code40[
 
 
 ```r
@@ -698,6 +784,69 @@ ggplot(data = penguins) +
 * geom_point(
 *   mapping = aes(x = bill_length_mm,
 *                 y = flipper_length_mm)) +
+  labs_bill_vs_flippper
+```
+
+&lt;img src="images/g05-local-out-1.png" width="80%" height="80%" style="display: block; margin: auto auto auto 0;" /&gt;
+
+]
+
+]
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 8%
+
+# Our `ggplot2` templates
+
+The template from part 1 uses .green[local] mappings (i.e. aesthetic mappings are set *inside* the `geom_*` function). 
+
+
+```r
+# Recall our template from Part 1
+ggplot(data = &lt;DATA&gt;) +
+     geom_*(mapping = aes(&lt;AESTHETIC MAPPINGS&gt;)) 
+```
+
+--
+
+We could adjust this template to include .green[global] mappings (and the option to include aesthetic mappings .green[locally])
+
+
+```r
+# Adjusted template
+ggplot(data = &lt;DATA&gt;, 
+*      mapping = aes(&lt;AESTHETIC MAPPINGS&gt;)) + # global mappings
+*      geom_*(mapping = aes(&lt;AESTHETIC MAPPINGS&gt;)) # local mappings
+```
+
+.small[Read more [here](https://ggplot2-book.org/collective-geoms.html#different-groups-on-different-layers).]
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 8%
+
+# .red[graph 05] Convert .green[global] to .green[local] mappings
+
+For .red[graph 05.R], convert the global aesthetics to local aesthetics inside the `geom_point()` function
+
+.leftcol[
+
+Global 
+
+.code80[
+
+
+```r
+ggplot(data = penguins, 
+* mapping = aes(x = bill_length_mm,
+*            y = flipper_length_mm)) +
+  geom_point() + 
   labs_bill_vs_flippper
 ```
 
@@ -709,11 +858,599 @@ ggplot(data = penguins) +
 
 .rightcol[
 
-This creates the same plot. 
+Local
 
-&lt;img src="images/g03-local-out-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+.code80[
 
-Read more [here](https://ggplot2-book.org/collective-geoms.html#different-groups-on-different-layers).
+
+```r
+ggplot(data = penguins) + 
+  geom_point(
+*   mapping = aes(x = bill_length_mm,
+*            y = flipper_length_mm)) +
+  labs_bill_vs_flippper
+```
+
+]
+]
+
+---
+class: center, middle
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# **.fancy[.darkblue[.large[Visual encodings]]]**
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 8%
+
+# What are visual encodings?
+
+--
+
+### Visual encodings are what we see on the graph 
+
+--
+
+### Things like position, size, shape, color, etc.
+
+--
+
+### Ranked by accuracy ("generally speaking"):
+
+&lt;img src="images/visual-encodings.png" width="90%" height="90%" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 8%
+
+# .red[graph 06] Adding color (global)
+
+Map `color` to the `species` variable in the scatter plot using .green[global] aesthetic mapping
+
+--
+
+.leftcol[
+
+.code60[
+
+
+```r
+ggplot(data = penguins,
+       mapping = 
+*        aes(x = bill_length_mm,
+*            y = flipper_length_mm,
+*            color = species)) +
+  geom_point() + 
+  labs_bill_vs_flippper
+```
+
+
+]
+]
+
+--
+
+.rightcol[
+
+&lt;img src="images/g06-color-out-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 8%
+
+# .red[graph 07] Adding color (local)
+
+Map `color` to the `species` variable in the scatter plot using .green[local] aesthetic mapping
+
+.leftcol[
+
+.code60[
+
+
+```r
+ggplot(data = penguins,
+       mapping = 
+         aes(x = bill_length_mm, 
+             y = flipper_length_mm)) + 
+* geom_point(aes(color = species)) +
+  labs_bill_vs_flippper
+```
+
+
+
+]
+]
+
+--
+
+.rightcol[
+
+&lt;img src="images/g07-color-local-out-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+.small[The `x` and `y` aesthetics are inherited from the `ggplot()` function, but the `color` aesthetic comes from the `geom_point()` layer]
+
+]
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 8%
+
+# .red[graph 08] Color vs. Fill
+
+Below we'll look at the counts of `sex` vs. `species` of Palmer penguins
+
+--
+
+.leftcol[
+
+.small[Create labels] 
+
+.code60[
+
+
+```r
+labs_sex_vs_species &lt;- ggplot2::labs(
+  title = "Sex by species of Palmer penguins", 
+  subtitle = "Counts for adult foraging penguins",
+  x = "Sex", 
+  fill = "Species")
+```
+
+.small[Create `penguins_no_miss` by removing missing values]
+
+
+```r
+penguins_no_miss &lt;- drop_na(data = penguins)
+```
+
+]
+]
+
+
+--
+
+.rightcol[
+
+.small[View the `penguins_no_miss` data]
+
+.code60[
+
+
+```r
+glimpse(penguins_no_miss)
+```
+
+
+
+```
+#&gt; Rows: 333
+#&gt; Columns: 8
+#&gt; $ species           &lt;fct&gt; Adelie, Adelie, Adelie…
+#&gt; $ island            &lt;fct&gt; Torgersen, Torgersen, …
+#&gt; $ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, 36.7…
+#&gt; $ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, 19.3…
+#&gt; $ flipper_length_mm &lt;int&gt; 181, 186, 195, 193, 19…
+#&gt; $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, 3450…
+#&gt; $ sex               &lt;fct&gt; male, female, female, …
+#&gt; $ year              &lt;int&gt; 2007, 2007, 2007, 2007…
+```
+
+
+]
+]
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 8%
+
+# .red[graph 08] Color vs. Fill
+
+It's important to note that some `geom_*()` functions take the `fill` argument instead of `color`
+
+.leftcol[
+
+.small[Build a bar-graph using `geom_bar()` using .green[local] aesthetic mapping]
+
+.small[Map `sex` to the `x` axis and `y` to `fill`]
+
+.code60[
+
+
+```r
+ggplot(data = penguins_no_miss) + 
+  geom_bar(mapping = aes(x = sex, 
+*                        fill = species)) +
+  labs_sex_vs_species
+```
+
+]
+
+.small[Don't forget the labels!]
+
+]
+
+--
+
+.rightcol[
+
+&lt;img src="images/g08-geom_bar-out-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 8%
+
+# .red[graph 09] Change position
+
+Stacked bar-graphs make it difficult to do side-by-side comparisons  using the `y` axis 
+
+.leftcol[
+
+.small[Using the same code as .red[graph 08], add the `position = "dodge"` argument *outside* the `aes()` function]
+
+.code60[
+
+
+```r
+ggplot(data = penguins_no_miss) + 
+  geom_bar(mapping = aes(x = sex, 
+                         fill = species), 
+*          position = "dodge") +
+  labs_sex_vs_species
+```
+
+
+]
+]
+
+--
+
+.rightcol[
+
+&lt;img src="images/g08-dodge-out-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 8%
+
+# .red[graph 10] Histograms (special bar-graphs)
+
+The `geom_histogram()` function uses 'bins' to represent counts for each value
+
+
+.leftcol[
+
+.small[Create new labels]
+
+.code60[
+
+
+```r
+labs_bodymass_vs_species &lt;- ggplot2::labs(
+  title = "Body mass by species of Palmer penguins", 
+  subtitle = "Counts for adult foraging penguins",
+  x = "Body Mass (grams)", 
+  fill = "Species")
+```
+
+]
+
+.small[Create a histogram of `body_mass_g`, colored (filled) by `island`]
+
+.code60[
+
+
+```r
+ggplot(data = penguins) + 
+  geom_histogram(
+*   mapping = aes(x = body_mass_g,
+*                 fill = species)) +
+  labs_bodymass_vs_species
+```
+
+]
+]
+
+--
+
+.rightcol[
+
+.small[Notice the overlapping distributions of `body_mass_g`]
+
+&lt;img src="images/g10-hist-out-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 8%
+
+# .red[graph 11] Density plots 
+
+Density plots are also great for comparing overlapping distributions
+
+.leftcol[
+
+.small[Create a density plot with `geom_density()`]
+
+.small[Change the color saturation by setting .red[alpha] to `1/2`]
+
+.code60[
+
+
+```r
+ggplot(data = penguins) + 
+  geom_density(
+    mapping = aes(x = body_mass_g, 
+                  fill = species),
+*   alpha = 1/2) +
+  labs_bodymass_vs_species
+```
+
+]
+]
+
+--
+
+.rightcol[
+
+&lt;img src="images/g11-alpha-out-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+.small[Also check out [ridgeline plots](https://mjfrigaard.github.io/odsc-ggplot2-2022/eda-graph gallery.html#74)]
+
+]
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 8%
+
+# Mapping vs. setting aesthetics
+
+.leftcol[
+
+.small[
+The last few graphs have mapped aesthetics inside and outside the `aes()` function
+]
+
+.code40[
+
+
+```r
+ggplot(data = penguins_no_miss) + 
+  geom_point(
+    mapping = aes(x = bill_length_mm, 
+                  y = flipper_length_mm,
+                  color = sex)) + 
+  labs_bill_vs_flippper
+```
+
+&lt;img src="images/map-aes-1.png" width="90%" height="90%" style="display: block; margin: auto;" /&gt;
+
+]
+]
+
+--
+
+.rightcol[
+
+.small[
+Inside the `aes()` function is 'mapping', outside the `aes()` function is 'setting'
+]
+
+.code40[
+
+
+```r
+ggplot(data = penguins_no_miss) + 
+  geom_point(
+    mapping = aes(x = bill_length_mm, 
+                  y = flipper_length_mm),
+                  color = "dodgerblue") + 
+  labs_bill_vs_flippper
+```
+
+&lt;img src="images/set-aes-1.png" width="90%" height="90%" style="display: block; margin: auto;" /&gt;
+
+]
+]
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 8%
+
+# .red[graph 12] Setting graph aesthetics 
+
+Change the code below to make the points `"firebrick"` red
+
+.leftcol[
+
+.small[Create labels]
+
+.code40[
+
+
+```r
+labs_body_mass_vs_bill_depth &lt;- ggplot2::labs(
+  title = "Body mass and bill depth of Palmer penguins", 
+  subtitle = "Size measurements for adult foraging penguins",
+  x = "Body mass (mm)", 
+  y = "Bill depth (mm)")
+```
+
+]
+
+.small[What is wrong with the code below?]
+
+.code60[
+
+
+```r
+ggplot(data = penguins) + 
+  geom_point(
+    mapping = aes(x = body_mass_g, 
+                  y = bill_depth_mm,
+                  color = "firebrick")) + 
+  labs_body_mass_vs_bill_depth
+```
+
+]
+]
+
+--
+
+.rightcol[
+
+&lt;img src="images/g12-set-out-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+.small[TIP: the legend tells us `geom_point()` is looking for a mapped variable in the penguins dataset named `"firebrick"`]
+
+]
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 8%
+
+# .red[graph 13] New layer? New data
+
+Each `geom_*()` function also has a `data` argument, so we can supply new data at each layer! 
+
+.leftcol[
+
+.small[Create labels]
+
+.code50[
+
+
+```r
+labs_body_mass_vs_bill_depth &lt;- ggplot2::labs(
+  title = "Body mass and bill depth of Palmer penguins", 
+  subtitle = "Size measurements for adult foraging penguins",
+  x = "Body mass (mm)", 
+  y = "Bill depth (mm)",
+  color = "Sex")
+```
+
+
+]
+
+.small[Create `big_penguins` and `label`]
+
+.code40[
+
+
+```r
+big_penguins &lt;- bind_rows(
+  slice_max(.data = penguins, bill_depth_mm, n = 1),
+  slice_max(.data = penguins, body_mass_g, n = 1))
+big_penguins &lt;- mutate(.data = big_penguins, 
+         label = case_when(
+  bill_depth_mm == 21.5 ~ paste0("bill depth = ", bill_depth_mm),
+  body_mass_g == 6300 ~ paste0("body mass = ", body_mass_g)))
+```
+
+
+]
+
+]
+
+--
+
+.rightcol[
+
+.small[View `big_penguins`]
+
+.small[
+
+&lt;div data-pagedtable="false"&gt;
+  &lt;script data-pagedtable-source type="application/json"&gt;
+{"columns":[{"label":["species"],"name":[1],"type":["fct"],"align":["left"]},{"label":["island"],"name":[2],"type":["fct"],"align":["left"]},{"label":["bill_length_mm"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["bill_depth_mm"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["flipper_length_mm"],"name":[5],"type":["int"],"align":["right"]},{"label":["body_mass_g"],"name":[6],"type":["int"],"align":["right"]},{"label":["sex"],"name":[7],"type":["fct"],"align":["left"]},{"label":["year"],"name":[8],"type":["int"],"align":["right"]},{"label":["label"],"name":[9],"type":["chr"],"align":["left"]}],"data":[{"1":"Adelie","2":"Torgersen","3":"46.0","4":"21.5","5":"194","6":"4200","7":"male","8":"2007","9":"bill depth = 21.5"},{"1":"Gentoo","2":"Biscoe","3":"49.2","4":"15.2","5":"221","6":"6300","7":"male","8":"2007","9":"body mass = 6300"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  &lt;/script&gt;
+&lt;/div&gt;
+
+]
+
+]
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 97% 6%
+background-size: 8%
+
+# .red[graph 13] Add layer with new data
+
+We'll use the `geom_label_repel()` function from the [`ggrepel` package](https://cran.r-project.org/web/packages/ggrepel/vignettes/ggrepel.html) to label the data in `big_penguins`
+
+.leftcol40[
+
+.code50[
+
+
+```r
+ggplot(data = penguins_no_miss) + 
+  geom_point(
+    mapping = aes(x = body_mass_g, 
+                  y = bill_depth_mm, 
+                  color = sex)) + 
+  # new data, layer and geom!
+  ggrepel::geom_label_repel(
+    data = big_penguins, 
+      mapping = aes(x = body_mass_g, 
+                    y = bill_depth_mm,
+                    label = label)) + 
+  labs_body_mass_vs_bill_depth
+```
+
+
+]
+]
+
+--
+
+.rightcol60[
+
+
+
+&lt;img src="images/g13-geom_label_repel-out-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -723,205 +1460,26 @@ Read more [here](https://ggplot2-book.org/collective-geoms.html#different-groups
 class: left, top, inverse
 background-image: url(images/ODSC_Logo_2020.png)
 background-position: 97% 6%
-background-size: 10%
+background-size: 8%
 
-# .red[graph-04]: Using color 
-
-
----
-class: left, top, inverse
-background-image: url(images/ODSC_Logo_2020.png)
-background-position: 97% 6%
-background-size: 10%
-
-# .red[graph-05]: Multiple geoms
-
+# .red[graph 14]
 
 
 ---
 class: left, top, inverse
 background-image: url(images/ODSC_Logo_2020.png)
 background-position: 97% 6%
-background-size: 10%
+background-size: 8%
 
-# .red[graph-06]: Multiple geoms
-
-
-
----
-class: center, middle
-background-image: url(images/ODSC_Logo_2020.png)
-background-position: 95% 8%
-background-size: 12%
-
-# **.fancy[.darkblue[.large[Creating Graphs with .red[ggplot2]]]]**
-
+# .red[graph 15]
 
 ---
 class: left, top, inverse
 background-image: url(images/ODSC_Logo_2020.png)
 background-position: 97% 6%
-background-size: 10%
+background-size: 8%
 
-# .red[graph 04]: Creating graphs 
-
-&lt;br&gt;
-
-## The data 
-
----
-class: left, top, inverse
-background-image: url(images/ODSC_Logo_2020.png)
-background-position: 97% 6%
-background-size: 10%
-
-# .red[graph 04]: Creating graphs 
-
-&lt;br&gt;
-
-## The data 
-
----
-class: left, top, inverse
-background-image: url(images/ODSC_Logo_2020.png)
-background-position: 97% 6%
-background-size: 10%
-
-# .red[graph 05]: Creating graphs 
-
-&lt;br&gt;
-
-## Graph labels
-
----
-class: left, top, inverse
-background-image: url(images/ODSC_Logo_2020.png)
-background-position: 97% 6%
-background-size: 10%
-
-
-# .red[graph 06]: Creating graphs 
-
-&lt;br&gt;
-
-## A blank canvas
-
----
-class: left, top, inverse
-background-image: url(images/ODSC_Logo_2020.png)
-background-position: 97% 6%
-background-size: 10%
-
-# .red[graph 07]: Creating graphs 
-
-&lt;br&gt;
-
-## Geoms and mapping
-
----
-class: left, top, inverse
-background-image: url(images/ODSC_Logo_2020.png)
-background-position: 97% 6%
-background-size: 10%
-
-# .red[graph 07]: Creating graphs 
-
-&lt;br&gt;
-
-## Geoms and mapping
-
----
-class: left, top, inverse
-background-image: url(images/ODSC_Logo_2020.png)
-background-position: 97% 6%
-background-size: 10%
-
-# .red[graph 08]: Creating graphs 
-
-&lt;br&gt;
-
-## Add labels
-
----
-class: left, top, inverse
-background-image: url(images/ODSC_Logo_2020.png)
-background-position: 97% 6%
-background-size: 10%
-
-# .red[graph 09]: Creating graphs 
-
-&lt;br&gt;
-
-## Saving graphs
-
----
-class: left, top, inverse
-background-image: url(images/ODSC_Logo_2020.png)
-background-position: 97% 6%
-background-size: 10%
-
-# .red[graph 10]: Creating graphs 
-
-&lt;br&gt;
-
-## Saving graphs
-
-
----
-class: center, middle
-background-image: url(images/ODSC_Logo_2020.png)
-background-position: 95% 8%
-background-size: 12%
-
-# **.fancy[.darkblue[.large[.blue[Re]-creating Graphs with .red[ggplot2]]]]**
-
----
-class: left, top, inverse
-background-image: url(images/ODSC_Logo_2020.png)
-background-position: 97% 6%
-background-size: 10%
-
-# `ggplot2`: .green[Re]-creating graphs 
-
----
-class: left, top, inverse
-background-image: url(images/ODSC_Logo_2020.png)
-background-position: 97% 6%
-background-size: 10%
-
-# `ggplot2`: .green[Re]-creating graphs 
-
----
-class: left, top, inverse
-background-image: url(images/ODSC_Logo_2020.png)
-background-position: 97% 6%
-background-size: 10%
-
-# `ggplot2`: .green[Re]-creating graphs 
-
----
-class: left, top, inverse
-background-image: url(images/ODSC_Logo_2020.png)
-background-position: 97% 6%
-background-size: 10%
-
-# `ggplot2`: .green[Re]-creating graphs 
-
----
-class: left, top, inverse
-background-image: url(images/ODSC_Logo_2020.png)
-background-position: 97% 6%
-background-size: 10%
-
-# `ggplot2`: .green[Re]-creating graphs 
-
----
-class: left, top, inverse
-background-image: url(images/ODSC_Logo_2020.png)
-background-position: 97% 6%
-background-size: 10%
-
-# `ggplot2`: .green[Re]-creating graphs 
+# .red[graph 16]
 
 
 ---

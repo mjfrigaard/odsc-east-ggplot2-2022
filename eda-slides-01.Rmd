@@ -158,17 +158,17 @@ background-size: 12%
 
 ### Part 2
 
-**Graphs & mental models**
+**Start with labels**
 
-- *Mental representations graph elements*
+- *Setting your expectations*
 
 **Creating graphs with ggplot2**
 
-- *Build from scratch, layer-by-layer*
+- *Building graphs from scratch, layer-by-layer*
 
-**.fancy[Re]-creating graphs with ggplot2**
+**Visual encodings**
 
-- *Mapping data to graph elements*
+- *Using color, size, shape, and facets*
 
 ]
 

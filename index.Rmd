@@ -35,17 +35,17 @@ Read the preview full blog post [here](https://opendatascience.com/ggplot2-a-fra
   
 ### [Part 2: creating graphs with ggplot2](https://mjfrigaard.github.io/odsc-ggplot2-2022/eda-slides-02.html#1) 
 
-- **Graphs & mental models**
+**Start with labels**
 
-  - *Mental representations graph elements*
+- *Setting your expectations*
 
-- **Creating graphs with ggplot2**
+**Creating graphs with ggplot2**
 
-  - *Build from scratch, layer-by-layer*
+- *Building graphs from scratch, layer-by-layer*
 
-- **Re-creating graphs with ggplot2**
+**Visual encodings**
 
-  - *Mapping data to graph elements*
+- *Using color, size, shape, and facets*
   
 ### [Graph Gallery](https://mjfrigaard.github.io/odsc-ggplot2-2022/eda-graph-gallery.html#1)
 
