@@ -21,3 +21,37 @@
 ```
 
 ]
+
+
+---
+class: left, top, inverse
+background-image: url(images/ODSC_Logo_2020.png)
+background-position: 95% 8%
+background-size: 12%
+
+# `ggplot2`: templates
+
+
+.leftcol55[
+
+### Basic Template: Data, aesthetic mappings, geom
+
+.code70[
+
+```{r , eval=FALSE, echo=TRUE}
+ggplot(data = <DATA>) +
+     geom_*(mapping = aes(<AESTHETIC MAPPINGS>)) 
+```
+
+]
+]
+
+.rightcol45[
+
+<br>
+
+```{r , eval=TRUE, echo=FALSE, fig.align='center', out.height='83%', out.width='83%'}
+knitr::include_graphics("images/layer-breakdown-01.png")
+```
+
+]

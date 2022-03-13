@@ -126,23 +126,19 @@ background-size: 12%
 
 ]
 
----
-class: left, top, inverse
-background-image: url(images/ODSC_Logo_2020.png)
-background-position: 95% 8%
-background-size: 12%
-
 ## Outline 
 
 .leftcol[
 
-### .red[Part 1]
+### Part 1
 
-**Exploratory Data Analysis**
+.font70[
+
+**Exploratory data analysis**
 
 - *What is it, who does it, and why it's important*
 
-**A Bayesian Mindset**
+**A Bayesian mindset**
 
 - *Priors -> new information -> posteriors*
 
@@ -152,23 +148,33 @@ background-size: 12%
 
 ]
 
+]
+
 --
  
 .rightcol[
 
-### Part 2
+### .red[Part 2]
 
-**Start with labels**
+.font70[
 
-- *Setting your expectations*
+**Build labels first**
 
-**Creating graphs with ggplot2**
+- *Set expectations*
 
-- *Building graphs from scratch, layer-by-layer*
+**Exercises & solutions**
 
-**Visual encodings**
+- *RStudio.Cloud*
 
-- *Using color, size, shape, and facets*
+**Creating graphs**
+
+- *Building graphs layer-by-layer, global vs. local mapping, visual encodings*
+
+**Applying the grammar**
+
+- *Mapping vs. setting aesthetics, combining layers, facets*
+
+]
 
 ]
 
