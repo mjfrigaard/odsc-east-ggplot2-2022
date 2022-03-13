@@ -136,7 +136,7 @@ background-size: 12%
 
 .leftcol[
 
-### Part 1
+### .red[Part 1]
 
 .font70[
 
@@ -160,7 +160,7 @@ background-size: 12%
  
 .rightcol[
 
-### .red[Part 2]
+### Part 2
 
 .font70[
 
