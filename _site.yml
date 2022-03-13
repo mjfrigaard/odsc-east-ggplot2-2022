@@ -6,8 +6,8 @@ navbar:
     - text: "Home"
       href: index.html
     - text: "Part 1"
-      href: eda-slides-01.html
+      href: ggplot2-slides-01.html
     - text: "Part 2"
-      href: eda-slides-02.html
+      href: ggplot2-slides-02.html
     - text: "Gallery"
-      href: eda-graph-gallery.html
+      href: ggplot2-graph-gallery.html
