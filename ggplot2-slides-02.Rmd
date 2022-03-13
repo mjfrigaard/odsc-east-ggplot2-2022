@@ -1853,11 +1853,12 @@ background-size: 8%
 
 # What we've covered 
 
-1. 
-2. 
-3. 
-4. 
-5. 
+1. Build labels (set your expectations)  
+2. View data before building any graphs  
+3. Building graphs layer-by-layer (data, mapping, geom)  
+4. Mapping variables to graph elements (color, position, size, etc)  
+5. Extending graphs by combining layers  
+6. Using facets to explore relationships  
 
 ---
 class: center, middle, inverse, no-slide-number
