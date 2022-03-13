@@ -3,7 +3,7 @@ output_dir: "docs"
 navbar:
   title: "ODSC East 2022 (Boston)"
   left:
-    - text: "Home"
+    - text: "Setup"
       href: index.html
     - text: "Part 1"
       href: ggplot2-slides-01.html
