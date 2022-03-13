@@ -1213,7 +1213,7 @@ labs_bodymass_vs_species <- ggplot2::labs(
 
 ]
 
-.small[Create a histogram of `body_mass_g`, colored (filled) by `island`]
+.small[Create a histogram of `body_mass_g`, colored (filled) by `species`]
 
 .code50[
 
@@ -1384,7 +1384,7 @@ labs_body_mass_vs_bill_depth <- ggplot2::labs(
 
 ]
 
-.small[What is wrong with the code below?]
+.small[What color will the points be on this graph?]
 
 .code50[
 
@@ -1853,12 +1853,25 @@ background-size: 8%
 
 # What we've covered 
 
-1. Build labels (set your expectations)  
-2. View data before building any graphs  
-3. Building graphs layer-by-layer (data, mapping, geom)  
-4. Mapping variables to graph elements (color, position, size, etc)  
-5. Extending graphs by combining layers  
-6. Using facets to explore relationships  
+.leftcol[
+
+### 1. Build labels (set your expectations)  
+
+### 2. View data before building any graphs  
+
+### 3. Building graphs layer-by-layer (data, mapping, geom) 
+
+]
+
+.rightcol[
+
+### 4. Mapping variables to graph elements (color, position, size, etc) 
+
+### 5. Extending graphs by combining layers  
+
+### 6. Using facets to explore relationships  
+
+]
 
 ---
 class: center, middle, inverse, no-slide-number

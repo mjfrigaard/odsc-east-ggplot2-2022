@@ -9,5 +9,3 @@ navbar:
       href: ggplot2-slides-01.html
     - text: "Part 2"
       href: ggplot2-slides-02.html
-    - text: "Gallery"
-      href: ggplot2-graph-gallery.html
