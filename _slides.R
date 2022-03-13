@@ -10,11 +10,11 @@
 library(pagedown)
 
 
-pagedown::chrome_print(input = "docs/eda-slides-01.html", "eda-slides-01.pdf", 
+pagedown::chrome_print(input = "docs/ggplot2-slides-01.html", "ggplot2-slides-01.pdf", 
                        timeout = 10000)
 
-# pagedown::chrome_print(input = "docs/eda-slides-02.html", "eda-slides-02.pdf", 
-#                        timeout = 10000)
+pagedown::chrome_print(input = "docs/ggplot2-slides-02.html", "ggplot2-slides-02.pdf",
+                       timeout = 10000)
 
 # graphs_1_9 <- paste0(rep("graph-0", times = 9), 1:9, ".R")
 # graphs_10_19 <- paste0(rep("graph-", times = 9), 10:19, ".R")

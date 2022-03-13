@@ -11,53 +11,81 @@ output:
       - css/lexis-fonts.css
 ---
 
-# (*Currently under development*)
+```{r ggplot2-png, echo=FALSE, fig.align='right', out.height='100%', out.height='100%'}
+knitr::include_graphics("images/ggplot2.png")
+```
 
 <br><br>
 
-Read the preview full blog post [here](https://opendatascience.com/ggplot2-a-framework-for-thinking-with-graphs/), and [previous tutorials](https://www.storybench.org/getting-started-data-visualization-r-using-ggplot2/) I've written on `ggplot2`.  
+Read the preview full blog post [here](https://opendatascience.com/ggplot2-a-framework-for-thinking-with-graphs/).
 
 ***
 
+## Getting setup with RStudio.Cloud
+
+#### 1. Create a [GitHub account](https://github.com/) (it's free!)
+
+```{r github-signup-png, echo=FALSE, fig.align='right', out.height='50%', out.height='50%'}
+knitr::include_graphics("images/github-signup.png")
+```
+
+#### 2. Create [RStudio.Cloud account](https://rstudio.cloud/plans/free) (also free!)
+
+
+```{r rstudio-cloud-signup-png, echo=FALSE, fig.align='right', out.height='50%', out.height='50%'}
+knitr::include_graphics("images/rstudio-cloud-signup.png")
+```
+
+#### 3. Use your GitHub credentials to [log into RStudio.Cloud](https://client.login.rstudio.cloud/oauth/register?redirect=https%3A%2F%2Fclient.login.rstudio.cloud%2Foauth%2Flogin%3Fshow_auth%3D0%26show_login%3D0) 
+
+```{r rscloud-github-cred-png, echo=FALSE, fig.align='center', out.height='100%', out.height='100%'}
+knitr::include_graphics("images/rscloud-github-cred.png")
+```
+
+***
+
+## Materials 
+
 ### [Part 1: thinking with graphs](https://mjfrigaard.github.io/odsc-ggplot2-2022/eda-slides-01.html#1)
 
-- **Exploratory Data Analysis**
+**Exploratory data analysis**
 
-  - *What is it, who does it, and why it's important*
+- *What is it, who does it, and why it's important*
 
-- **A Bayesian Mindset**
+**A Bayesian mindset**
 
-  - *Priors -> new information -> posteriors*
+- *Priors -> new information -> posteriors*
 
-- **The grammar of graphics**
+**The grammar of graphics**
 
-   - *Layers, aesthetics, and geoms*
+- *Layers, aesthetics, and geoms*
   
 ### [Part 2: creating graphs with ggplot2](https://mjfrigaard.github.io/odsc-ggplot2-2022/eda-slides-02.html#1) 
 
-**Start with labels**
+**Build labels first**
 
-- *Setting your expectations*
+- *Set expectations*
 
-**Creating graphs with ggplot2**
+**Exercises & solutions**
 
-- *Building graphs from scratch, layer-by-layer*
+- *[RStudio.Cloud materials](https://rstudio.cloud/spaces/225054/content/all?sort=name_asc)*
 
-**Visual encodings**
+**Creating graphs**
 
-- *Using color, size, shape, and facets*
+- *Building graphs layer-by-layer, global vs. local mapping, visual encodings*
+
+**Applying the grammar**
+
+- *Mapping vs. setting aesthetics, combining layers, facets*
+
+<!--
   
 ### [Graph Gallery](https://mjfrigaard.github.io/odsc-ggplot2-2022/eda-graph-gallery.html#1)
 
 - A collection of common graphs and code.
 
+-->
+
 ***
 
-## *Coming soon!*
-
-[RStudio.Cloud materials]()
-
-
-```{r ggplot2-png, echo=FALSE, fig.align='center', out.height='100%', out.height='100%'}
-knitr::include_graphics("images/ggplot2.png")
-```
+Read [previous tutorials](https://www.storybench.org/getting-started-data-visualization-r-using-ggplot2/) I've written on `ggplot2`.  
