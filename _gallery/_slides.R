@@ -17,14 +17,12 @@ library(knitr)
 
 # render 03-proportions -------------------------------------------------
  rmarkdown::render('ggp2-gallery-03-proportions.Rmd',  encoding = 'UTF-8')
-
-
 # remove cache
-unlink("ggp2-gallery-03-proportions_cache/", recursive = TRUE, force = TRUE)
+# unlink("ggp2-gallery-03-proportions_cache/", recursive = TRUE, force = TRUE)
 
 # # render ggp2-graph-gallery ---------------------------------------------
-#  rmarkdown::render('ggp2-graph-gallery.Rmd',  encoding = 'UTF-8')
-# # remove cache
+rmarkdown::render('ggp2-graph-gallery.Rmd',  encoding = 'UTF-8')
+# remove cache
 # unlink("ggp2-graph-gallery_cache/", recursive = TRUE, force = TRUE)
 
 

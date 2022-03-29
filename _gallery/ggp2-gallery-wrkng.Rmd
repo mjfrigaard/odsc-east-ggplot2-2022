@@ -28,11 +28,14 @@ library(ggridges)
 library(ggtern)
 library(ggsunburst)
 library(ggbeeswarm)
-library(ggmosaic)
 library(ggcorrplot)
 library(openintro)
 library(ggwaffle)
 library(statebins)
+library(ggmosaic)
+library(treemapify)
+library(fivethirtyeight)
+library(fivethirtyeightdata)
 options(
     htmltools.dir.version = FALSE,
     knitr.table.format = "html",
