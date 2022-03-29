@@ -14,3 +14,29 @@ Add this to _site.yml for gallery
     - text: "Gallery"
       href: ggplot2-graph-gallery.html
 ```
+
+Comprehensive Graph Gallery
+
+Comparing categories and distributions
+
+Amounts
+
+Distributions
+
+Hierarchies/part-to-whole relationships
+
+Proportions
+
+Correlations and connections
+
+X–Y relationships
+
+Trends and intervals over time
+
+X–Y relationships
+
+Maps, overlays, and distortions
+
+Geospatial Data
+
+Uncertainty (BONUS!)

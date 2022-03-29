@@ -46,7 +46,7 @@ knitr::include_graphics("images/rscloud-github-cred.png")
 
 ## Materials 
 
-### [Part 1: thinking with graphs](https://mjfrigaard.github.io/odsc-ggplot2-2022/eda-slides-01.html#1)
+### [Part 1: thinking with graphs](https://mjfrigaard.github.io/odsc-ggplot2-2022/ggplot2-slides-01.html#1)
 
 **Exploratory data analysis**
 
@@ -60,7 +60,7 @@ knitr::include_graphics("images/rscloud-github-cred.png")
 
 - *Layers, aesthetics, and geoms*
   
-### [Part 2: creating graphs with ggplot2](https://mjfrigaard.github.io/odsc-ggplot2-2022/eda-slides-02.html#1) 
+### [Part 2: creating graphs with ggplot2](https://mjfrigaard.github.io/odsc-ggplot2-2022/ggplot2-slides-02.html#1) 
 
 **Build labels first**
 
