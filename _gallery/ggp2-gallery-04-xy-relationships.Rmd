@@ -247,7 +247,7 @@ background-size: 6%
 
 > .blue[Hierarchies and proportions]
 
-> - .red[.fancy[Part-to-whole relationships]]
+> - .red[Part-to-whole relationships]
 
 ]
 
@@ -257,7 +257,7 @@ background-size: 6%
 
 > .blue[Trends, correlations and connections]
 
-> - .red[X–Y relationships]
+> - .red[.fancy[X–Y relationships]]
 
 > .blue[Maps, overlays, and distortions]
 
@@ -420,4 +420,4 @@ background-size: 25%
 
 <br><br><br><br><br><br><br><br><br><br><br>
 
-# .fancy[X–Y relationships:]
+# .fancy[X–Y relationships]

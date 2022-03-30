@@ -247,7 +247,7 @@ background-size: 6%
 
 > .blue[Hierarchies and proportions]
 
-> - .red[.fancy[Part-to-whole relationships]]
+> - .red[Part-to-whole relationships]
 
 ]
 
@@ -265,7 +265,7 @@ background-size: 6%
 
 > .blue[Statistical measures]
 
-> - .red[Uncertainty]
+> - .red[.fancy[Uncertainty]]
 
 
 ]
@@ -420,4 +420,4 @@ background-size: 25%
 
 <br><br><br><br><br><br><br><br><br><br><br>
 
-# .fancy[Uncertainty:]
+# .fancy[Uncertainty]

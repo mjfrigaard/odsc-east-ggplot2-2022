@@ -1,6 +1,6 @@
 ---
 title: "ODSC: ggplot2 Graph Gallery"
-subtitle: "Hierarchies/proportions: Proportions"
+subtitle: "Hierarchies/proportions: part-to-whole relationships"
 author: "Martin Frigaard"
 institute: "California State University | BioMarin"
 output:
@@ -62,7 +62,7 @@ options(
 )
 # fs::dir_create("slides-cache/")
 knitr::opts_chunk$set(
-    cache = TRUE,
+    cache = FALSE,
     warning = FALSE,
     message = FALSE,
     fig.path = "images/",
@@ -429,7 +429,7 @@ background-image: url(images/ggplot2.png)
 background-position: 95% 8%
 background-size: 6%
 
-# .red[Proportions:] .fancy[Pie charts]
+# .red[Part-to-whole relationships:] .fancy[Pie charts]
 
 <br>
 
@@ -460,7 +460,7 @@ background-image: url(images/ggplot2.png)
 background-position: 95% 8%
 background-size: 6%
 
-# .red[Proportions:] .fancy[Pie charts]
+# .red[Part-to-whole relationships:] .fancy[Pie charts]
 
 
 <br><br>
@@ -504,7 +504,7 @@ background-image: url(images/ggplot2.png)
 background-position: 95% 8%
 background-size: 6%
 
-# .red[Proportions:] .fancy[Pie charts]
+# .red[Part-to-whole relationships:] .fancy[Pie charts]
 
 .small[
 
@@ -565,7 +565,7 @@ background-image: url(images/ggplot2.png)
 background-position: 95% 8%
 background-size: 6%
 
-# .red[Proportions:] .fancy[Stacked-density]
+# .red[Part-to-whole relationships:] .fancy[Stacked-density]
 
 <br>
 
@@ -581,7 +581,7 @@ background-image: url(images/ggplot2.png)
 background-position: 95% 8%
 background-size: 6%
 
-# .red[Proportions:] .fancy[Stacked-density]
+# .red[Part-to-whole relationships:] .fancy[Stacked-density]
 
 <br><br>
 
@@ -613,7 +613,7 @@ background-image: url(images/ggplot2.png)
 background-position: 95% 8%
 background-size: 6%
 
-# .red[Proportions:] .fancy[Stacked-density]
+# .red[Part-to-whole relationships:] .fancy[Stacked-density]
 
 .small[
 
@@ -668,7 +668,7 @@ background-image: url(images/ggplot2.png)
 background-position: 95% 8%
 background-size: 6%
 
-# .red[Proportions:] .fancy[Waffle chart]
+# .red[Part-to-whole relationships:] .fancy[Waffle chart]
 
 <br>
 
@@ -684,7 +684,7 @@ background-image: url(images/ggplot2.png)
 background-position: 95% 8%
 background-size: 6%
 
-# .red[Proportions:] .fancy[Waffle chart]
+# .red[Part-to-whole relationships:] .fancy[Waffle chart]
 
 .small[
 
@@ -731,7 +731,7 @@ background-image: url(images/ggplot2.png)
 background-position: 95% 8%
 background-size: 6%
 
-# .red[Proportions:] .fancy[Waffle chart]
+# .red[Part-to-whole relationships:] .fancy[Waffle chart]
 
 .small[
 
@@ -791,7 +791,7 @@ background-image: url(images/ggplot2.png)
 background-position: 95% 8%
 background-size: 6%
 
-# .red[Proportions:] .fancy[Mosaic plot]
+# .red[Part-to-whole relationships:] .fancy[Mosaic plot]
 
 <br><br>
 
@@ -809,7 +809,7 @@ background-image: url(images/ggplot2.png)
 background-position: 95% 8%
 background-size: 6%
 
-# .red[Proportions:] .fancy[Mosaic plot]
+# .red[Part-to-whole relationships:] .fancy[Mosaic plot]
 
 .code50[
 
@@ -845,7 +845,7 @@ background-image: url(images/ggplot2.png)
 background-position: 95% 8%
 background-size: 6%
 
-# .red[Proportions:] .fancy[Mosaic plot]
+# .red[Part-to-whole relationships:] .fancy[Mosaic plot]
 
 .small[
 
@@ -907,7 +907,7 @@ background-image: url(images/ggplot2.png)
 background-position: 95% 8%
 background-size: 6%
 
-# .red[Proportions:] .fancy[Mosaic plot]
+# .red[Part-to-whole relationships:] .fancy[Mosaic plot]
 
 
 .leftcol[
@@ -937,7 +937,7 @@ background-image: url(images/ggplot2.png)
 background-position: 95% 8%
 background-size: 6%
 
-# .red[Proportions:] .fancy[Treemaps]
+# .red[Part-to-whole relationships:] .fancy[Treemaps]
 
 <br>
 
@@ -953,7 +953,7 @@ background-image: url(images/ggplot2.png)
 background-position: 95% 8%
 background-size: 6%
 
-# .red[Proportions:] .fancy[Treemaps]
+# .red[Part-to-whole relationships:] .fancy[Treemaps]
 
 .code50[
 
@@ -963,7 +963,7 @@ treemap_penguins_grouped <- group_by(treemap_penguins,
                                   species, island, sex)
 treemap_penguins_counts <- ungroup(
                              count(treemap_penguins_grouped, 
-                                species, island))
+                              species, island))
 ```
 
 ]
@@ -987,7 +987,7 @@ background-image: url(images/ggplot2.png)
 background-position: 95% 8%
 background-size: 6%
 
-# .red[Proportions:] .fancy[Treemaps]
+# .red[Part-to-whole relationships:] .fancy[Treemaps]
 
 .small[
 
@@ -1039,7 +1039,7 @@ background-image: url(images/ggplot2.png)
 background-position: 95% 8%
 background-size: 6%
 
-# .red[Proportions:] .fancy[Treemaps]
+# .red[Part-to-whole relationships:] .fancy[Treemaps]
 
 .small[
 
@@ -1080,7 +1080,7 @@ background-image: url(images/ggplot2.png)
 background-position: 95% 8%
 background-size: 6%
 
-# .red[Proportions:] .fancy[Treemaps]
+# .red[Part-to-whole relationships:] .fancy[Treemaps]
 
 .small[
 
@@ -1130,7 +1130,7 @@ background-image: url(images/ggplot2.png)
 background-position: 95% 8%
 background-size: 6%
 
-# .red[Proportions:] .fancy[Treemaps]
+# .red[Part-to-whole relationships:] .fancy[Treemaps]
 
 .small[
 
