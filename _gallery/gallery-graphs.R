@@ -1,5 +1,5 @@
 # =====================================================================#
-# File name: ggp2-graph-gallery.R
+# File name: gallery-graphs.R
 # This is code to create: code for graphs in slides
 # Authored by and feedback to: @mjfrigaard
 # Last updated: 2022-03-28
@@ -26,6 +26,33 @@ library(ggmosaic)
 library(treemapify)
 library(fivethirtyeight)
 library(fivethirtyeightdata)
+library(gt)
+library(glue)
+
+
+# Comprehensive Graph Gallery ---
+CompGraphGallery <- structure(list(`Graph group` = c(
+  "Comparing categories and distributions", 
+  "Hierarchies/proportions",
+  "Correlations and connections", 
+  "Trends and intervals over time",
+  "Maps, overlays, and distortions", 
+  "Statistical measures"
+), `Graph type` = c(
+  "Amounts & Distributions", "Part-to-whole relationships", "X–Y relationships", 
+  "X–Y relationships", "Geospatial Data", "Uncertainty"
+)), class = c("tbl_df", "tbl",
+  "data.frame"), 
+row.names = c(NA, -6L))
+
+gt_tbl <- CompGraphGallery %>% 
+  gt(rowname_col = "Graph group") %>% 
+  tab_stubhead(label = "Graph group") %>% 
+  tab_header(
+    title = "Comprehensive Graph Gallery",
+    subtitle = "Graphs by group and type ")
+
+
 
 # DATA -----
 ## penguins -------

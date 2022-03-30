@@ -13,7 +13,15 @@ pagedown::chrome_print(input = "docs/ggplot2-slides-01.html", "pdfs/ggplot2-slid
 pagedown::chrome_print(input = "docs/ggplot2-slides-02.html", "pdfs/ggplot2-slides-02.pdf",
                        timeout = 10000)
 
- # rmarkdown::render('_gallery/ggp2-gallery-02-distributions.Rmd',  encoding = 'UTF-8')
+ # # render 01 - amounts -----------------------------------------------------
+ rmarkdown::render('ggp2-gallery-01-amounts.Rmd',  encoding = 'UTF-8')
+
+# # render 02-distributions -------------------------------------------------
+ rmarkdown::render('ggp2-gallery-02-distributions.Rmd',  encoding = 'UTF-8')
+
+# render 03-proportions -------------------------------------------------
+rmarkdown::render('ggp2-gallery-03-proportions.Rmd',  encoding = 'UTF-8')
+
  
 # graphs_1_9 <- paste0(rep("graph-0", times = 9), 1:9, ".R")
 # graphs_10_19 <- paste0(rep("graph-", times = 9), 10:19, ".R")

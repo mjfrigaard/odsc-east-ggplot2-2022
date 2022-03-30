@@ -70,7 +70,7 @@ class: title-slide, center, middle, inverse
 
 Written: September 21 2021
 
-Updated: March 27 2022
+Updated: March 29 2022
 
 ---
 class: left, top
@@ -180,6 +180,7 @@ From *"Fundamentals of Data Visualization"*, Claus O. Wilke (2019)
 
 ]
 
+
 ---
 class: left, top
 background-image: url(images/ggplot2.png)
@@ -192,15 +193,15 @@ background-size: 6%
 
 .leftcol[
 
-&gt; .blue[Comparing categories and distributions]
+&gt; .blue[Comparing categories and values]
 
-&gt; - .red[Amounts]
+&gt; - .red[.fancy[Amounts]]
 
 &gt; - .red[Distributions]
 
-&gt; .blue[Hierarchies/part-to-whole relationships]
+&gt; .blue[Hierarchies and proportions]
 
-&gt; - .red[Proportions]
+&gt; - .red[Part-to-whole relationships]
 
 ]
 
@@ -208,11 +209,7 @@ background-size: 6%
  
 .rightcol[
 
-&gt; .blue[Correlations and connections]
-
-&gt; - .red[X–Y relationships]
-
-&gt; .blue[Trends and intervals over time]
+&gt; .blue[Trends, correlations and connections]
 
 &gt; - .red[X–Y relationships]
 
@@ -220,13 +217,13 @@ background-size: 6%
 
 &gt; - .red[Geospatial Data]
 
+&gt; .blue[Statistical measures]
+
+&gt; - .red[Uncertainty]
+
+
 ]
 
-.center[.fancy[.large[
-
-.red[Uncertainty] (BONUS!)
-
-]]]
 
 ---
 class: left, top
@@ -402,8 +399,6 @@ background-size: 6%
 ]
 
 
-
-
 ---
 class: left, top
 background-image: url(images/ggplot2.png)
@@ -441,17 +436,26 @@ background-size: 6%
 
 # .red[Amounts:] .fancy[Bars]
 
+.small[
+
+&gt; *Map `mpaa` to the `x` axis and to the `fill` aesthetic inside the `aes()` of `geom_bar()`, and add the labels*
+
+]
+
+--
+
+.leftcol45[
 .code50[
 
 
 ```r
-labs_geom_bar &lt;- labs(x = "MPAA rating", 
-    title = "IMDB movie information/user ratings")
+labs_geom_bar &lt;- labs(
+  x = "MPAA rating", 
+  title = "IMDB movie information/user ratings")
 ```
 
 ]
 
-.leftcol35[
 .code60[
 
 
@@ -467,7 +471,7 @@ ggplot(data = movies_data,
 
 --
 
-.rightcol65[
+.rightcol55[
 .border[
 
 &lt;img src="images/plot-geom_bar-1.png" width="90%" height="90%" style="display: block; margin: auto;" /&gt;
@@ -531,19 +535,29 @@ background-size: 6%
 
 # .red[Amounts:] .fancy[Grouped Bars]
 
+.small[
+
+&gt; *Map `mpaa` to the `x` axis, `rating` to the `y` axis, and `mpaa` to `fill` inside the `aes()` of `geom_col()`, and add the labels*
+
+]
+
+--
+
+.leftcol45[
+
 .code50[
 
 
 ```r
-labs_geom_col &lt;- labs(x = "MPAA rating", 
-    y = "Average IMDB user rating",
-    title = "IMDB movie information/user ratings")
+labs_geom_col &lt;- labs(
+  x = "MPAA rating", 
+  y = "Average IMDB user rating",
+  title = "IMDB movie information/user ratings")
 ```
 
 ]
 
-.leftcol35[
-.code60[
+.code50[
 
 
 ```r
@@ -558,7 +572,7 @@ ggplot(data = movies_data,
 
 --
 
-.rightcol65[
+.rightcol55[
 .border[
 
 &lt;img src="images/plot-geom_col-1.png" width="90%" height="90%" style="display: block; margin: auto;" /&gt;
@@ -618,18 +632,29 @@ background-size: 6%
 
 # .red[Amounts:] .fancy[Stacked Bars]
 
+.small[
+
+&gt; *Map `flipper_length_mm` to the `x` axis, `sex` to  `fill`, the `geom_bar()` layer, and add the labels*
+
+]
+
+--
+
+
+.leftcol45[
 
 .code50[
 
 
 ```r
-labs_geom_bar_stacked &lt;- labs(x = "Flipper length (millimeters)",
+labs_geom_bar_stacked &lt;- labs(
+  x = "Flipper length (millimeters)",
   title = "Adult foraging penguins")
 ```
 
 ]
 
-.leftcol35[.code60[
+.code50[
 
 
 ```r
@@ -647,7 +672,7 @@ ggplot(data = penguins_stacked,
 
 --
 
-.rightcol65[
+.rightcol55[
 .border[
 
 &lt;img src="images/plot-stacked-bars-1.png" width="90%" height="90%" style="display: block; margin: auto;" /&gt;
@@ -707,26 +732,37 @@ background-size: 6%
 
 # .red[Amounts:] .fancy[Stacked Bars]
 
+.small[
+
+&gt; *Map `island` to the `x` axis, `flipper_length_mm` to the `y` axis, `sex` to `fill`, the `geom_bar()` layer (with `position` and `stat`), and add the labels*
+
+]
+
+--
+
+
+.leftcol45[
+
 .code50[
 
 
 ```r
-geom_bar_stacked_2 &lt;- labs(x = "Island in Palmer Archipelago",
-    y = "Flipper length (millimeters)",
-    title = "Adult foraging penguins")
+geom_bar_stacked_2 &lt;- labs(
+  x = "Island in Palmer Archipelago",
+  y = "Flipper length (millimeters)",
+  title = "Adult foraging penguins")
 ```
 
 ]
 
-.leftcol35[
-.code60[
+.code50[
 
 
 ```r
 ggplot(data = penguins,
-      aes(fill = sex, 
-          x = island,
-          y = flipper_length_mm)) + 
+      aes(x = island,
+          y = flipper_length_mm,
+          fill = sex)) + 
 # use this to determine how many
 # sex values are NA (and in what
 # categories)
@@ -739,7 +775,7 @@ ggplot(data = penguins,
 
 --
 
-.rightcol65[
+.rightcol55[
 .border[
 
 &lt;img src="images/plot-stacked-bars-2-1.png" width="90%" height="90%" style="display: block; margin: auto;" /&gt;
@@ -794,7 +830,7 @@ sample_names &lt;- slice_sample(unisex_names_diff, n = 10)
 
 &lt;div data-pagedtable="false"&gt;
   &lt;script data-pagedtable-source type="application/json"&gt;
-{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["total"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["male_share"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["female_share"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["gap"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["male_female_diff"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["diff_cat"],"name":[7],"type":["chr"],"align":["left"]}],"data":[{"1":"Mycah","2":"1110.6747","3":"0.4218043","4":"0.5781957","5":"0.15639141","6":"-0.15639141","7":"More common female name"},{"1":"Amrit","2":"786.6429","3":"0.5744511","4":"0.4255489","5":"0.14890213","6":"0.14890213","7":"More common male name"},{"1":"Babe","2":"153.2976","3":"0.5056360","4":"0.4943640","5":"0.01127196","6":"0.01127196","7":"More common male name"},{"1":"Coren","2":"230.7267","3":"0.5575074","4":"0.4424926","5":"0.11501471","6":"0.11501471","7":"More common male name"},{"1":"Reily","2":"796.2873","3":"0.6036980","4":"0.3963020","5":"0.20739608","6":"0.20739608","7":"More common male name"},{"1":"Jackie","2":"132928.7887","3":"0.4211326","4":"0.5788674","5":"0.15773480","6":"-0.15773480","7":"More common female name"},{"1":"Jayln","2":"606.5433","3":"0.6383980","4":"0.3616020","5":"0.27679605","6":"0.27679605","7":"More common male name"},{"1":"Robbie","2":"32636.0476","3":"0.5531569","4":"0.4468431","5":"0.10631388","6":"0.10631388","7":"More common male name"},{"1":"Merlyn","2":"2500.6287","3":"0.5919276","4":"0.4080724","5":"0.18385522","6":"0.18385522","7":"More common male name"},{"1":"Braelin","2":"393.0998","3":"0.5678630","4":"0.4321370","5":"0.13572596","6":"0.13572596","7":"More common male name"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["total"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["male_share"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["female_share"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["gap"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["male_female_diff"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["diff_cat"],"name":[7],"type":["chr"],"align":["left"]}],"data":[{"1":"Armari","2":"104.2150","3":"0.6284457","4":"0.3715543","5":"0.25689131","6":"0.25689131","7":"More common male name"},{"1":"Rilley","2":"124.0847","3":"0.5515621","4":"0.4484379","5":"0.10312411","6":"0.10312411","7":"More common male name"},{"1":"Pat","2":"44781.6024","3":"0.3690344","4":"0.6309656","5":"0.26193123","6":"-0.26193123","7":"More common female name"},{"1":"Rajah","2":"441.0978","3":"0.6584937","4":"0.3415063","5":"0.31698739","6":"0.31698739","7":"More common male name"},{"1":"Oluwademilade","2":"132.0988","3":"0.6613049","4":"0.3386951","5":"0.32260987","6":"0.32260987","7":"More common male name"},{"1":"Deavion","2":"502.7161","3":"0.6191643","4":"0.3808357","5":"0.23832850","6":"0.23832850","7":"More common male name"},{"1":"Tyjai","2":"167.6391","3":"0.5438630","4":"0.4561370","5":"0.08772604","6":"0.08772604","7":"More common male name"},{"1":"Rorey","2":"137.3659","3":"0.6598459","4":"0.3401541","5":"0.31969178","6":"0.31969178","7":"More common male name"},{"1":"Reese","2":"36360.5206","3":"0.3619103","4":"0.6380897","5":"0.27617942","6":"-0.27617942","7":"More common female name"},{"1":"Jammie","2":"6013.4448","3":"0.3640473","4":"0.6359527","5":"0.27190542","6":"-0.27190542","7":"More common female name"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   &lt;/script&gt;
 &lt;/div&gt;
 
@@ -810,11 +846,22 @@ background-size: 6%
 
 # .red[Amounts:] .fancy[Diverging Bars]
 
+.small[
+
+&gt; *Here we use the `reorder()` function to arrange the values of `male_female_diff` by `name`, and map the `diff_cat` to `label`.*
+
+]
+
+--
+
+.leftcol45[
+
 .code50[
 
 
 ```r
-labs_geom_bar_diverg &lt;- labs(x = "Name",
+labs_geom_bar_diverg &lt;- labs(
+  x = "Name",
   y = "Male share - female share", 
   title = "Most Common Unisex Names In America",
   fill = "Difference category")
@@ -822,7 +869,6 @@ labs_geom_bar_diverg &lt;- labs(x = "Name",
 
 ]
 
-.leftcol45[
 .code50[
 
 
@@ -847,7 +893,7 @@ ggplot(data = sample_names,
 .rightcol55[
 .border[
 
-&lt;img src="images/plot-geom_bar_diverging-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/plot-geom_bar_diverging-1.png" width="90%" height="90%" style="display: block; margin: auto;" /&gt;
 
 ]]
 
@@ -883,7 +929,7 @@ sample_names &lt;- slice_sample(unisex_names_diff, n = 20)
 
 &lt;div data-pagedtable="false"&gt;
   &lt;script data-pagedtable-source type="application/json"&gt;
-{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["total"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["male_share"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["female_share"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["gap"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["male_female_diff"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["diff_cat"],"name":[7],"type":["chr"],"align":["left"]}],"data":[{"1":"Avrey","2":"541.7820","3":"0.4554581","4":"0.5445419","5":"0.08908379","6":"-0.08908379","7":"More common female name"},{"1":"Gaylin","2":"157.9756","3":"0.5311366","4":"0.4688634","5":"0.06227326","6":"0.06227326","7":"More common male name"},{"1":"Kayler","2":"182.5719","3":"0.4242373","4":"0.5757627","5":"0.15152535","6":"-0.15152535","7":"More common female name"},{"1":"Rhythm","2":"226.5146","3":"0.5347910","4":"0.4652090","5":"0.06958195","6":"0.06958195","7":"More common male name"},{"1":"Lamari","2":"328.6738","3":"0.6312254","4":"0.3687746","5":"0.26245084","6":"0.26245084","7":"More common male name"},{"1":"Jasiyah","2":"418.3329","3":"0.3702581","4":"0.6297419","5":"0.25948389","6":"-0.25948389","7":"More common female name"},{"1":"Markelle","2":"271.7025","3":"0.5492150","4":"0.4507850","5":"0.09842995","6":"0.09842995","7":"More common male name"},{"1":"Tomie","2":"473.4376","3":"0.4662430","4":"0.5337570","5":"0.06751398","6":"-0.06751398","7":"More common female name"},{"1":"Krishna","2":"3270.0492","3":"0.4942404","4":"0.5057596","5":"0.01151915","6":"-0.01151915","7":"More common female name"},{"1":"Emery","2":"18844.1189","3":"0.4867755","4":"0.5132245","5":"0.02644893","6":"-0.02644893","7":"More common female name"},{"1":"Shady","2":"480.3995","3":"0.5886069","4":"0.4113931","5":"0.17721372","6":"0.17721372","7":"More common male name"},{"1":"Oluwadarasimi","2":"108.3539","3":"0.3667539","4":"0.6332461","5":"0.26649222","6":"-0.26649222","7":"More common female name"},{"1":"Merritt","2":"3843.5607","3":"0.6584233","4":"0.3415767","5":"0.31684657","6":"0.31684657","7":"More common male name"},{"1":"Yarnell","2":"146.0612","3":"0.4140965","4":"0.5859035","5":"0.17180692","6":"-0.17180692","7":"More common female name"},{"1":"Kaelen","2":"862.7284","3":"0.6392168","4":"0.3607832","5":"0.27843364","6":"0.27843364","7":"More common male name"},{"1":"Kary","2":"3020.9687","3":"0.4012849","4":"0.5987151","5":"0.19743021","6":"-0.19743021","7":"More common female name"},{"1":"Shai","2":"1950.9917","3":"0.4579850","4":"0.5420150","5":"0.08403001","6":"-0.08403001","7":"More common female name"},{"1":"Azariah","2":"4420.5608","3":"0.3702633","4":"0.6297367","5":"0.25947337","6":"-0.25947337","7":"More common female name"},{"1":"Mekiah","2":"174.6191","3":"0.3747016","4":"0.6252984","5":"0.25059674","6":"-0.25059674","7":"More common female name"},{"1":"Brighten","2":"114.2151","3":"0.5562880","4":"0.4437120","5":"0.11257600","6":"0.11257600","7":"More common male name"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["total"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["male_share"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["female_share"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["gap"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["male_female_diff"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["diff_cat"],"name":[7],"type":["chr"],"align":["left"]}],"data":[{"1":"Jamisen","2":"389.0248","3":"0.6042255","4":"0.3957745","5":"0.2084509169","6":"0.2084509169","7":"More common male name"},{"1":"Siah","2":"154.8886","3":"0.4611827","4":"0.5388173","5":"0.0776346990","6":"-0.0776346990","7":"More common female name"},{"1":"Shaya","2":"1373.0472","3":"0.4979618","4":"0.5020382","5":"0.0040764555","6":"-0.0040764555","7":"More common female name"},{"1":"Vegas","2":"279.0862","3":"0.6155396","4":"0.3844604","5":"0.2310792276","6":"0.2310792276","7":"More common male name"},{"1":"Jlyn","2":"266.9562","3":"0.3899432","4":"0.6100568","5":"0.2201136318","6":"-0.2201136318","7":"More common female name"},{"1":"Vail","2":"106.0570","3":"0.3797119","4":"0.6202881","5":"0.2405762464","6":"-0.2405762464","7":"More common female name"},{"1":"Kijana","2":"393.6463","3":"0.6564387","4":"0.3435613","5":"0.3128773543","6":"0.3128773543","7":"More common male name"},{"1":"Rossi","2":"407.4709","3":"0.5766410","4":"0.4233590","5":"0.1532819068","6":"0.1532819068","7":"More common male name"},{"1":"Osie","2":"580.9517","3":"0.4572893","4":"0.5427107","5":"0.0854213075","6":"-0.0854213075","7":"More common female name"},{"1":"Callaway","2":"291.8519","3":"0.4997724","4":"0.5002276","5":"0.0004551042","6":"-0.0004551042","7":"More common female name"},{"1":"Atari","2":"116.9936","3":"0.6560014","4":"0.3439986","5":"0.3120028397","6":"0.3120028397","7":"More common male name"},{"1":"Shaquel","2":"148.7384","3":"0.4826473","4":"0.5173527","5":"0.0347053244","6":"-0.0347053244","7":"More common female name"},{"1":"Eliyah","2":"999.5272","3":"0.3649171","4":"0.6350829","5":"0.2701657461","6":"-0.2701657461","7":"More common female name"},{"1":"Dell","2":"3615.0333","3":"0.6504769","4":"0.3495231","5":"0.3009537332","6":"0.3009537332","7":"More common male name"},{"1":"Markelle","2":"271.7025","3":"0.5492150","4":"0.4507850","5":"0.0984299510","6":"0.0984299510","7":"More common male name"},{"1":"Bobie","2":"435.7710","3":"0.3381931","4":"0.6618069","5":"0.3236138033","6":"-0.3236138033","7":"More common female name"},{"1":"Yuri","2":"3774.6992","3":"0.3894299","4":"0.6105701","5":"0.2211401050","6":"-0.2211401050","7":"More common female name"},{"1":"Aarin","2":"692.6768","3":"0.5878457","4":"0.4121543","5":"0.1756913825","6":"0.1756913825","7":"More common male name"},{"1":"Marvis","2":"1653.1578","3":"0.4929931","4":"0.5070069","5":"0.0140137487","6":"-0.0140137487","7":"More common female name"},{"1":"Kayler","2":"182.5719","3":"0.4242373","4":"0.5757627","5":"0.1515253529","6":"-0.1515253529","7":"More common female name"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   &lt;/script&gt;
 &lt;/div&gt;
 
@@ -915,11 +961,22 @@ background-size: 6%
 
 # .red[Amounts:] .fancy[Diverging Bars (vertical)]
 
+.small[
+
+&gt; *For vertically arranged bars, we switch the `x` and `y` axis variables (and the `reorder()` function).*
+
+]
+
+--
+
+.leftcol45[
+
 .code50[
 
 
 ```r
-labs_geom_bar_diverg_vert &lt;- labs(x = "Name", 
+labs_geom_bar_diverg_vert &lt;- labs(
+  x = "Name", 
   y = "Male share - female share", 
   title = "Most Common Unisex Names In America",
   fill = "Difference category")
@@ -927,7 +984,7 @@ labs_geom_bar_diverg_vert &lt;- labs(x = "Name",
 
 ]
 
-.leftcol35[.code50[
+.code50[
 
 
 ```r
@@ -948,7 +1005,7 @@ ggplot(data = sample_names,
 
 --
 
-.rightcol65[
+.rightcol55[
 .border[
 
 &lt;img src="images/plot-geom_bar_diverging_vertical-1.png" width="90%" height="90%" style="display: block; margin: auto;" /&gt;

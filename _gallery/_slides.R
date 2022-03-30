@@ -5,23 +5,37 @@ library(rmarkdown)
 library(knitr)
 
 # # render 01 - amounts -----------------------------------------------------
-#  rmarkdown::render('ggp2-gallery-01-amounts.Rmd',  encoding = 'UTF-8')
+ # rmarkdown::render('ggp2-gallery-01-amounts.Rmd',  encoding = 'UTF-8')
 # # remove cache
 # unlink("ggp2-gallery-01-amounts_cache/", recursive = TRUE, force = TRUE)
 
-
 # # render 02-distributions -------------------------------------------------
-#  rmarkdown::render('ggp2-gallery-02-distributions.Rmd',  encoding = 'UTF-8')
+ # rmarkdown::render('ggp2-gallery-02-distributions.Rmd',  encoding = 'UTF-8')
 # # remove cache
 # unlink("ggp2-gallery-02-distributions_cache/", recursive = TRUE, force = TRUE)
 
 # render 03-proportions -------------------------------------------------
- rmarkdown::render('ggp2-gallery-03-proportions.Rmd',  encoding = 'UTF-8')
+rmarkdown::render('ggp2-gallery-03-proportions.Rmd',  encoding = 'UTF-8')
 # remove cache
 # unlink("ggp2-gallery-03-proportions_cache/", recursive = TRUE, force = TRUE)
 
+# render 04-xy-relationships -------------------------------------------------
+rmarkdown::render('ggp2-gallery-04-xy-relationships.Rmd',  encoding = 'UTF-8')
+# remove cache
+# unlink("ggp2-gallery-04-xy-relationships_cache/", recursive = TRUE, force = TRUE)
+
+# render 05-geospatial-data -------------------------------------------------
+rmarkdown::render('ggp2-gallery-05-geospatial-data.Rmd',  encoding = 'UTF-8')
+# remove cache
+# unlink("ggp2-gallery-05-geospatial-data_cache/", recursive = TRUE, force = TRUE)
+
+# render 06-uncertainty -------------------------------------------------
+rmarkdown::render('ggp2-gallery-06-uncertainty.Rmd',  encoding = 'UTF-8')
+# remove cache
+# unlink("ggp2-gallery-06-uncertainty_cache/", recursive = TRUE, force = TRUE)
+
 # # render ggp2-graph-gallery ---------------------------------------------
-rmarkdown::render('ggp2-graph-gallery.Rmd',  encoding = 'UTF-8')
+# rmarkdown::render('ggp2-graph-gallery.Rmd',  encoding = 'UTF-8')
 # remove cache
 # unlink("ggp2-graph-gallery_cache/", recursive = TRUE, force = TRUE)
 

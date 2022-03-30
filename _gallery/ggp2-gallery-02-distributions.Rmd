@@ -224,6 +224,8 @@ From *"Fundamentals of Data Visualization"*, Claus O. Wilke (2019)
 
 ]
 
+
+
 ---
 class: left, top
 background-image: url(images/ggplot2.png)
@@ -236,15 +238,15 @@ background-size: 6%
 
 .leftcol[
 
-> .blue[Comparing categories and distributions]
+> .blue[Comparing categories and values]
 
 > - .red[Amounts]
 
-> - .green[**Distributions**]
+> - .red[.fancy[Distributions]]
 
-> .blue[Hierarchies/part-to-whole relationships]
+> .blue[Hierarchies and proportions]
 
-> - .red[Proportions]
+> - .red[Part-to-whole relationships]
 
 ]
 
@@ -252,11 +254,7 @@ background-size: 6%
  
 .rightcol[
 
-> .blue[Correlations and connections]
-
-> - .red[X–Y relationships]
-
-> .blue[Trends and intervals over time]
+> .blue[Trends, correlations and connections]
 
 > - .red[X–Y relationships]
 
@@ -264,13 +262,13 @@ background-size: 6%
 
 > - .red[Geospatial Data]
 
+> .blue[Statistical measures]
+
+> - .red[Uncertainty]
+
+
 ]
 
-.center[.fancy[.large[
-
-.red[Uncertainty] (BONUS!)
-
-]]]
 
 ---
 class: left, top
@@ -470,18 +468,27 @@ background-size: 6%
 
 # .red[Distributions:] .fancy[Histograms]
 
-.code60[
+.small[
 
-```{r labs_histogram}
-labs_histogram <- labs(x = "Flipper length (millimeters)", 
-  title = "Adult foraging penguins")
-```
-
+> *Map `flipper_length_mm` to the `x` axis, add the `geom_histogram()` layer and the labels*
 
 ]
 
-.leftcol35[
-.code60[
+--
+
+.leftcol45[
+
+.code50[
+
+```{r labs_histogram}
+labs_histogram <- labs(
+  x = "Flipper length (millimeters)", 
+  title = "Adult foraging penguins")
+```
+
+]
+
+.code50[
 
 ```{r geom_histogram, fig.show='hide'}
 ggplot(data = penguins,
@@ -495,7 +502,7 @@ ggplot(data = penguins,
 
 --
 
-.rightcol65[.border[
+.rightcol55[.border[
 
 ```{r plot-geom_histogram, ref.label='geom_histogram', echo=FALSE, fig.align='center', out.width='90%', out.height='90%'}
 ```
@@ -551,17 +558,28 @@ background-size: 6%
 
 # .red[Distributions:] .fancy[Frequency Polygon]
 
-.code60[
+.small[
+
+> *Map `flipper_length_mm` to the `x` axis, add the `geom_freqpoly()` layer and the labels*
+
+]
+
+--
+
+.leftcol35[
+
+.code50[
 
 ```{r labs_freqpoly}
-labs_freqpoly <- labs(x = "Flipper length (millimeters)", 
+labs_freqpoly <- labs(
+  x = "Flipper length (millimeters)", 
   title = "Adult foraging penguins")
 ```
 
 ]
 
-.leftcol35[
-.code60[
+
+.code50[
 
 ```{r geom_freqpoly, fig.show='hide'}
 ggplot(data = penguins,
@@ -577,7 +595,7 @@ ggplot(data = penguins,
 .rightcol65[
 .border[
 
-```{r plot-geom_freqpoly, ref.label='geom_freqpoly', echo=FALSE, fig.align='center', out.width='90%', out.height='90%'}
+```{r plot-geom_freqpoly, ref.label='geom_freqpoly', echo=FALSE, fig.align='center', out.width='85%', out.height='85%'}
 ```
 
 ]]
@@ -590,13 +608,9 @@ background-size: 6%
 
 # .red[Distributions:] .fancy[Frequency Polygon]
 
-.code50[
+.small[
 
-```{r labs_freqpoly_2}
-labs_freqpoly_2 <- labs(x = "Flipper length (millimeters)",
-  color = "Penguins species",
-  title = "Adult foraging penguins")
-```
+> *Frequency polygons are helpful when we want to look at a continuous variable across the levels of a categorical variable*
 
 ]
 
@@ -604,7 +618,16 @@ labs_freqpoly_2 <- labs(x = "Flipper length (millimeters)",
 
 .leftcol35[
 
-.small[*Frequency polygons are helpful when we want to look at a continuous variable across the levels of a categorical variable*]
+.code50[
+
+```{r labs_freqpoly_2}
+labs_freqpoly_2 <- labs(
+  x = "Flipper length (millimeters)",
+  color = "Penguins species",
+  title = "Adult foraging penguins")
+```
+
+]
 
 .code50[
 
@@ -612,8 +635,8 @@ labs_freqpoly_2 <- labs(x = "Flipper length (millimeters)",
 ggplot(data = penguins, 
        aes(x = flipper_length_mm)) + 
   geom_freqpoly(
-    aes(color = species, 
-        group = species)) + 
+    aes(color = species, #<<
+        group = species)) + #<<
   labs_freqpoly_2
 ```
 
@@ -629,6 +652,7 @@ ggplot(data = penguins,
 
 ]]
 
+
 ---
 class: left, top
 background-image: url(images/ggplot2.png)
@@ -639,7 +663,7 @@ background-size: 6%
 
 <br>
 
-> *Dot-plots are similar to histograms and frequency polygons, except instead of using bars or lines, they use dots to represent the values of a given variable.*
+> *Dot-plots (`geom_dotplot()`) are similar to histograms and frequency polygons, except instead of using bars or lines, they use dots to represent the values of a given variable.*
 
 ---
 class: left, top
@@ -675,22 +699,30 @@ background-size: 6%
 
 # .red[Distributions:] .fancy[Dot-Plots]
 
-.code50[
+.small[
 
-```{r labs_dotplot}
-labs_dotplot <- labs(x = "Flipper length (millimeters)", 
-  title = "Adult foraging penguins")
-```
-
+> *Map `flipper_length_mm` to the `x` axis, add the `geom_dotplot()` layer and the labels*
 
 ]
 
-.leftcol35[
-.code60[
+--
+
+.leftcol45[
+.code50[
+
+```{r labs_dotplot}
+labs_dotplot <- labs(
+  x = "Flipper length (millimeters)", 
+  title = "Adult foraging penguins")
+```
+
+]
+
+.code50[
 
 ```{r geom_dotplot, fig.show='hide'}
 ggplot(data = penguins,
-    aes(x = flipper_length_mm)) +
+    aes(x = flipper_length_mm)) + 
     geom_dotplot() + 
     labs_dotplot
 ```
@@ -699,7 +731,7 @@ ggplot(data = penguins,
 
 --
 
-.rightcol65[
+.rightcol55[
 .border[
 
 ```{r plot-geom_dotplot, ref.label='geom_dotplot', echo=FALSE, fig.align='center', out.width='90%', out.height='90%'}
@@ -715,25 +747,16 @@ background-size: 6%
 
 # .red[Distributions:] .fancy[Dot-Plots]
 
-.leftcol[
 
-> .small[*The default setting is '1/30 of the range of the data', but we can adjust this with `binwidth` or `method = "histodot"`.*]
-
-> .small[*We can also use dot-plots to look at the range of a continuous (numerical) variable across the levels of a categorical (character) variable.*]
-
-]
-
---
-
-.rightcol[
-
-.code50[
+.code60[
 
 ```{r geom_dotplot-stackgroups-code, eval=FALSE}
 penguins_histodot <- filter(penguins, !is.na(sex))
 ```
 
 ]
+
+--
 
 .small[
 
@@ -742,9 +765,7 @@ penguins_histodot <- filter(penguins, !is.na(sex))
 rmarkdown::paged_table(penguins_histodot)
 ```
 
-]]
-
-
+]
 
 ---
 class: left, top
@@ -754,26 +775,40 @@ background-size: 6%
 
 # .red[Distributions:] .fancy[Dot-Plots]
 
+.small[
+
+> *We can also use dot-plots to look at the range of a continuous (numerical) variable across the levels of a categorical (character) variable (like `sex` below).*
+
+> *The default setting for the size of the dots is '1/30 of the range of the data.' We can adjust the size with `binwidth` (and `method = "histodot"`)*
+
+]
+
+--
+
+.leftcol45[
+
 .code50[
 
 ```{r labs_histodot}
-labs_histodot <- labs(x = "Flipper length (millimeters)",
+labs_histodot <- labs(
+  x = "Flipper length (millimeters)",
   fill = "Sex",
   title = "Adult foraging penguins")
 ```
 
+
 ]
 
-.leftcol35[.code60[
+.code50[
 
 ```{r penguins_histodot_stackgroups, fig.show='hide'}
 ggplot(data = penguins_histodot, 
     aes(x = flipper_length_mm,
-        fill = factor(sex))) +
+        fill = factor(sex))) + #<<
   geom_dotplot(
         stackgroups = TRUE,
-        binwidth = 1,
-        method = "histodot") + 
+        binwidth = 1, #<<
+        method = "histodot") + #<<
   labs_histodot
 ```
 
@@ -781,10 +816,10 @@ ggplot(data = penguins_histodot,
 
 --
 
-.rightcol65[
+.rightcol55[
 .border[
 
-```{r plot-geom_dotplot-stackgroups, ref.label='penguins_histodot_stackgroups', echo=FALSE, fig.align='center', out.width='90%', out.height='90%'}
+```{r plot-geom_dotplot-stackgroups, ref.label='penguins_histodot_stackgroups', echo=FALSE, fig.align='center', out.width='81%', out.height='81%'}
 ```
 
 ]]
@@ -837,10 +872,21 @@ background-size: 6%
 
 # .red[Distributions:] .fancy[Bee-swarm Plots]
 
+.small[
+
+> *Map `island` to the `x` axis and `color`, `body_mass_g` to the `y` axis, the `geom_beeswarm()` layer (with `alpha`), and the labels*
+
+]
+
+--
+
+.leftcol45[
+
 .code50[
 
 ```{r labs_beeswarm}
-labs_beeswarm <- labs(x = "Island in Palmer Archipelago, Antarctica",
+labs_beeswarm <- labs(
+  x = "Island in Palmer Archipelago, Antarctica",
   y = "Body mass (grams)",
   color = "Penguin sex (female, male)",
   title = "Adult foraging penguins")
@@ -848,7 +894,7 @@ labs_beeswarm <- labs(x = "Island in Palmer Archipelago, Antarctica",
 
 ]
 
-.leftcol35[.code60[
+.code50[
 
 ```{r geom_beeswarm, fig.show='hide'}
 ggplot(data = penguins, 
@@ -864,10 +910,10 @@ ggplot(data = penguins,
 
 --
 
-.rightcol65[
+.rightcol55[
 .border[
 
-```{r plot-geom_beeswarm, ref.label='geom_beeswarm', echo=FALSE, fig.align='center', out.width='85%', out.height='85%'}
+```{r plot-geom_beeswarm, ref.label='geom_beeswarm', echo=FALSE, fig.align='center', out.width='90%', out.height='90%'}
 ```
 
 ]]
@@ -920,6 +966,16 @@ background-size: 6%
 
 # .red[Distributions:] .fancy[Density Plots]
 
+.small[
+
+> *Map `flipper_length_mm` to the `x` axis, add the `geom_density()` layer and the labels*
+
+]
+
+--
+
+.leftcol45[
+
 .code50[
 
 ```{r labs_density}
@@ -930,7 +986,7 @@ labs_density <- labs(
 
 ]
 
-.leftcol35[.code60[
+.code50[
 
 ```{r geom_density, fig.show='hide'}
 ggplot(data = penguins, 
@@ -943,7 +999,7 @@ ggplot(data = penguins,
 
 --
 
-.rightcol65[
+.rightcol55[
 .border[
 
 ```{r plot-geom_density, ref.label='geom_density', echo=FALSE, fig.align='center', out.width='90%', out.height='90%'}
@@ -963,30 +1019,34 @@ background-size: 6%
 
 > *Similar to frequency polygons, `geom_density()` is useful when we want to look at the distribution of a continuous variable across the levels of a categorical variable*
 
+> *We can set the `fill` argument to a categorical variable, and use the `alpha` to handle the overlapping areas.*
+
 ]
 
 --
 
 .leftcol45[
-.small[
 
-*We can set the `fill` argument to a categorical variable, and use the `alpha` to handle the overlapping areas.*
+.code50[
+
+```{r labs_density_alpha}
+labs_density_alpha <- labs(
+  x = "Flipper length (millimeters)",
+  fill = "Penguin sex (female, male)",
+  title = "Adult foraging penguins")
+```
 
 ]
 
 .code50[
 
 ```{r geom_density-alpha, fig.show='hide'}
-labs_density_alpha <- labs(
-  x = "Flipper length (millimeters)",
-  fill = "Penguin sex (female, male)",
-  title = "Adult foraging penguins")
 # remove missing sex
 penguins_density <- filter(penguins, !is.na(sex))
 ggplot(data = penguins_density, 
        aes(x = flipper_length_mm, 
-        fill = sex)) + 
-        geom_density(alpha = 1/3) + 
+        fill = sex)) + #<<
+        geom_density(alpha = 1/3) + #<<
   labs_density_alpha
 ```
 
@@ -1014,7 +1074,7 @@ background-size: 6%
 
 .large[
 
-> If we want to plot density curves but retain the interpretability of the axes, consider comparing multiple distributions using [`ridgeline plots`](https://wilkelab.org/ggridges/) (`geom_density_ridges()`)
+> *If we want to plot density curves but retain the interpretability of the axes, consider comparing multiple distributions using [`ridgeline plots`](https://wilkelab.org/ggridges/) (`geom_density_ridges()`)*
 
 ]
 
@@ -1051,17 +1111,28 @@ background-size: 6%
 
 # .red[Distributions:] .fancy[Ridgeline Plots]
 
+.small[
+
+> *Map `bill_length_mm` to the `x` axis, `island` to the `y` axis and `fill`, the `geom_density_ridges()` layer (with `alpha`) and the labels*
+
+]
+
+--
+
+.leftcol45[
+
 .code50[
 
 ```{r labs_density_ridges}
-labs_density_ridges <- labs(x = "Flipper length (millimeters)",
+labs_density_ridges <- labs(
+  x = "Bill length (millimeters)",
   y = "Island in Palmer Archipelago, Antarctica",
   title = "Adult foraging penguins")
 ```
 
 ]
 
-.leftcol35[.code60[
+.code50[
 
 ```{r geom_density_ridges, fig.show='hide'}
 # remove missing island
@@ -1079,10 +1150,10 @@ ggplot(data = penguins_density_ridges,
 
 --
 
-.rightcol65[
+.rightcol55[
 .border[
 
-```{r plot-geom_density_ridges, ref.label='geom_density_ridges', echo=FALSE, fig.align='center', out.width='85%', out.height='85%'}
+```{r plot-geom_density_ridges, ref.label='geom_density_ridges', echo=FALSE, fig.align='center', out.width='90%', out.height='90%'}
 ```
 
 ]]
@@ -1137,23 +1208,34 @@ background-size: 6%
 
 # .red[Distributions:] .fancy[Box-plots]
 
+.small[
+
+> *Map a blank character string (`" "`) to the `x` axis, `length` to the `y` axis, the `geom_boxplot()` layer, and the labels*
+
+]
+
+--
+
+.leftcol45[
+
 .code50[
 
 ```{r labs_boxplot}
-labs_boxplot <- labs(y = "length", 
+labs_boxplot <- labs(
+  y = "length", 
    title = "IMDB Movie information and user ratings")
 ```
 
 ]
 
-.leftcol35[
-.code60[
+
+.code50[
 
 ```{r geom_boxplot, fig.show='hide'}
 ggplot(data = movies_data, 
     # place an empty string in the
     # x axis
-           aes(x = ' ', 
+           aes(x = " ", 
     # place the length on the y
                y = length)) +
     geom_boxplot() + 
@@ -1164,7 +1246,7 @@ ggplot(data = movies_data,
 
 --
 
-.rightcol65[
+.rightcol55[
 .border[
 
 ```{r plot-geom_boxplot, ref.label='geom_boxplot', echo=FALSE, fig.align='center', out.width='90%', out.height='90%'}
@@ -1218,9 +1300,11 @@ rmarkdown::paged_table(LengthBoxStats)
 
 > Use these numbers to help you interpret the structure of the box-plot. 
 
+.border[
 ```{r boxplot-diagram, echo=FALSE, fig.align='center', out.width='100%', out.height='100%'}
 knitr::include_graphics(path = "images/boxplot-diagram.png")
 ```
+]
 
 ]]
 
@@ -1233,15 +1317,25 @@ background-size: 6%
 # .red[Distributions:] .fancy[Box-plots]
 
 
-.small[
+.leftcol[
 
-> *As we can see, the box-plot combines multiple summary statistics.*
+.border[
+```{r boxplot-diagram-02, echo=FALSE, fig.align='center', out.width='100%', out.height='100%'}
+knitr::include_graphics(path = "images/boxplot-diagram.png")
+```
+]
 
 ]
 
 --
 
-<br>
+.rightcol[
+
+.small[
+
+> *As we can see, the box-plot combines multiple summary statistics.*
+
+]
 
 .small[
 
@@ -1249,16 +1343,65 @@ background-size: 6%
 
 ]
 
---
-
-<br>
-
 .small[
 
 > *In `ggplot2`, values that fall more than 1.5 times the IQR are displayed as individual points (aka .green[*outliers*]). The lines extending from the bottom and top of the main box represent the last non-outlier value in the distribution.*
 
 ]
+]
 
+---
+class: left, top
+background-image: url(images/ggplot2.png)
+background-position: 95% 8%
+background-size: 6%
+
+# .red[Distributions:] .fancy[Box-plots]
+
+.small[
+
+> *Because box-plot provides so many helpful statistical measures, they are also helpful for viewing how a continuous variable varies across a categorical variable*
+
+]
+
+.leftcol45[
+
+.code50[
+
+```{r labs_boxplots}
+labs_boxplots <- labs(
+  x = "mpaa",
+  y = "length", 
+   title = "IMDB Movie information and user ratings")
+```
+
+]
+
+
+.code50[
+
+```{r geom_boxplots, fig.show='hide'}
+ggplot(data = movies_data, 
+    # place an empty string in the
+    # x axis
+           aes(x = mpaa, 
+    # place the length on the y
+               y = length)) +
+    geom_boxplot() + 
+    labs_boxplots
+```
+
+]]
+
+--
+
+.rightcol55[
+.border[
+
+```{r plot-geom_boxplots, ref.label='geom_boxplots', echo=FALSE, fig.align='center', out.width='90%', out.height='90%'}
+```
+
+]]
 
 ---
 class: left, top
@@ -1313,7 +1456,10 @@ patchwork::wrap_plots(ggp_point, ggp_freqp,
                       ncol = 5) 
 ```
 
-```{r boxplot-comparisons, echo=FALSE, fig.align='center', out.width='70%', out.height='70%'}
+.border[
+
+```{r boxplot-comparisons, echo=FALSE, fig.align='center', out.width='75%', out.height='75%'}
 knitr::include_graphics(path = "images/boxplot-comparisons.png")
 ```
 
+]
