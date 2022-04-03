@@ -1,8 +1,8 @@
 ---
 title: "ODSC: ggplot2 Graph Gallery"
 subtitle: "Hierarchies/proportions: part-to-whole relationships"
-author: "Martin Frigaard"
-institute: "California State University | BioMarin"
+author: "Martin Frigaard & Peter Spangler"
+institute: "Paradigm Data Group"
 output:
   xaringan::moon_reader:
     css:

@@ -1,8 +1,8 @@
 ---
 title: "ODSC: Data Visualization with ggplot2"
 subtitle: "Part 2: Creating graphs with ggplot2"
-author: "Martin Frigaard"
-institute: "California State University | BioMarin"
+author: "Martin Frigaard & Peter Spangler"
+institute: "Paradigm Data Group"
 date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
