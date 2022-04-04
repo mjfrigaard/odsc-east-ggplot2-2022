@@ -1,7 +1,7 @@
 ---
 title: "Data Visualization with `ggplot2`"
 subtitle: "A talk for **[ODSC East, 2022](https://odsc.com/boston/)**"
-author: "Martin Frigaard, PDG"
+author: "Martin Frigaard & Peter Spangler, PDG"
 output:
   html_document:
     theme: cosmo
@@ -117,4 +117,4 @@ knitr::include_graphics("images/rscloud-github-cred.png")
 
 ## More Resources 
 
-Read [previous tutorials](https://www.storybench.org/getting-started-data-visualization-r-using-ggplot2/) I've written on `ggplot2`.  
+Read [previous tutorials](https://www.storybench.org/getting-started-data-visualization-r-using-ggplot2/) on `ggplot2`.  

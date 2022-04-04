@@ -110,7 +110,7 @@ class: title-slide, center, middle, inverse
 
 <br>
 
-.large[by Martin Frigaard]
+.large[by Martin Frigaard & Peter Spangler]
 
 Written: `r dateWritten`
 
