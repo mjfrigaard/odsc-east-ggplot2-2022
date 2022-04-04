@@ -31,7 +31,7 @@ meta() %>%
     title = "ODSC: Exploratory Data Visualization with ggplot2",
     url = "https://mjfrigaard.github.io/odsc-ggplot2-2022/",
     og_type = "website",
-    og_author = "Martin Frigaard",
+    og_author = "Martin Frigaard & Peter Spangler",
     twitter_card_type = "summary",
     twitter_creator = "@mjfrigaard"
   )
