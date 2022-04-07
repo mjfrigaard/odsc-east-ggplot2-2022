@@ -79,15 +79,6 @@ knitr::include_graphics("images/rscloud-github-cred.png")
 
 - *Mapping vs. setting aesthetics, combining layers, facets*
 
-
-## Graph Gallery
-
-### [Amounts](https://mjfrigaard.github.io/odsc-ggplot2-2022/ggp2-gallery-01-amounts.html#1)
-
-### [Distributions](https://mjfrigaard.github.io/odsc-ggplot2-2022/ggp2-gallery-02-distributions.html#1)
-
-### [Proportions](https://mjfrigaard.github.io/odsc-ggplot2-2022/ggp2-gallery-03-proportions.html#1)
-
 <!--
 
 - A collection of common graphs and code.
@@ -98,19 +89,9 @@ knitr::include_graphics("images/rscloud-github-cred.png")
 
 ## Slides as .pdfs
 
-### [Part 1](https://github.com/mjfrigaard/odsc-ggplot2-2022/blob/gh-pages/pdfs/ggplot2-slides-01.pdf)
++ **[Part 1](https://github.com/mjfrigaard/odsc-ggplot2-2022/blob/gh-pages/pdfs/ggplot2-slides-01.pdf)**
 
-### [Part 2](https://github.com/mjfrigaard/odsc-ggplot2-2022/blob/gh-pages/pdfs/ggplot2-slides-02.pdf)
-
-### [Amounts](https://github.com/mjfrigaard/odsc-ggplot2-2022/blob/gh-pages/pdfs/ggp2-gallery-01-amounts.pdf)
-
-<!-- https://mjfrigaard.github.io/odsc-ggplot2-2022/ggp2-gallery-01-amounts.html#1 -->
-
-### [Distributions](https://github.com/mjfrigaard/odsc-ggplot2-2022/blob/gh-pages/pdfs/ggp2-gallery-02-distributions.pdf)
-
-<!-- https://mjfrigaard.github.io/odsc-ggplot2-2022/ggp2-gallery-02-distributions.html#1 -->
-
-### [Proportions](https://github.com/mjfrigaard/odsc-ggplot2-2022/blob/gh-pages/pdfs/ggp2-gallery-03-proportions.pdf)
++ **[Part 2](https://github.com/mjfrigaard/odsc-ggplot2-2022/blob/gh-pages/pdfs/ggplot2-slides-02.pdf)**
 
 <!-- https://mjfrigaard.github.io/odsc-ggplot2-2022/ggp2-gallery-03-proportions.html#1 -->
 
