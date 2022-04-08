@@ -12,40 +12,54 @@ output:
       - css/lexis-fonts.css
 ---
 
-```{r ggplot2-png, echo=FALSE, fig.align='right', out.height='100%', out.height='100%'}
-knitr::include_graphics("images/ggplot2.png")
+<br>
+
+```{r odsc-talk-image-png, echo=FALSE, fig.align='center', out.height='100%', out.height='100%'}
+knitr::include_graphics("images/odsc-talk-image.png")
 ```
+
+[Read the ODSC blog post](https://opendatascience.com/ggplot2-a-framework-for-thinking-with-graphs/).
 
 <br><br>
 
-Read the preview full blog post [here](https://opendatascience.com/ggplot2-a-framework-for-thinking-with-graphs/).
+
 
 ***
 
-## Getting setup with RStudio.Cloud
+## Setup
 
-#### 1. Create a [GitHub account](https://github.com/) (it's free!)
+<br><br>
+
+### 1. Head over to [GitHub](https://github.com/) and set up a free account
 
 ```{r github-signup-png, echo=FALSE, fig.align='right', out.height='50%', out.height='50%'}
 knitr::include_graphics("images/github-signup.png")
 ```
 
-#### 2. Create [RStudio.Cloud account](https://rstudio.cloud/plans/free) (also free!)
+<br><br>
+
+### 2. Create your [RStudio.Cloud account](https://rstudio.cloud/plans/free) (also free!)
 
 
 ```{r rstudio-cloud-signup-png, echo=FALSE, fig.align='right', out.height='50%', out.height='50%'}
 knitr::include_graphics("images/rstudio-cloud-signup.png")
 ```
 
-#### 3. Use your GitHub credentials to [log into RStudio.Cloud](https://client.login.rstudio.cloud/oauth/register?redirect=https%3A%2F%2Fclient.login.rstudio.cloud%2Foauth%2Flogin%3Fshow_auth%3D0%26show_login%3D0) 
+<br><br>
+
+### 3. Use your GitHub credentials to [log into RStudio.Cloud](https://client.login.rstudio.cloud/oauth/register?redirect=https%3A%2F%2Fclient.login.rstudio.cloud%2Foauth%2Flogin%3Fshow_auth%3D0%26show_login%3D0) 
 
 ```{r rscloud-github-cred-png, echo=FALSE, fig.align='center', out.height='100%', out.height='100%'}
 knitr::include_graphics("images/rscloud-github-cred.png")
 ```
 
+<br><br>
+
 ***
 
 ## Materials 
+
+<br><br>
 
 ### [Part 1: thinking with graphs](https://mjfrigaard.github.io/odsc-ggplot2-2022/ggplot2-slides-01.html#1)
 
@@ -60,6 +74,8 @@ knitr::include_graphics("images/rscloud-github-cred.png")
 **The grammar of graphics**
 
 - *Layers, aesthetics, and geoms*
+
+<br><br>
   
 ### [Part 2: creating graphs with ggplot2](https://mjfrigaard.github.io/odsc-ggplot2-2022/ggplot2-slides-02.html#1) 
 
@@ -79,11 +95,7 @@ knitr::include_graphics("images/rscloud-github-cred.png")
 
 - *Mapping vs. setting aesthetics, combining layers, facets*
 
-<!--
-
-- A collection of common graphs and code.
-
--->
+<br>
 
 ***
 
@@ -93,9 +105,13 @@ knitr::include_graphics("images/rscloud-github-cred.png")
 
 + **[Part 2](https://github.com/mjfrigaard/odsc-ggplot2-2022/blob/gh-pages/pdfs/ggplot2-slides-02.pdf)**
 
-<!-- https://mjfrigaard.github.io/odsc-ggplot2-2022/ggp2-gallery-03-proportions.html#1 -->
+<br>
 
+***
+
+<br>
 
 ## More Resources 
+
 
 Read [previous tutorials](https://www.storybench.org/getting-started-data-visualization-r-using-ggplot2/) on `ggplot2`.  

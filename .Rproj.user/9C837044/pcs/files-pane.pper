@@ -2,8 +2,8 @@
     "sortOrder": [
         {
             "columnIndex": 2,
-            "ascending": false
+            "ascending": true
         }
     ],
-    "path": "~/Dropbox/@projects/high-priority/@talks/odsc-ggplot2-2022/pdfs"
+    "path": "~/Dropbox/@projects/high-priority/@talks/odsc-ggplot2-2022"
 }
