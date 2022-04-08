@@ -1,6 +1,6 @@
 ---
 title: "Data Visualization with `ggplot2`"
-subtitle: "A talk for **[ODSC East, 2022](https://odsc.com/boston/)**"
+subtitle: "A workshop for **[ODSC East, 2022](https://odsc.com/speakers/data-visualization-with-ggplot2/)**"
 author: "Martin Frigaard & Peter Spangler, PDG"
 output:
   html_document:
@@ -114,4 +114,8 @@ knitr::include_graphics("images/rscloud-github-cred.png")
 ## More Resources 
 
 
-Read [previous tutorials](https://www.storybench.org/getting-started-data-visualization-r-using-ggplot2/) on `ggplot2`.  
+- Read [previous tutorials](https://www.storybench.org/getting-started-data-visualization-r-using-ggplot2/) on `ggplot2`
+
+- [ODSC blog](https://odsc.com/blog/)
+
+- [Conference page](https://odsc.com/boston/) 
