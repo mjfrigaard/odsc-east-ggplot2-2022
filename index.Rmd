@@ -14,11 +14,20 @@ output:
 
 <br>
 
+[Read the ODSC blog post](https://opendatascience.com/ggplot2-a-framework-for-thinking-with-graphs/).
+
+<br>
+
 ```{r odsc-talk-image-png, echo=FALSE, fig.align='center', out.height='100%', out.height='100%'}
 knitr::include_graphics("images/odsc-talk-image.png")
 ```
 
-[Read the ODSC blog post](https://opendatascience.com/ggplot2-a-framework-for-thinking-with-graphs/).
+<br><br> 
+
+## Workshop details
+
+- **When**: April 21st from 3:10 PM till 4:10 PM ET
+- **Where**: Hynes Convention Center, 900 Boylston St, Boston, MA 02115, United States (Room 311)
 
 <br><br>
 
@@ -99,6 +108,8 @@ knitr::include_graphics("images/rscloud-github-cred.png")
 
 ***
 
+<br>
+
 ## Slides as .pdfs
 
 + **[Part 1](https://github.com/mjfrigaard/odsc-ggplot2-2022/blob/gh-pages/pdfs/ggplot2-slides-01.pdf)**
@@ -115,6 +126,8 @@ knitr::include_graphics("images/rscloud-github-cred.png")
 
 
 - Read [previous tutorials](https://www.storybench.org/getting-started-data-visualization-r-using-ggplot2/) on `ggplot2`
+
++ [ggplot2/EDA FAQ](https://github.com/mjfrigaard/odsc-ggplot2-2022/blob/gh-pages/pdfs/ODSC Data Visualization Workshop - Notes.pdf)
 
 - [ODSC blog](https://odsc.com/blog/)
 
