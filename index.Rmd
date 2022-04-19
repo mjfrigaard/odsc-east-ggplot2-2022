@@ -127,7 +127,7 @@ knitr::include_graphics("images/rscloud-github-cred.png")
 
 - Read [previous tutorials](https://www.storybench.org/getting-started-data-visualization-r-using-ggplot2/) on `ggplot2`
 
-+ [ggplot2/EDA FAQ](https://github.com/mjfrigaard/odsc-ggplot2-2022/blob/gh-pages/pdfs/ODSC Data Visualization Workshop - Notes.pdf)
++ [ggplot2/EDA FAQ](https://github.com/mjfrigaard/odsc-ggplot2-2022/raw/gh-pages/pdfs/ODSC%20Data%20Visualization%20Workshop%20-%20Notes.pdf)
 
 - [ODSC blog](https://odsc.com/blog/)
 
