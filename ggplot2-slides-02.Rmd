@@ -374,7 +374,7 @@ background-size: 8%
 
 ### In your RStudio.Cloud, you will see the following: 
 
-```{r rscloud-landing, echo=FALSE, fig.align='center', out.height='90%', out.width='90%'}
+```{r rscloud-landing, echo=FALSE, fig.align='center', out.height='40%', out.width='40%'}
 knitr::include_graphics("images/rscloud-landing.png")
 ```
 
