@@ -68,7 +68,7 @@ knitr::include_graphics("images/rscloud-github-cred.png")
 
 ## Materials 
 
-Link to [RStudio.Cloud space](https://rstudio.cloud/spaces/225054/join?access_code=0Tn3Cwv-HxyTRjXxY2P3XkxW4-v3fgco65EyWXO6)
+Link to [RStudio.Cloud space](https://rstudio.cloud/spaces/225054/join?access_code=qtzdG3OUzelSw0JtxeHx7Cw2udVZ1IXzeMZdifVb)
 
 <br><br>
 
@@ -96,7 +96,7 @@ Link to [RStudio.Cloud space](https://rstudio.cloud/spaces/225054/join?access_co
 
 **Exercises & solutions**
 
-- *[RStudio.Cloud materials](https://rstudio.cloud/spaces/225054/content/all?sort=name_asc)*
+- *[RStudio.Cloud materials](https://rstudio.cloud/spaces/225054/join?access_code=qtzdG3OUzelSw0JtxeHx7Cw2udVZ1IXzeMZdifVb)*
 
 **Creating graphs**
 
