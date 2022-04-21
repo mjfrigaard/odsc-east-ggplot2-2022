@@ -84,6 +84,8 @@ class: title-slide, center, middle, inverse
 # `r rmarkdown::metadata$title`
 #.fancy[`r rmarkdown::metadata$subtitle`]
 
+### https://bit.ly/odsc-ggplot2
+
 <br>
 
 .large[by Martin Frigaard & Peter Spangler]
