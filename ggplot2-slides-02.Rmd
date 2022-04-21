@@ -372,13 +372,26 @@ background-size: 8%
 
 # RStudio.Cloud: Set up
 
+
+.cols3[
+
 ### In your RStudio.Cloud, you will see the following: 
 
-```{r rscloud-landing, echo=FALSE, fig.align='center', out.height='40%', out.width='40%'}
+]
+
+.cols3[
+
+```{r rscloud-landing, echo=FALSE, fig.align='center', out.height='80%', out.width='80%'}
 knitr::include_graphics("images/rscloud-landing.png")
 ```
 
-### Click on .red[odsc-ggplot2-2022] project
+]
+
+.cols3[
+
+### Log in with your .red[GitHub] credentials
+
+]
 
 ---
 class: left, top, inverse
@@ -388,11 +401,18 @@ background-size: 8%
 
 # RStudio.Cloud: Set up
 
-### In your RStudio IDE, you will see the following: 
+### On the top of the RStudio IDE, you will see the following: 
+
+<br>
 
 ```{r rscloud-env, echo=FALSE, fig.align='center', out.height='80%', out.width='80%'}
 knitr::include_graphics("images/rscloud-env.png")
 ```
+
+<br>
+
+### Click on .red[Save a Permanent Copy] to add this project to your workspace
+
 
 ---
 class: left, top, inverse
