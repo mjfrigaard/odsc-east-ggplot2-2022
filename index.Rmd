@@ -68,6 +68,8 @@ knitr::include_graphics("images/rscloud-github-cred.png")
 
 ## Materials 
 
+Link to [RStudio.Cloud space](https://rstudio.cloud/spaces/225054/join?access_code=0Tn3Cwv-HxyTRjXxY2P3XkxW4-v3fgco65EyWXO6)
+
 <br><br>
 
 ### [Part 1: thinking with graphs](https://mjfrigaard.github.io/odsc-ggplot2-2022/ggplot2-slides-01.html#1)
